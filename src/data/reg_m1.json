@@ -1,0 +1,178 @@
+[
+  {
+    "id": "MCQ-06433",
+    "question": "Mark and Molly met at a New Year's Eve party held December 31, Year 1. They were married at 11:38 p.m. that night. Identify Mark's filing status for Year 1.",
+    "options": [
+      "Single",
+      "Head of household",
+      "Surviving spouse",
+      "Married filing jointly"
+    ],
+    "correctIndex": 3,
+    "explanation": {
+      "correct": {
+        "choice": "D",
+        "text": "Filing status is determined as of the last day of the tax year. Because Mark and Molly were married before midnight on December 31, Mark is treated as married for the entire year and may file jointly."
+      },
+      "incorrect": {
+        "A": "Mark is not single because he was married on December 31.",
+        "B": "Head of household status does not apply to married taxpayers unless specific separation rules are met.",
+        "C": "Surviving spouse status applies only after a spouse has died, which is not the case here."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06434",
+    "question": "A taxpayer’s spouse dies in August of the current year. What filing status may the taxpayer use for the current year?",
+    "options": [
+      "Single",
+      "Head of household",
+      "Qualifying surviving spouse",
+      "Married filing jointly"
+    ],
+    "correctIndex": 3,
+    "explanation": {
+      "correct": {
+        "choice": "D",
+        "text": "A surviving spouse is considered married for the entire year in which the spouse dies and may file a joint return for that year."
+      },
+      "incorrect": {
+        "A": "The taxpayer is not considered single for the year of the spouse’s death.",
+        "B": "Head of household is not the correct status for the year of death.",
+        "C": "Qualifying surviving spouse status applies only in years following the year of death."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06435",
+    "question": "Which of the following is required to qualify as a qualifying surviving spouse?",
+    "options": [
+      "The taxpayer remarries within two years of the spouse’s death",
+      "A dependent child lived with the taxpayer for the entire year",
+      "The taxpayer lived alone during the year",
+      "The taxpayer paid exactly half of household costs"
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "correct": {
+        "choice": "B",
+        "text": "To qualify as a qualifying surviving spouse, the taxpayer must have a dependent child who lived in the home for the entire year and must pay more than half the cost of maintaining the home."
+      },
+      "incorrect": {
+        "A": "Remarrying disqualifies the taxpayer from qualifying surviving spouse status.",
+        "C": "Living alone is not a requirement for qualifying surviving spouse status.",
+        "D": "The taxpayer must pay more than half, not exactly half, of household costs."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06436",
+    "question": "John and Theresa are married and not legally separated. John moved out of the family home in October. What filing status may Theresa use for the year?",
+    "options": [
+      "Head of household",
+      "Single",
+      "Married filing jointly or separately",
+      "Qualifying surviving spouse"
+    ],
+    "correctIndex": 2,
+    "explanation": {
+      "correct": {
+        "choice": "C",
+        "text": "Because John and Theresa are still married and not legally separated at year-end, Theresa must file as married, either jointly or separately."
+      },
+      "incorrect": {
+        "A": "Head of household status generally requires legal separation and meeting other conditions.",
+        "B": "Theresa is not single because she is still married at year-end.",
+        "D": "Qualifying surviving spouse status applies only after a spouse has died."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06437",
+    "question": "Taxpayers who are legally separated under a decree of divorce or separate maintenance are treated as:",
+    "options": [
+      "Married",
+      "Unmarried",
+      "Married filing separately only",
+      "Head of household automatically"
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "correct": {
+        "choice": "B",
+        "text": "Taxpayers who are legally separated under a decree of divorce or separate maintenance are considered unmarried for tax purposes."
+      },
+      "incorrect": {
+        "A": "Legally separated taxpayers are not considered married.",
+        "C": "They are not allowed to file as married filing separately because they are treated as unmarried.",
+        "D": "Head of household status is not automatic and requires additional qualifications."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06438",
+    "question": "Which of the following taxpayers may file as head of household?",
+    "options": [
+      "A legally separated taxpayer with no dependents",
+      "An unmarried taxpayer who paid more than half the cost of maintaining a home for a qualifying child",
+      "A married taxpayer living with their spouse all year",
+      "A surviving spouse in the year of death"
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "correct": {
+        "choice": "B",
+        "text": "Head of household status requires the taxpayer to be unmarried and to pay more than half the cost of maintaining a home for a qualifying person."
+      },
+      "incorrect": {
+        "A": "Without a qualifying dependent, head of household status is not available.",
+        "C": "A married taxpayer living with their spouse does not qualify.",
+        "D": "A surviving spouse generally files married filing jointly in the year of death."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06439",
+    "question": "Which of the following prevents taxpayers from filing a joint return?",
+    "options": [
+      "Living apart during the year",
+      "Being legally separated at year-end",
+      "Having no dependents",
+      "One spouse having no income"
+    ],
+    "correctIndex": 1,
+    "explanation": {
+      "correct": {
+        "choice": "B",
+        "text": "Taxpayers who are legally separated under state law at year-end are not considered married and therefore cannot file a joint return."
+      },
+      "incorrect": {
+        "A": "Living apart does not prevent joint filing if the taxpayers are still married.",
+        "C": "Having no dependents does not affect the ability to file jointly.",
+        "D": "A spouse having no income does not prevent joint filing."
+      }
+    }
+  },
+  {
+    "id": "MCQ-06440",
+    "question": "A surviving spouse with no dependent children in the year following the spouse’s death should generally file as:",
+    "options": [
+      "Married filing jointly",
+      "Qualifying surviving spouse",
+      "Head of household",
+      "Single"
+    ],
+    "correctIndex": 3,
+    "explanation": {
+      "correct": {
+        "choice": "D",
+        "text": "Qualifying surviving spouse status requires a dependent child. Without a dependent, the surviving spouse must file as single in the year following the spouse’s death."
+      },
+      "incorrect": {
+        "A": "Married filing jointly is not available after the year of death.",
+        "B": "Qualifying surviving spouse status requires a dependent child.",
+        "C": "Head of household status requires a qualifying dependent."
+      }
+    }
+  }
+]
