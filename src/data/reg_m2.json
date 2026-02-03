@@ -1,0 +1,115 @@
+{
+  "module": "M2",
+  "questions": [
+    {
+      "id": "M2-001",
+      "question": "Which country is widely known for having one of the best cuisines in the world?",
+      "options": [
+        "Germany",
+        "Italy",
+        "Canada",
+        "Norway"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Italy is famous worldwide for its cuisine, including pasta, pizza, and regional dishes that emphasize fresh ingredients."
+        },
+        "incorrect": {
+          "A": "German cuisine is hearty but not as globally renowned as Italian cuisine.",
+          "C": "Canadian cuisine is diverse but not typically ranked among the top world cuisines.",
+          "D": "Norwegian cuisine is traditional but limited in global influence."
+        }
+      }
+    },
+    {
+      "id": "M2-002",
+      "question": "Which food is traditionally associated with Japan?",
+      "options": [
+        "Tacos",
+        "Sushi",
+        "Pizza",
+        "Currywurst"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Sushi is a traditional Japanese dish made with vinegared rice and seafood or vegetables."
+        },
+        "incorrect": {
+          "A": "Tacos are traditionally Mexican.",
+          "C": "Pizza originated in Italy.",
+          "D": "Currywurst is a popular German street food."
+        }
+      }
+    },
+    {
+      "id": "M2-003",
+      "question": "Which country is famous for croissants and fine pastries?",
+      "options": [
+        "France",
+        "Brazil",
+        "India",
+        "Australia"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "France is internationally known for its pastries, including croissants, éclairs, and macarons."
+        },
+        "incorrect": {
+          "B": "Brazilian cuisine is known more for grilled meats and stews.",
+          "C": "Indian cuisine focuses on spices and curries rather than pastries.",
+          "D": "Australian cuisine is diverse but not pastry-focused."
+        }
+      }
+    },
+    {
+      "id": "M2-004",
+      "question": "Which cuisine is most associated with the use of olive oil as a primary cooking fat?",
+      "options": [
+        "Mexican",
+        "Mediterranean",
+        "Chinese",
+        "American"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Mediterranean cuisine heavily relies on olive oil for cooking and flavoring dishes."
+        },
+        "incorrect": {
+          "A": "Mexican cuisine uses a variety of oils and fats.",
+          "C": "Chinese cuisine often uses vegetable or peanut oil.",
+          "D": "American cuisine uses a wide range of cooking fats."
+        }
+      }
+    },
+    {
+      "id": "M2-005",
+      "question": "Which country is well known for spicy curries and extensive use of spices?",
+      "options": [
+        "Sweden",
+        "India",
+        "Ireland",
+        "Japan"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Indian cuisine is famous for its use of spices and a wide variety of curry-based dishes."
+        },
+        "incorrect": {
+          "A": "Swedish cuisine is generally mild.",
+          "C": "Irish cuisine traditionally uses simple ingredients with limited spices.",
+          "D": "Japanese cuisine emphasizes balance and subtle flavors rather than heavy spice."
+        }
+      }
+    }
+  ]
+}

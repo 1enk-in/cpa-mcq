@@ -18,7 +18,9 @@ export default function Home({ setScreen }) {
             key={sub.name}
             className="home-card"
             style={{ backgroundColor: sub.color }}
-            onClick={() => sub.name === "REG" && setScreen("reg")}
+            onClick={() => {
+              if (sub.name === "REG") setScreen("reg");
+            }}
           >
             {sub.name}
           </div>

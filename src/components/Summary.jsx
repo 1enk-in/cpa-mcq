@@ -1,4 +1,6 @@
 export default function Summary({ sessionData, setScreen }) {
+  if (!sessionData) return null;
+
   const { total, answered, correct } = sessionData;
   const percent = ((correct / total) * 100).toFixed(0);
 

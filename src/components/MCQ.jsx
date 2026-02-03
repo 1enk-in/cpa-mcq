@@ -1,13 +1,68 @@
-import { useState } from "react";
-import questions from "../data/reg_m1.json";
+import { useEffect, useState } from "react";
 
-export default function MCQ({ setScreen, setSessionData }) {
+import regM1 from "../data/reg_m1.json";
+import regM2 from "../data/reg_m2.json";
+
+const MODULE_DATA = {
+  M1: regM1,
+  M2: regM2
+};
+
+const SESSION_KEY = "cpa_active_session";
+const HISTORY_KEY = "cpa_reg_history";
+
+export default function MCQ({ module, setScreen, setSessionData }) {
+  /* 🔒 SAFETY GUARD */
+  if (!module) return null;
+
+  const data = MODULE_DATA[module];
+  if (!data) return null;
+
+  const questions = data.questions;
   const total = questions.length;
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(Array(total).fill(null));
   const [confirmType, setConfirmType] = useState(null);
   const [error, setError] = useState("");
+  const [hydrated, setHydrated] = useState(false);
+
+  /* ===============================
+     🔹 RESTORE SESSION
+     =============================== */
+  useEffect(() => {
+    const saved = localStorage.getItem(SESSION_KEY);
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+
+      if (
+        parsed.module === module &&
+        parsed.answers?.length === total
+      ) {
+        setAnswers(parsed.answers);
+        setIndex(parsed.index ?? 0);
+      }
+    }
+
+    setHydrated(true);
+  }, [module, total]);
+
+  /* ===============================
+     🔹 AUTO SAVE
+     =============================== */
+  useEffect(() => {
+    if (!hydrated) return;
+
+    localStorage.setItem(
+      SESSION_KEY,
+      JSON.stringify({
+        module,
+        answers,
+        index
+      })
+    );
+  }, [answers, index, hydrated, module]);
 
   const q = questions[index];
   const selected = answers[index];
@@ -15,41 +70,76 @@ export default function MCQ({ setScreen, setSessionData }) {
   const answeredCount = answers.filter(a => a !== null).length;
   const allAnswered = answeredCount === total;
 
+  /* ===============================
+     🔹 ANSWER SELECT (LOCKED)
+     =============================== */
   function selectOption(i) {
     if (selected !== null) return;
+
     const copy = [...answers];
     copy[index] = i;
     setAnswers(copy);
   }
 
+  /* ===============================
+     🔹 GENERATE REPORT + SAVE HISTORY
+     =============================== */
   function generateReport() {
-    const correct = answers.filter(
-      (a, i) => a === questions[i].correctIndex
-    ).length;
+  const correct = answers.filter(
+    (a, i) => a === questions[i].correctIndex
+  ).length;
 
-    setSessionData({
-      total,
-      answered: answeredCount,
-      correct
-    });
+  const report = {
+    module,
+    total,
+    answered: answeredCount,
+    correct,
+    percent: Math.round((correct / total) * 100),
+    completedAt: new Date().toISOString(),
+    answers
+  };
 
-    setScreen("summary");
-  }
+  const history =
+    JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
 
+  history.unshift(report);
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+
+  localStorage.removeItem(SESSION_KEY);
+
+  setSessionData(report);   // 🔑 THIS WAS MISSING
+  setScreen("summary"); 
+}
+
+
+  /* ===============================
+     🔹 END SESSION (CONFIRM)
+     =============================== */
   function handleEndSession() {
     if (answeredCount < 2) {
-      setError("At least 2 questions must be answered to generate a report.");
+      setError("Answer at least 2 questions to end session.");
       return;
     }
     setConfirmType("end");
   }
 
+  /* ===============================
+     🔹 SUBMIT (NO CONFIRM)
+     =============================== */
   function handleSubmit() {
-    setConfirmType("end");
+    if (answeredCount < 2) {
+      setError("Answer at least 2 questions to submit.");
+      return;
+    }
+    generateReport();
   }
 
   function confirmAction() {
-    if (confirmType === "exit") setScreen("reg");
+    if (confirmType === "exit") {
+      localStorage.removeItem(SESSION_KEY);
+      setScreen("reg");
+    }
+
     if (confirmType === "end") generateReport();
   }
 
@@ -104,6 +194,7 @@ export default function MCQ({ setScreen, setSessionData }) {
           );
         })}
 
+        {/* EXPLANATION */}
         {selected !== null && (
           <div className="explanation">
             <h4>Explanation</h4>
@@ -157,13 +248,12 @@ export default function MCQ({ setScreen, setSessionData }) {
       {/* CONFIRM MODAL */}
       {confirmType && (
         <div className="modal-overlay">
-          <div className={`modal-box ${confirmType === "end" ? "danger" : ""}`}>
+          <div className="modal-box danger">
             <p>
               {confirmType === "exit"
-                ? "Are you sure you want to leave this session without submitting?"
-                : "Are you sure you want to end this session and view the report?"}
+                ? "Leave without submitting?"
+                : "End session and view report?"}
             </p>
-
             <div className="modal-actions">
               <button onClick={() => setConfirmType(null)}>Cancel</button>
               <button onClick={confirmAction}>Yes</button>
