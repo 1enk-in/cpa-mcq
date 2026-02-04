@@ -243,13 +243,16 @@ export default function MCQ({
   }
 
   function confirmAction() {
-    if (confirmType === "exit") {
-      localStorage.removeItem(SESSION_KEY);
-      setScreen("reg");
-    }
+  if (confirmType === "exit") {
+    localStorage.removeItem(SESSION_KEY);
 
-    if (confirmType === "end") generateReport();
+    // 🔑 Go back to the correct subject
+    setScreen(activeSubject || "home");
   }
+
+  if (confirmType === "end") generateReport();
+}
+
 
   return (
     <div className="page">
