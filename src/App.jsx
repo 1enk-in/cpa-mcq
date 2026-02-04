@@ -12,7 +12,7 @@ const SESSION_KEY = "cpa_active_session";
 export default function App() {
   const [screen, setScreen] = useState("home");
   const [activeModule, setActiveModule] = useState(null);
-  const [sessionData, setSessionData] = useState(null); // ✅ ADD THIS
+  const [sessionData, setSessionData] = useState(null); 
   const [reviewSession, setReviewSession] = useState(null);
 
   /* 🔹 BOOTSTRAP ACTIVE SESSION */
@@ -45,6 +45,16 @@ export default function App() {
           setSessionData={setSessionData}   
         />
       )}
+
+      {screen === "retry" && sessionData && (
+  <MCQ
+    module={sessionData.module}
+    retryIndexes={sessionData.wrongIndexes}
+    setScreen={setScreen}
+    setSessionData={setSessionData}
+  />
+)}
+
 
       {screen === "summary" && sessionData && (
         <Summary

@@ -32,41 +32,55 @@ export default function History({ setScreen, setReviewSession }) {
         <p className="empty-history">No practice sessions yet.</p>
       ) : (
         <div className="history-list">
-          {history.map((s, i) => (
-            <div key={i} className="history-card">
-              <div className="history-score">
-                {s.correct}/{s.total}
-              </div>
+          {history.map((s, i) => {
+            const attempted =
+              s.attempted ?? s.answered ?? s.total;
 
-              <div
-                className="history-info"
-                onClick={() => {
-                  setReviewSession(s);
-                  setScreen("review");
-                }}
-              >
-                <div className="history-percent">
-                  {s.module} • {s.percent}% Correct
+            const wrong =
+              s.wrong ?? Math.max(attempted - s.correct, 0);
+
+            return (
+              <div key={i} className="history-card">
+                {/* SCORE BLOCK */}
+                <div className="history-score">
+                  {s.correct}/{attempted}
                 </div>
 
-                <div className="history-date">
-                  {new Date(s.completedAt).toLocaleDateString("en-GB")}{" "}
-                  {new Date(s.completedAt).toLocaleTimeString("en-US", {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    hour12: true
-                  })}
-                </div>
-              </div>
+                {/* INFO */}
+                <div
+                  className="history-info"
+                  onClick={() => {
+                    setReviewSession(s);
+                    setScreen("review");
+                  }}
+                >
+                  <div className="history-percent">
+                    {s.module} • {s.percent}% Correct
+                  </div>
 
-              <button
-                className="delete-btn"
-                onClick={() => deleteSession(i)}
-              >
-                ❌
-              </button>
-            </div>
-          ))}
+                  <div className="history-stats">
+                    Attempted: {attempted} | Correct: {s.correct} | Wrong: {wrong}
+                  </div>
+
+                  <div className="history-date">
+                    {new Date(s.completedAt).toLocaleDateString("en-GB")}{" "}
+                    {new Date(s.completedAt).toLocaleTimeString("en-US", {
+                      hour: "numeric",
+                      minute: "2-digit",
+                      hour12: true
+                    })}
+                  </div>
+                </div>
+
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteSession(i)}
+                >
+                  ❌
+                </button>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

@@ -11,14 +11,25 @@ const MODULE_DATA = {
 const SESSION_KEY = "cpa_active_session";
 const HISTORY_KEY = "cpa_reg_history";
 
-export default function MCQ({ module, setScreen, setSessionData }) {
+export default function MCQ({
+  module,
+  setScreen,
+  setSessionData,
+  retryIndexes = null
+}) {
+
   /* 🔒 SAFETY GUARD */
   if (!module) return null;
 
   const data = MODULE_DATA[module];
   if (!data) return null;
 
-  const questions = data.questions;
+  const baseQuestions = data.questions;
+
+const questions = retryIndexes
+  ? retryIndexes.map(i => baseQuestions[i])
+  : baseQuestions;
+
   const total = questions.length;
 
   const [index, setIndex] = useState(0);
@@ -85,19 +96,32 @@ export default function MCQ({ module, setScreen, setSessionData }) {
      🔹 GENERATE REPORT + SAVE HISTORY
      =============================== */
   function generateReport() {
-  const correct = answers.filter(
-    (a, i) => a === questions[i].correctIndex
-  ).length;
+  const wrongIndexes = [];
+  let correct = 0;
+
+  answers.forEach((a, i) => {
+    if (a === null) return;
+    if (a === questions[i].correctIndex) {
+      correct++;
+    } else {
+      wrongIndexes.push(i);
+    }
+  });
 
   const report = {
-    module,
-    total,
-    answered: answeredCount,
-    correct,
-    percent: Math.round((correct / total) * 100),
-    completedAt: new Date().toISOString(),
-    answers
-  };
+  module,
+  isRetry: !!retryIndexes,     // 🔑
+  retryOf: retryIndexes ?? null,
+  total,
+  attempted: answeredCount,
+  correct,
+  wrong: wrongIndexes.length,
+  wrongIndexes,
+  percent: Math.round((correct / total) * 100),
+  completedAt: new Date().toISOString(),
+  answers
+};
+
 
   const history =
     JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
@@ -107,17 +131,18 @@ export default function MCQ({ module, setScreen, setSessionData }) {
 
   localStorage.removeItem(SESSION_KEY);
 
-  setSessionData(report);   // 🔑 THIS WAS MISSING
-  setScreen("summary"); 
+  setSessionData(report);
+  setScreen("summary");
 }
+
 
 
   /* ===============================
      🔹 END SESSION (CONFIRM)
      =============================== */
   function handleEndSession() {
-    if (answeredCount < 2) {
-      setError("Answer at least 2 questions to end session.");
+    if (answeredCount < 1) {
+      setError("Answer at least 1 questions to end session.");
       return;
     }
     setConfirmType("end");
@@ -127,8 +152,8 @@ export default function MCQ({ module, setScreen, setSessionData }) {
      🔹 SUBMIT (NO CONFIRM)
      =============================== */
   function handleSubmit() {
-    if (answeredCount < 2) {
-      setError("Answer at least 2 questions to submit.");
+    if (answeredCount < 1) {
+      setError("Answer at least 1 questions to submit.");
       return;
     }
     generateReport();
