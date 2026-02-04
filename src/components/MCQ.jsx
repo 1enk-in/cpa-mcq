@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import regM1 from "../data/reg/reg_m1.json";
 import regM2 from "../data/reg/reg_m2.json";
@@ -118,22 +118,6 @@ export default function MCQ({
   const [confirmType, setConfirmType] = useState(null);
   const [error, setError] = useState("");
 
-  // 📝 SLATE STATE
-const [showSlate, setShowSlate] = useState(false);
-const canvasRef = useRef(null);
-const isDrawing = useRef(false);
-// 📝 Track if canvas was already initialized
-const canvasInitializedRef = useRef(false);
-
-// 📝 SLATE FULL SCREEN
-const [isFullScreen, setIsFullScreen] = useState(false);
-// 📝 SLATE PEN
-const [penSize, setPenSize] = useState(2);
-// 📝 SLATE ERASER
-const [isEraser, setIsEraser] = useState(false);
-
-
-
   /* ===============================
      🔹 RESTORE SESSION (NO SHUFFLE)
      =============================== */
@@ -176,103 +160,6 @@ const [isEraser, setIsEraser] = useState(false);
       })
     );
   }, [answers, index, hydrated, module, questions]);
-
-  // 🛑 Disable background scroll when slate is fullscreen
-useEffect(() => {
-  if (isFullScreen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
-
-  return () => {
-    document.body.style.overflow = "";
-  };
-}, [isFullScreen]);
-
-  // 📝 SLATE CANVAS LOGIC
-useEffect(() => {
-  if (!showSlate) return;
-
-  // 🔧 FIX canvas resolution to match display size
-const resizeCanvas = () => {
-  const canvas = canvasRef.current;
-  const ctx = canvas.getContext("2d");
-
-  // 🔹 Save existing drawing
-  const prevImage = canvas.width && canvas.height
-    ? ctx.getImageData(0, 0, canvas.width, canvas.height)
-    : null;
-
-  const rect = canvas.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
-
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
-
-  ctx.scale(dpr, dpr);
-
-  // 🔹 Restore drawing
-  if (prevImage) {
-    ctx.putImageData(prevImage, 0, 0);
-  }
-};
-
-
-resizeCanvas();
-
-
-  const canvas = canvasRef.current;
-  const ctx = canvas.getContext("2d");
-
-  ctx.lineWidth = penSize;
-  ctx.lineCap = "round";
-  ctx.strokeStyle = isEraser ? "#fff" : "#000";
-
-  const getPos = e => {
-    const rect = canvas.getBoundingClientRect();
-    return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    };
-  };
-
-  
-
-
-  const startDraw = e => {
-    isDrawing.current = true;
-    const { x, y } = getPos(e);
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-  };
-
-  const draw = e => {
-    if (!isDrawing.current) return;
-    const { x, y } = getPos(e);
-    ctx.lineTo(x, y);
-    ctx.stroke();
-  };
-
-  const stopDraw = () => {
-    isDrawing.current = false;
-  };
-
-  canvas.addEventListener("pointerdown", startDraw);
-  canvas.addEventListener("pointermove", draw);
-  canvas.addEventListener("pointerup", stopDraw);
-  canvas.addEventListener("pointerleave", stopDraw);
-
-  return () => {
-    canvas.removeEventListener("pointerdown", startDraw);
-    canvas.removeEventListener("pointermove", draw);
-    canvas.removeEventListener("pointerup", stopDraw);
-    canvas.removeEventListener("pointerleave", stopDraw);
-  };
-}, [showSlate, penSize, isEraser, isFullScreen]);
-
-
-
 
   const q = questions[index];
   const selected = answers[index];
@@ -363,14 +250,6 @@ resizeCanvas();
 
     if (confirmType === "end") generateReport();
   }
-
-  // 📝 SLATE CLEAR
-function clearCanvas() {
-  const canvas = canvasRef.current;
-  const ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
 
   return (
     <div className="page">
@@ -475,80 +354,21 @@ function clearCanvas() {
       </div>
 
       {/* CONFIRM MODAL */}
-      {/* 📝 SLATE BUTTON */}
-<button
-  className="slate-fab"
-  onClick={() => setShowSlate(true)}
-  aria-label="Open rough work slate"
->
-  ✏️
-</button>
-
-
-{confirmType && (
-  <div className="modal-overlay">
-    <div className="modal-box danger">
-      <p>
-        {confirmType === "exit"
-          ? "Leave without submitting?"
-          : "End session and view report?"}
-      </p>
-      <div className="modal-actions">
-        <button onClick={() => setConfirmType(null)}>Cancel</button>
-        <button onClick={confirmAction}>Yes</button>
-      </div>
+      {confirmType && (
+        <div className="modal-overlay">
+          <div className="modal-box danger">
+            <p>
+              {confirmType === "exit"
+                ? "Leave without submitting?"
+                : "End session and view report?"}
+            </p>
+            <div className="modal-actions">
+              <button onClick={() => setConfirmType(null)}>Cancel</button>
+              <button onClick={confirmAction}>Yes</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-  </div>
-)}
-
-{/* 📝 SLATE OVERLAY */}
-{showSlate && (
-  <div className={`slate-overlay ${isFullScreen ? "fullscreen" : ""}`}>
-    <div className="slate-header">
-  <span>Rough Work</span>
-
-  <div className="slate-tools">
-    {/* Pen sizes */}
-    <button onClick={() => { setPenSize(2); setIsEraser(false); }}>✏️</button>
-<button onClick={() => { setPenSize(4); setIsEraser(false); }}>🖊️</button>
-<button onClick={() => { setPenSize(7); setIsEraser(false); }}>🖍️</button>
-
-
-    {/* Eraser */}
-    <button
-      onClick={() => setIsEraser(e => !e)}
-      style={{ opacity: isEraser ? 0.5 : 1 }}
-    >
-      🧽
-    </button>
-
-    {/* Clear */}
-    <button onClick={clearCanvas}>🧹</button>
-
-    {/* Full screen */}
-    <button onClick={() => setIsFullScreen(f => !f)}>
-      {isFullScreen ? "🗗" : "🗖"}
-    </button>
-
-    {/* Close */}
-    <button onClick={() => setShowSlate(false)}>❌</button>
-  </div>
-</div>
-
-
-    <canvas
-      ref={canvasRef}
-      width={window.innerWidth}
-      height={250}
-      style={{
-        background: "#fff",
-        touchAction: "none"
-      }}
-    />
-  </div>
-)}
-
-</div>
-);
+  );
 }
-
