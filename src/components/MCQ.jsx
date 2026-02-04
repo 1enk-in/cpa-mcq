@@ -1,8 +1,4 @@
-import { useEffect, useState } from "react";
-
-/* ===============================
-   📦 IMPORT ALL MODULE DATA
-   =============================== */
+import { useEffect, useState, useRef } from "react";
 
 import regM1 from "../data/reg/reg_m1.json";
 import regM2 from "../data/reg/reg_m2.json";
@@ -37,25 +33,50 @@ import tcpT2 from "../data/tcp/tcp_t2.json";
 import tcpT3 from "../data/tcp/tcp_t3.json";
 import tcpT4 from "../data/tcp/tcp_t4.json";
 
-/* ===============================
-   📚 MODULE MAP
-   =============================== */
+
+
+
 
 const MODULE_DATA = {
-  M1: regM1, M2: regM2, M3: regM3, M4: regM4, M5: regM5, M6: regM6, M7: regM7,
-  A1: audA1, A2: audA2, A3: audA3, A4: audA4,
-  F1: farF1, F2: farF2, F3: farF3, F4: farF4,
-  B1: barB1, B2: barB2, B3: barB3, B4: barB4,
-  I1: iscI1, I2: iscI2, I3: iscI3, I4: iscI4,
-  T1: tcpT1, T2: tcpT2, T3: tcpT3, T4: tcpT4
+  M1: regM1,
+  M2: regM2,
+  M3: regM3,
+  M4: regM4,
+  M5: regM5,
+  M6: regM6,
+  M7: regM7,
+
+  A1: audA1,
+  A2: audA2,
+  A3: audA3,
+  A4: audA4,
+
+  F1: farF1,
+  F2: farF2,
+  F3: farF3,
+  F4: farF4,
+
+  B1: barB1,
+  B2: barB2,
+  B3: barB3,
+  B4: barB4,
+
+  I1: iscI1,
+  I2: iscI2,
+  I3: iscI3,
+  I4: iscI4,
+
+  T1: tcpT1,
+  T2: tcpT2,
+  T3: tcpT3,
+  T4: tcpT4
 };
+
 
 const SESSION_KEY = "cpa_active_session";
 const HISTORY_KEY = "cpa_reg_history";
 
-/* ===============================
-   🔀 SHUFFLE HELPER (Fisher-Yates)
-   =============================== */
+/* 🔀 SHUFFLE HELPER */
 function shuffleArray(arr) {
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
@@ -65,16 +86,15 @@ function shuffleArray(arr) {
   return copy;
 }
 
-/* ===============================
-   🧠 MCQ COMPONENT
-   =============================== */
 export default function MCQ({
   module,
   setScreen,
   setSessionData,
   retryIndexes = null,
-  activeSubject
+  activeSubject       // 🔑 NEW
 }) {
+
+  /* 🔒 SAFETY GUARD */
   if (!module) return null;
 
   const data = MODULE_DATA[module];
@@ -82,15 +102,40 @@ export default function MCQ({
 
   const baseQuestions = data.questions;
 
-  const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState([]);
-  const [index, setIndex] = useState(0);
-  const [confirmType, setConfirmType] = useState(null);
-  const [error, setError] = useState("");
   const [hydrated, setHydrated] = useState(false);
 
+  /* 🔹 BUILD QUESTION SET */
+  const rawQuestions = retryIndexes
+    ? retryIndexes.map(i => baseQuestions[i])
+    : baseQuestions;
+
+  const [questions, setQuestions] = useState(rawQuestions);
+
+  const total = questions.length;
+
+  const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState(Array(total).fill(null));
+  const [confirmType, setConfirmType] = useState(null);
+  const [error, setError] = useState("");
+
+  // 📝 SLATE STATE
+const [showSlate, setShowSlate] = useState(false);
+const canvasRef = useRef(null);
+const isDrawing = useRef(false);
+// 📝 Track if canvas was already initialized
+const canvasInitializedRef = useRef(false);
+
+// 📝 SLATE FULL SCREEN
+const [isFullScreen, setIsFullScreen] = useState(false);
+// 📝 SLATE PEN
+const [penSize, setPenSize] = useState(2);
+// 📝 SLATE ERASER
+const [isEraser, setIsEraser] = useState(false);
+
+
+
   /* ===============================
-     🔹 INIT / RESTORE SESSION
+     🔹 RESTORE SESSION (NO SHUFFLE)
      =============================== */
   useEffect(() => {
     const saved = localStorage.getItem(SESSION_KEY);
@@ -98,28 +143,25 @@ export default function MCQ({
     if (saved) {
       const parsed = JSON.parse(saved);
 
-      if (parsed.module === module && parsed.questions?.length) {
-        setQuestions(parsed.questions);
+      if (
+        parsed.module === module &&
+        parsed.answers?.length === total
+      ) {
         setAnswers(parsed.answers);
         setIndex(parsed.index ?? 0);
+        setQuestions(parsed.questions); // 🔑 restore exact order
         setHydrated(true);
         return;
       }
     }
 
-    // 🔁 NEW SESSION
-    let qs = retryIndexes
-      ? retryIndexes.map(i => baseQuestions[i])
-      : shuffleArray(baseQuestions);
-
-    setQuestions(qs);
-    setAnswers(Array(qs.length).fill(null));
-    setIndex(0);
+    /* 🔹 NEW SESSION → SHUFFLE */
+    setQuestions(shuffleArray(rawQuestions));
     setHydrated(true);
-  }, [module, retryIndexes]);
+  }, [module, total]);
 
   /* ===============================
-     🔹 AUTO SAVE SESSION
+     🔹 AUTO SAVE
      =============================== */
   useEffect(() => {
     if (!hydrated) return;
@@ -128,42 +170,141 @@ export default function MCQ({
       SESSION_KEY,
       JSON.stringify({
         module,
-        questions,
         answers,
-        index
+        index,
+        questions // 🔑 save order
       })
     );
-  }, [questions, answers, index, hydrated, module]);
+  }, [answers, index, hydrated, module, questions]);
 
-  if (!questions.length) return null;
+  // 🛑 Disable background scroll when slate is fullscreen
+useEffect(() => {
+  if (isFullScreen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
 
-  const total = questions.length;
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [isFullScreen]);
+
+  // 📝 SLATE CANVAS LOGIC
+useEffect(() => {
+  if (!showSlate) return;
+
+  // 🔧 FIX canvas resolution to match display size
+const resizeCanvas = () => {
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
+
+  // 🔹 Save existing drawing
+  const prevImage = canvas.width && canvas.height
+    ? ctx.getImageData(0, 0, canvas.width, canvas.height)
+    : null;
+
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+
+  ctx.scale(dpr, dpr);
+
+  // 🔹 Restore drawing
+  if (prevImage) {
+    ctx.putImageData(prevImage, 0, 0);
+  }
+};
+
+
+resizeCanvas();
+
+
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
+
+  ctx.lineWidth = penSize;
+  ctx.lineCap = "round";
+  ctx.strokeStyle = isEraser ? "#fff" : "#000";
+
+  const getPos = e => {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    };
+  };
+
+  
+
+
+  const startDraw = e => {
+    isDrawing.current = true;
+    const { x, y } = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+  };
+
+  const draw = e => {
+    if (!isDrawing.current) return;
+    const { x, y } = getPos(e);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  };
+
+  const stopDraw = () => {
+    isDrawing.current = false;
+  };
+
+  canvas.addEventListener("pointerdown", startDraw);
+  canvas.addEventListener("pointermove", draw);
+  canvas.addEventListener("pointerup", stopDraw);
+  canvas.addEventListener("pointerleave", stopDraw);
+
+  return () => {
+    canvas.removeEventListener("pointerdown", startDraw);
+    canvas.removeEventListener("pointermove", draw);
+    canvas.removeEventListener("pointerup", stopDraw);
+    canvas.removeEventListener("pointerleave", stopDraw);
+  };
+}, [showSlate, penSize, isEraser, isFullScreen]);
+
+
+
+
   const q = questions[index];
   const selected = answers[index];
+
   const answeredCount = answers.filter(a => a !== null).length;
   const allAnswered = answeredCount === total;
 
   /* ===============================
-     🔹 ANSWER SELECT
+     🔹 ANSWER SELECT (LOCKED)
      =============================== */
   function selectOption(i) {
     if (selected !== null) return;
+
     const copy = [...answers];
     copy[index] = i;
     setAnswers(copy);
   }
 
   /* ===============================
-     🔹 GENERATE REPORT
+     🔹 GENERATE REPORT + SAVE HISTORY
      =============================== */
   function generateReport() {
-    let correct = 0;
     const wrongIndexes = [];
+    let correct = 0;
 
     answers.forEach((a, i) => {
       if (a === null) return;
-      if (a === questions[i].correctIndex) correct++;
-      else wrongIndexes.push(i);
+      if (a === questions[i].correctIndex) {
+        correct++;
+      } else {
+        wrongIndexes.push(i);
+      }
     });
 
     const report = {
@@ -185,6 +326,7 @@ export default function MCQ({
 
     history.unshift(report);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+
     localStorage.removeItem(SESSION_KEY);
 
     setSessionData(report);
@@ -192,7 +334,7 @@ export default function MCQ({
   }
 
   /* ===============================
-     🔹 CONFIRM HANDLERS
+     🔹 END SESSION (CONFIRM)
      =============================== */
   function handleEndSession() {
     if (answeredCount < 1) {
@@ -202,17 +344,34 @@ export default function MCQ({
     setConfirmType("end");
   }
 
+  /* ===============================
+     🔹 SUBMIT
+     =============================== */
+  function handleSubmit() {
+    if (answeredCount < 1) {
+      setError("Answer at least 1 question to submit.");
+      return;
+    }
+    generateReport();
+  }
+
   function confirmAction() {
     if (confirmType === "exit") {
       localStorage.removeItem(SESSION_KEY);
-      setScreen(activeSubject || "home");
+      setScreen("reg");
     }
+
     if (confirmType === "end") generateReport();
   }
 
-  /* ===============================
-     🖥️ RENDER
-     =============================== */
+  // 📝 SLATE CLEAR
+function clearCanvas() {
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
   return (
     <div className="page">
       {/* TOP BAR */}
@@ -230,9 +389,13 @@ export default function MCQ({
         {questions.map((_, i) => {
           let cls = "panel-box";
           if (answers[i] !== null) {
-            cls += answers[i] === questions[i].correctIndex ? " correct" : " wrong";
+            cls +=
+              answers[i] === questions[i].correctIndex
+                ? " correct"
+                : " wrong";
           }
           if (i === index) cls += " active";
+
           return (
             <div key={i} className={cls} onClick={() => setIndex(i)}>
               {i + 1}
@@ -252,6 +415,7 @@ export default function MCQ({
             if (i === q.correctIndex) cls += " correct";
             else if (i === selected) cls += " wrong";
           }
+
           return (
             <div key={i} className={cls} onClick={() => selectOption(i)}>
               <strong>{String.fromCharCode(65 + i)}.</strong> {opt}
@@ -263,12 +427,14 @@ export default function MCQ({
         {selected !== null && (
           <div className="explanation">
             <h4>Explanation</h4>
+
             <p>
               <strong>
                 Choice "{q.explanation.correct.choice}" is correct.
               </strong>{" "}
               {q.explanation.correct.text}
             </p>
+
             {Object.entries(q.explanation.incorrect).map(
               ([choice, text]) => (
                 <p key={choice}>
@@ -279,19 +445,28 @@ export default function MCQ({
           </div>
         )}
 
-        {/* NAV */}
+        {/* NAVIGATION */}
         <div className="nav">
-          <button onClick={() => setIndex(i => Math.max(i - 1, 0))} disabled={index === 0}>
+          <button
+            onClick={() => setIndex(i => Math.max(i - 1, 0))}
+            disabled={index === 0}
+          >
             Previous
           </button>
+
           <span>{index + 1} / {total}</span>
-          <button onClick={() => setIndex(i => Math.min(i + 1, total - 1))} disabled={index === total - 1}>
+
+          <button
+            onClick={() => setIndex(i => Math.min(i + 1, total - 1))}
+            disabled={index === total - 1}
+          >
             Next
           </button>
         </div>
 
+        {/* SUBMIT */}
         {allAnswered && (
-          <button className="submit-btn" onClick={generateReport}>
+          <button className="submit-btn" onClick={handleSubmit}>
             SUBMIT
           </button>
         )}
@@ -300,21 +475,80 @@ export default function MCQ({
       </div>
 
       {/* CONFIRM MODAL */}
-      {confirmType && (
-        <div className="modal-overlay">
-          <div className="modal-box danger">
-            <p>
-              {confirmType === "exit"
-                ? "Leave without submitting?"
-                : "End session and view report?"}
-            </p>
-            <div className="modal-actions">
-              <button onClick={() => setConfirmType(null)}>Cancel</button>
-              <button onClick={confirmAction}>Yes</button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* 📝 SLATE BUTTON */}
+<button
+  className="slate-fab"
+  onClick={() => setShowSlate(true)}
+  aria-label="Open rough work slate"
+>
+  ✏️
+</button>
+
+
+{confirmType && (
+  <div className="modal-overlay">
+    <div className="modal-box danger">
+      <p>
+        {confirmType === "exit"
+          ? "Leave without submitting?"
+          : "End session and view report?"}
+      </p>
+      <div className="modal-actions">
+        <button onClick={() => setConfirmType(null)}>Cancel</button>
+        <button onClick={confirmAction}>Yes</button>
+      </div>
     </div>
-  );
+  </div>
+)}
+
+{/* 📝 SLATE OVERLAY */}
+{showSlate && (
+  <div className={`slate-overlay ${isFullScreen ? "fullscreen" : ""}`}>
+    <div className="slate-header">
+  <span>Rough Work</span>
+
+  <div className="slate-tools">
+    {/* Pen sizes */}
+    <button onClick={() => { setPenSize(2); setIsEraser(false); }}>✏️</button>
+<button onClick={() => { setPenSize(4); setIsEraser(false); }}>🖊️</button>
+<button onClick={() => { setPenSize(7); setIsEraser(false); }}>🖍️</button>
+
+
+    {/* Eraser */}
+    <button
+      onClick={() => setIsEraser(e => !e)}
+      style={{ opacity: isEraser ? 0.5 : 1 }}
+    >
+      🧽
+    </button>
+
+    {/* Clear */}
+    <button onClick={clearCanvas}>🧹</button>
+
+    {/* Full screen */}
+    <button onClick={() => setIsFullScreen(f => !f)}>
+      {isFullScreen ? "🗗" : "🗖"}
+    </button>
+
+    {/* Close */}
+    <button onClick={() => setShowSlate(false)}>❌</button>
+  </div>
+</div>
+
+
+    <canvas
+      ref={canvasRef}
+      width={window.innerWidth}
+      height={250}
+      style={{
+        background: "#fff",
+        touchAction: "none"
+      }}
+    />
+  </div>
+)}
+
+</div>
+);
 }
+
