@@ -1,0 +1,71 @@
+{
+  "module": "M2",
+  "questions": [
+    {
+      "id": "M2-MCQ-01",
+      "question": "Gross income generally includes which of the following?",
+      "options": [
+        "Gifts received",
+        "Inherited property",
+        "Compensation for services",
+        "Child support received"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Compensation for services is included in gross income."
+        },
+        "incorrect": {
+          "A": "Gifts received are excluded from gross income.",
+          "B": "Inherited property is not taxable income.",
+          "D": "Child support is excluded from income."
+        }
+      }
+    },
+    {
+      "id": "M2-MCQ-02",
+      "question": "Which item is excluded from gross income?",
+      "options": [
+        "Interest income",
+        "Dividend income",
+        "Life insurance proceeds on death",
+        "Business income"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Life insurance proceeds received due to death are excluded."
+        },
+        "incorrect": {
+          "A": "Interest income is taxable.",
+          "B": "Dividends are taxable.",
+          "D": "Business income is taxable."
+        }
+      }
+    },
+    {
+      "id": "M2-MCQ-03",
+      "question": "Which of the following is taxable?",
+      "options": [
+        "Municipal bond interest",
+        "Lottery winnings",
+        "Child support",
+        "Gift received"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Lottery winnings are fully taxable."
+        },
+        "incorrect": {
+          "A": "Municipal bond interest is excluded.",
+          "C": "Child support is not taxable.",
+          "D": "Gifts received are not taxable."
+        }
+      }
+    }
+  ]
+}

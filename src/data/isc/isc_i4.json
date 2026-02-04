@@ -1,0 +1,49 @@
+{
+  "module": "I4",
+  "questions": [
+    {
+      "id": "ISC-I4-01",
+      "question": "Change management controls are designed to:",
+      "options": [
+        "Speed up system development",
+        "Ensure changes are authorized and tested",
+        "Reduce IT staffing",
+        "Eliminate system downtime"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Change management ensures changes are approved, tested, and documented."
+        },
+        "incorrect": {
+          "A": "Speed is not the main objective.",
+          "C": "Staffing levels are unrelated.",
+          "D": "Downtime cannot be fully eliminated."
+        }
+      }
+    },
+    {
+      "id": "ISC-I4-02",
+      "question": "Which phase follows system development?",
+      "options": [
+        "Planning",
+        "Design",
+        "Implementation",
+        "Testing"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Implementation follows development and testing."
+        },
+        "incorrect": {
+          "A": "Planning is first.",
+          "B": "Design comes before development.",
+          "D": "Testing precedes implementation."
+        }
+      }
+    }
+  ]
+}

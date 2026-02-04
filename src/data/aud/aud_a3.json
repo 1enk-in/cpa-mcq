@@ -1,0 +1,49 @@
+{
+  "module": "A3",
+  "questions": [
+    {
+      "id": "AUD-A3-01",
+      "question": "Audit planning primarily helps the auditor to:",
+      "options": [
+        "Reduce audit risk",
+        "Eliminate fraud",
+        "Avoid sampling",
+        "Guarantee accuracy"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "Proper planning helps reduce audit risk."
+        },
+        "incorrect": {
+          "B": "Fraud cannot be eliminated.",
+          "C": "Sampling is still required.",
+          "D": "Accuracy cannot be guaranteed."
+        }
+      }
+    },
+    {
+      "id": "AUD-A3-02",
+      "question": "Which factor most affects audit planning?",
+      "options": [
+        "Client size",
+        "Time of year",
+        "Materiality",
+        "Audit fee"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Materiality directly impacts audit procedures."
+        },
+        "incorrect": {
+          "A": "Size alone is not the main factor.",
+          "B": "Timing is secondary.",
+          "D": "Fees do not drive planning."
+        }
+      }
+    }
+  ]
+}

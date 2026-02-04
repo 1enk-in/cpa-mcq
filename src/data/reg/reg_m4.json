@@ -1,0 +1,71 @@
+{
+  "module": "M4",
+  "questions": [
+    {
+      "id": "M4-MCQ-01",
+      "question": "Which credit is refundable?",
+      "options": [
+        "Child tax credit",
+        "Foreign tax credit",
+        "Adoption credit",
+        "Education credit"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "The child tax credit is partially refundable."
+        },
+        "incorrect": {
+          "B": "Foreign tax credit is nonrefundable.",
+          "C": "Adoption credit is nonrefundable.",
+          "D": "Education credits are generally nonrefundable."
+        }
+      }
+    },
+    {
+      "id": "M4-MCQ-02",
+      "question": "Credits are generally applied against which tax?",
+      "options": [
+        "Gross income",
+        "Adjusted gross income",
+        "Tax liability",
+        "Taxable income"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Credits reduce tax liability dollar-for-dollar."
+        },
+        "incorrect": {
+          "A": "Credits do not reduce gross income.",
+          "B": "Credits are applied after AGI.",
+          "D": "Credits are applied after taxable income is calculated."
+        }
+      }
+    },
+    {
+      "id": "M4-MCQ-03",
+      "question": "Which credit is designed to avoid double taxation?",
+      "options": [
+        "Child tax credit",
+        "Foreign tax credit",
+        "Earned income credit",
+        "Adoption credit"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "The foreign tax credit prevents double taxation."
+        },
+        "incorrect": {
+          "A": "Child tax credit is unrelated.",
+          "C": "EIC is income-based.",
+          "D": "Adoption credit is unrelated."
+        }
+      }
+    }
+  ]
+}

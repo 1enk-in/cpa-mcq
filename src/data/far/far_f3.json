@@ -1,0 +1,49 @@
+{
+  "module": "F3",
+  "questions": [
+    {
+      "id": "FAR-F3-01",
+      "question": "Which step comes first in the revenue recognition process?",
+      "options": [
+        "Recognize revenue",
+        "Identify performance obligations",
+        "Identify the contract",
+        "Determine transaction price"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "The first step is identifying the contract with a customer."
+        },
+        "incorrect": {
+          "A": "Recognition is the final step.",
+          "B": "Obligations are identified after contract.",
+          "D": "Price determination is later."
+        }
+      }
+    },
+    {
+      "id": "FAR-F3-02",
+      "question": "Revenue is recognized when control of goods transfers to the:",
+      "options": [
+        "Seller",
+        "Customer",
+        "Auditor",
+        "Bank"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Revenue is recognized when control transfers to the customer."
+        },
+        "incorrect": {
+          "A": "Seller gives up control.",
+          "C": "Auditors do not receive goods.",
+          "D": "Banks are not relevant."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "module": "M5",
+  "questions": [
+    {
+      "id": "M5-MCQ-01",
+      "question": "Which deduction is FOR AGI?",
+      "options": [
+        "Medical expenses",
+        "Charitable contributions",
+        "Student loan interest",
+        "Casualty losses"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Student loan interest is a for-AGI deduction."
+        },
+        "incorrect": {
+          "A": "Medical expenses are from AGI.",
+          "B": "Charitable contributions are from AGI.",
+          "D": "Casualty losses are from AGI."
+        }
+      }
+    },
+    {
+      "id": "M5-MCQ-02",
+      "question": "Which deduction requires itemizing?",
+      "options": [
+        "IRA contribution",
+        "Standard deduction",
+        "Charitable contribution",
+        "Student loan interest"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Charitable contributions require itemizing."
+        },
+        "incorrect": {
+          "A": "IRA is for AGI.",
+          "B": "Standard deduction is automatic.",
+          "D": "Student loan interest is for AGI."
+        }
+      }
+    },
+    {
+      "id": "M5-MCQ-03",
+      "question": "Standard deduction is allowed when:",
+      "options": [
+        "Itemizing",
+        "AGI is low",
+        "Itemizing is not elected",
+        "Credits exceed tax"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Standard deduction applies when itemizing is not chosen."
+        },
+        "incorrect": {
+          "A": "Itemizing replaces standard deduction.",
+          "B": "AGI level does not control eligibility.",
+          "D": "Credits are unrelated."
+        }
+      }
+    }
+  ]
+}

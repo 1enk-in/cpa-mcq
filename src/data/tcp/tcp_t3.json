@@ -1,0 +1,49 @@
+{
+  "module": "T3",
+  "questions": [
+    {
+      "id": "TCP-T3-01",
+      "question": "Which entity is subject to double taxation?",
+      "options": [
+        "Partnership",
+        "S corporation",
+        "C corporation",
+        "LLC taxed as partnership"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "C corporations are taxed at the entity and shareholder level."
+        },
+        "incorrect": {
+          "A": "Partnerships are pass-through.",
+          "B": "S corps are pass-through.",
+          "D": "LLCs taxed as partnerships are pass-through."
+        }
+      }
+    },
+    {
+      "id": "TCP-T3-02",
+      "question": "Distributions from a partnership generally:",
+      "options": [
+        "Are taxable income",
+        "Reduce partner’s basis",
+        "Increase partner’s basis",
+        "Are always tax-free"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Distributions reduce partner basis."
+        },
+        "incorrect": {
+          "A": "Not always taxable.",
+          "C": "Basis increases from income.",
+          "D": "May trigger gain if excess."
+        }
+      }
+    }
+  ]
+}

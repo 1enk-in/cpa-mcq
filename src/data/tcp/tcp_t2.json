@@ -1,0 +1,49 @@
+{
+  "module": "T2",
+  "questions": [
+    {
+      "id": "TCP-T2-01",
+      "question": "Gain on sale of property is generally calculated as:",
+      "options": [
+        "Selling price minus FMV",
+        "Selling price minus basis",
+        "FMV minus basis",
+        "Basis minus selling price"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Gain equals amount realized minus adjusted basis."
+        },
+        "incorrect": {
+          "A": "FMV is irrelevant unless specified.",
+          "C": "FMV is not normally used.",
+          "D": "That would calculate a loss."
+        }
+      }
+    },
+    {
+      "id": "TCP-T2-02",
+      "question": "Which property receives a stepped-up basis at death?",
+      "options": [
+        "Gifted property",
+        "Inherited property",
+        "Purchased property",
+        "Leased property"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Inherited property generally receives a stepped-up basis."
+        },
+        "incorrect": {
+          "A": "Gifts carry over basis.",
+          "C": "Purchased property has cost basis.",
+          "D": "Leased property has no basis."
+        }
+      }
+    }
+  ]
+}

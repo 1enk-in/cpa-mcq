@@ -1,0 +1,49 @@
+{
+  "module": "I2",
+  "questions": [
+    {
+      "id": "ISC-I2-01",
+      "question": "IT governance primarily focuses on:",
+      "options": [
+        "Hardware maintenance",
+        "Aligning IT with business objectives",
+        "Programming standards",
+        "Daily system operations"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "IT governance ensures IT supports business goals."
+        },
+        "incorrect": {
+          "A": "Hardware maintenance is operational.",
+          "C": "Programming standards are tactical.",
+          "D": "Daily operations are not governance."
+        }
+      }
+    },
+    {
+      "id": "ISC-I2-02",
+      "question": "Which framework is commonly used for IT governance?",
+      "options": [
+        "COSO",
+        "COBIT",
+        "GAAP",
+        "IFRS"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "COBIT is widely used for IT governance."
+        },
+        "incorrect": {
+          "A": "COSO focuses on internal control broadly.",
+          "C": "GAAP is accounting standards.",
+          "D": "IFRS is financial reporting."
+        }
+      }
+    }
+  ]
+}

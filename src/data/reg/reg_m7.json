@@ -1,0 +1,71 @@
+{
+  "module": "M7",
+  "questions": [
+    {
+      "id": "M7-MCQ-01",
+      "question": "Which penalty applies for late filing?",
+      "options": [
+        "Failure to pay",
+        "Failure to file",
+        "Accuracy-related",
+        "Fraud penalty"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Failure to file penalty applies for late returns."
+        },
+        "incorrect": {
+          "A": "Failure to pay applies when tax is unpaid.",
+          "C": "Accuracy penalty applies to understatements.",
+          "D": "Fraud penalty applies to intentional fraud."
+        }
+      }
+    },
+    {
+      "id": "M7-MCQ-02",
+      "question": "Which form is used to request an extension?",
+      "options": [
+        "Form 4868",
+        "Form 941",
+        "Form 1120",
+        "Form 1065"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "Form 4868 requests an automatic extension."
+        },
+        "incorrect": {
+          "B": "941 is payroll tax.",
+          "C": "1120 is a corporate return.",
+          "D": "1065 is a partnership return."
+        }
+      }
+    },
+    {
+      "id": "M7-MCQ-03",
+      "question": "Accuracy-related penalties generally equal:",
+      "options": [
+        "10%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Accuracy-related penalties are generally 20%."
+        },
+        "incorrect": {
+          "A": "10% is incorrect.",
+          "B": "15% is incorrect.",
+          "D": "25% is not standard."
+        }
+      }
+    }
+  ]
+}

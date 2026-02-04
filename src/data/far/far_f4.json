@@ -1,0 +1,49 @@
+{
+  "module": "F4",
+  "questions": [
+    {
+      "id": "FAR-F4-01",
+      "question": "Inventory is generally measured at:",
+      "options": [
+        "Market value",
+        "Cost",
+        "Selling price",
+        "Replacement cost"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Inventory is measured at cost."
+        },
+        "incorrect": {
+          "A": "Market is used only for lower of cost or market.",
+          "C": "Selling price is not used.",
+          "D": "Replacement cost is not primary."
+        }
+      }
+    },
+    {
+      "id": "FAR-F4-02",
+      "question": "Which inventory method results in lowest net income during inflation?",
+      "options": [
+        "FIFO",
+        "LIFO",
+        "Average cost",
+        "Specific identification"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "LIFO results in higher COGS and lower income during inflation."
+        },
+        "incorrect": {
+          "A": "FIFO results in higher income.",
+          "C": "Average falls between FIFO and LIFO.",
+          "D": "Specific ID depends on items."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "module": "A1",
+  "questions": [
+    {
+      "id": "AUD-A1-01",
+      "question": "The primary purpose of an audit is to:",
+      "options": [
+        "Detect all fraud",
+        "Express an opinion on financial statements",
+        "Prepare tax returns",
+        "Guarantee accuracy"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "An audit provides an opinion on the fairness of financial statements."
+        },
+        "incorrect": {
+          "A": "Auditors are not responsible for detecting all fraud.",
+          "C": "Tax preparation is not an audit objective.",
+          "D": "Audits do not guarantee accuracy."
+        }
+      }
+    },
+    {
+      "id": "AUD-A1-02",
+      "question": "Which audit opinion is issued when financial statements are fairly presented?",
+      "options": [
+        "Qualified",
+        "Adverse",
+        "Disclaimer",
+        "Unqualified"
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": {
+          "choice": "D",
+          "text": "An unqualified opinion indicates fair presentation."
+        },
+        "incorrect": {
+          "A": "Qualified opinions indicate exceptions.",
+          "B": "Adverse opinions indicate material misstatements.",
+          "C": "Disclaimers indicate lack of evidence."
+        }
+      }
+    }
+  ]
+}

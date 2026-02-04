@@ -77,12 +77,13 @@ body {
 }
 
 .back {
-  background: none;
-  border: none;
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 16px;
-  cursor: pointer;
+ background: var(--primary);
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 .mcq-card {
@@ -171,7 +172,6 @@ body {
 .end-btn {
   background: #ea580c;
   color: white;
-  border: none;
   padding: 10px 18px;
   border-radius: 8px;
   font-weight: 700;
@@ -798,5 +798,43 @@ body {
 .history-date {
   font-size: 13px;
   opacity: 0.65;
+  margin-top: 2px;
 }
 
+.history-percent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-badge {
+  background: #ffcc00;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.history-percent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-badge {
+  background: #ffcc00;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.history-stats {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}

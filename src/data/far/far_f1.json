@@ -1,0 +1,49 @@
+{
+  "module": "F1",
+  "questions": [
+    {
+      "id": "FAR-F1-01",
+      "question": "The primary objective of financial reporting is to provide information useful to:",
+      "options": [
+        "Management only",
+        "Creditors only",
+        "Investors and creditors",
+        "Regulatory agencies"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Financial reporting is intended to provide information useful to investors and creditors."
+        },
+        "incorrect": {
+          "A": "Management is not the primary audience.",
+          "B": "Creditors are only one group.",
+          "D": "Regulators are not the primary users."
+        }
+      }
+    },
+    {
+      "id": "FAR-F1-02",
+      "question": "Which qualitative characteristic enhances usefulness of information?",
+      "options": [
+        "Comparability",
+        "Consistency",
+        "Materiality",
+        "Neutrality"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "Comparability allows users to identify similarities and differences."
+        },
+        "incorrect": {
+          "B": "Consistency helps comparability but is not a primary characteristic.",
+          "C": "Materiality is a constraint.",
+          "D": "Neutrality is part of faithful representation."
+        }
+      }
+    }
+  ]
+}

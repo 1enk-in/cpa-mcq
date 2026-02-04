@@ -1,0 +1,49 @@
+{
+  "module": "A4",
+  "questions": [
+    {
+      "id": "AUD-A4-01",
+      "question": "The primary purpose of internal control is to:",
+      "options": [
+        "Prevent all errors",
+        "Ensure profitability",
+        "Safeguard assets and ensure reliable reporting",
+        "Replace external audit"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Internal control helps safeguard assets and ensure reliable reporting."
+        },
+        "incorrect": {
+          "A": "Controls cannot prevent all errors.",
+          "B": "Profitability is not the primary goal.",
+          "D": "Controls do not replace audits."
+        }
+      }
+    },
+    {
+      "id": "AUD-A4-02",
+      "question": "Which component of COSO relates to risk identification?",
+      "options": [
+        "Control activities",
+        "Risk assessment",
+        "Monitoring",
+        "Information and communication"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Risk assessment identifies and analyzes risks."
+        },
+        "incorrect": {
+          "A": "Control activities respond to risks.",
+          "C": "Monitoring evaluates controls.",
+          "D": "Information supports communication."
+        }
+      }
+    }
+  ]
+}

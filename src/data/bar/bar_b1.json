@@ -1,0 +1,49 @@
+{
+  "module": "B1",
+  "questions": [
+    {
+      "id": "BAR-B1-01",
+      "question": "Financial statement analysis is primarily used to:",
+      "options": [
+        "Prepare tax returns",
+        "Evaluate financial performance and position",
+        "Detect fraud only",
+        "Determine audit opinion"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Analysis evaluates financial performance and financial position."
+        },
+        "incorrect": {
+          "A": "Tax preparation is not the goal.",
+          "C": "Fraud detection is not the primary purpose.",
+          "D": "Audit opinions are not determined by analysts."
+        }
+      }
+    },
+    {
+      "id": "BAR-B1-02",
+      "question": "Which statement is most useful for liquidity analysis?",
+      "options": [
+        "Income statement",
+        "Balance sheet",
+        "Statement of cash flows",
+        "Statement of equity"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Cash flows provide insight into liquidity."
+        },
+        "incorrect": {
+          "A": "Income statement focuses on performance.",
+          "B": "Balance sheet is static.",
+          "D": "Equity statement is secondary."
+        }
+      }
+    }
+  ]
+}

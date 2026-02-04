@@ -1,0 +1,71 @@
+{
+  "module": "M6",
+  "questions": [
+    {
+      "id": "M6-MCQ-01",
+      "question": "Which tax is paid by employers?",
+      "options": [
+        "Income tax",
+        "Employee FICA",
+        "Employer FICA",
+        "Self-employment tax"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Employers pay their share of FICA tax."
+        },
+        "incorrect": {
+          "A": "Income tax is paid by employees.",
+          "B": "Employee FICA is withheld from wages.",
+          "D": "SE tax applies to self-employed individuals."
+        }
+      }
+    },
+    {
+      "id": "M6-MCQ-02",
+      "question": "Which form reports payroll taxes?",
+      "options": [
+        "Form W-2",
+        "Form 941",
+        "Form 1099",
+        "Form 1040"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Form 941 reports payroll taxes."
+        },
+        "incorrect": {
+          "A": "W-2 reports wages to employees.",
+          "C": "1099 reports nonemployee income.",
+          "D": "1040 is an individual return."
+        }
+      }
+    },
+    {
+      "id": "M6-MCQ-03",
+      "question": "FUTA tax is paid by:",
+      "options": [
+        "Employees",
+        "Employers",
+        "Self-employed",
+        "Both employer and employee"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "FUTA tax is paid only by employers."
+        },
+        "incorrect": {
+          "A": "Employees do not pay FUTA.",
+          "C": "SE individuals do not pay FUTA.",
+          "D": "Employees do not share FUTA."
+        }
+      }
+    }
+  ]
+}

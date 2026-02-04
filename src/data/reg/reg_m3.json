@@ -1,0 +1,71 @@
+{
+  "module": "M3",
+  "questions": [
+    {
+      "id": "M3-MCQ-01",
+      "question": "Which filing status generally provides the highest standard deduction?",
+      "options": [
+        "Single",
+        "Head of household",
+        "Married filing jointly",
+        "Married filing separately"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Married filing jointly provides the highest standard deduction."
+        },
+        "incorrect": {
+          "A": "Single has a lower standard deduction.",
+          "B": "HOH is lower than MFJ.",
+          "D": "MFS has the lowest deduction."
+        }
+      }
+    },
+    {
+      "id": "M3-MCQ-02",
+      "question": "Who may qualify as head of household?",
+      "options": [
+        "A married taxpayer living with spouse",
+        "An unmarried taxpayer with a qualifying child",
+        "Any single taxpayer",
+        "A dependent child"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "HOH requires an unmarried taxpayer with a qualifying dependent."
+        },
+        "incorrect": {
+          "A": "Living with spouse disqualifies HOH.",
+          "C": "Single alone is not enough.",
+          "D": "Dependents cannot file HOH."
+        }
+      }
+    },
+    {
+      "id": "M3-MCQ-03",
+      "question": "When is filing status determined?",
+      "options": [
+        "Beginning of year",
+        "End of year",
+        "Date return is filed",
+        "Date income is earned"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Filing status is determined as of the last day of the year."
+        },
+        "incorrect": {
+          "A": "Beginning of year is irrelevant.",
+          "C": "Filing date does not matter.",
+          "D": "Income date does not matter."
+        }
+      }
+    }
+  ]
+}

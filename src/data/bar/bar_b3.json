@@ -1,0 +1,49 @@
+{
+  "module": "B3",
+  "questions": [
+    {
+      "id": "BAR-B3-01",
+      "question": "Financial forecasting is used to:",
+      "options": [
+        "Record past transactions",
+        "Predict future financial performance",
+        "Prepare audit reports",
+        "Calculate taxes"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Forecasting predicts future performance."
+        },
+        "incorrect": {
+          "A": "Past transactions are historical.",
+          "C": "Audits are unrelated.",
+          "D": "Tax calculation is separate."
+        }
+      }
+    },
+    {
+      "id": "BAR-B3-02",
+      "question": "Which assumption is critical in forecasting?",
+      "options": [
+        "Historical cost",
+        "Going concern",
+        "Consistency",
+        "Materiality"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Forecasts assume the entity is a going concern."
+        },
+        "incorrect": {
+          "A": "Historical cost is accounting based.",
+          "C": "Consistency is not forecast-specific.",
+          "D": "Materiality is not an assumption."
+        }
+      }
+    }
+  ]
+}

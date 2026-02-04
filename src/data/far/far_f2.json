@@ -1,0 +1,49 @@
+{
+  "module": "F2",
+  "questions": [
+    {
+      "id": "FAR-F2-01",
+      "question": "Which financial statement reports financial position at a point in time?",
+      "options": [
+        "Income statement",
+        "Statement of cash flows",
+        "Balance sheet",
+        "Statement of equity"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "The balance sheet reports assets, liabilities, and equity at a point in time."
+        },
+        "incorrect": {
+          "A": "Income statement reports performance.",
+          "B": "Cash flow statement reports cash movements.",
+          "D": "Equity statement reports changes."
+        }
+      }
+    },
+    {
+      "id": "FAR-F2-02",
+      "question": "Revenue is recognized when it is:",
+      "options": [
+        "Earned and realized",
+        "Received in cash",
+        "Billed to customer",
+        "Recorded in journal"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "Revenue is recognized when earned and realizable."
+        },
+        "incorrect": {
+          "B": "Cash receipt is not required.",
+          "C": "Billing alone is insufficient.",
+          "D": "Journal entry timing does not control recognition."
+        }
+      }
+    }
+  ]
+}

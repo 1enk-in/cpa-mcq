@@ -1,0 +1,49 @@
+{
+  "module": "T1",
+  "questions": [
+    {
+      "id": "TCP-T1-01",
+      "question": "Gross income generally includes:",
+      "options": [
+        "Gifts received",
+        "Inherited property",
+        "Income from services",
+        "Municipal bond interest"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Income from services is included in gross income."
+        },
+        "incorrect": {
+          "A": "Gifts received are excluded.",
+          "B": "Inheritance is excluded.",
+          "D": "Municipal bond interest is generally tax-exempt."
+        }
+      }
+    },
+    {
+      "id": "TCP-T1-02",
+      "question": "Which filing status generally results in the lowest tax rate?",
+      "options": [
+        "Single",
+        "Head of household",
+        "Married filing separately",
+        "Qualifying surviving spouse"
+      ],
+      "correctIndex": 3,
+      "explanation": {
+        "correct": {
+          "choice": "D",
+          "text": "Qualifying surviving spouse uses joint return rates."
+        },
+        "incorrect": {
+          "A": "Single has higher rates.",
+          "B": "HOH is higher than joint rates.",
+          "C": "MFS has the highest rates."
+        }
+      }
+    }
+  ]
+}

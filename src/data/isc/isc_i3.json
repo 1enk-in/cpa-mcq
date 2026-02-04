@@ -1,0 +1,49 @@
+{
+  "module": "I3",
+  "questions": [
+    {
+      "id": "ISC-I3-01",
+      "question": "Which control restricts system access to authorized users?",
+      "options": [
+        "Encryption",
+        "Authentication",
+        "Backup",
+        "Firewalls"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Authentication verifies user identity."
+        },
+        "incorrect": {
+          "A": "Encryption protects data, not access.",
+          "C": "Backups protect data availability.",
+          "D": "Firewalls filter network traffic."
+        }
+      }
+    },
+    {
+      "id": "ISC-I3-02",
+      "question": "Which principle limits user access to only necessary information?",
+      "options": [
+        "Separation of duties",
+        "Least privilege",
+        "Defense in depth",
+        "Redundancy"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Least privilege limits access to necessary information."
+        },
+        "incorrect": {
+          "A": "Separation of duties divides responsibilities.",
+          "C": "Defense in depth layers controls.",
+          "D": "Redundancy provides backup."
+        }
+      }
+    }
+  ]
+}

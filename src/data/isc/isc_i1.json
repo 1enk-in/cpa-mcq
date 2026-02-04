@@ -1,0 +1,49 @@
+{
+  "module": "I1",
+  "questions": [
+    {
+      "id": "ISC-I1-01",
+      "question": "The primary objective of information systems controls is to:",
+      "options": [
+        "Increase profitability",
+        "Ensure data accuracy and reliability",
+        "Eliminate fraud completely",
+        "Reduce audit fees"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Controls ensure data accuracy, reliability, and integrity."
+        },
+        "incorrect": {
+          "A": "Profitability is not the main goal.",
+          "C": "Controls cannot eliminate all fraud.",
+          "D": "Audit fees are unrelated."
+        }
+      }
+    },
+    {
+      "id": "ISC-I1-02",
+      "question": "Which control helps prevent unauthorized transactions?",
+      "options": [
+        "Corrective control",
+        "Preventive control",
+        "Detective control",
+        "Compensating control"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Preventive controls stop errors or fraud before they occur."
+        },
+        "incorrect": {
+          "A": "Corrective controls act after detection.",
+          "C": "Detective controls identify issues after occurrence.",
+          "D": "Compensating controls offset weaknesses."
+        }
+      }
+    }
+  ]
+}

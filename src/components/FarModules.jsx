@@ -1,30 +1,22 @@
-export default function RegModules({
+export default function FarModules({
   setScreen,
   setActiveModule,
   setActiveSubject
 }) {
   const modules = [
-    { id: "M1", title: "Filing Requirements and Filing Status", mcqs: 25 },
-    { id: "M2", title: "Gross Income: Part 1", mcqs: 40 },
-    { id: "M3", title: "Gross Income: Part 2", mcqs: 35 },
-    { id: "M4", title: "Adjustments", mcqs: 30 },
-    { id: "M5", title: "Itemized Deductions", mcqs: 45 },
-    {
-      id: "M6",
-      title: "Section 199A Qualified Business Income Deduction",
-      mcqs: 20
-    },
-    { id: "M7", title: "Tax Computations and Credits", mcqs: 50 }
+    { id: "F1", title: "Conceptual Framework", mcqs: 30 },
+    { id: "F2", title: "Financial Statements", mcqs: 40 },
+    { id: "F3", title: "Revenue Recognition", mcqs: 35 },
+    { id: "F4", title: "Inventory", mcqs: 25 }
   ];
 
   return (
     <div className="page">
-      {/* HEADER */}
       <div className="reg-header-alt">
         <button
           className="back"
           onClick={() => {
-            setActiveSubject(null); // reset context
+            setActiveSubject(null);
             setScreen("home");
           }}
         >
@@ -32,14 +24,14 @@ export default function RegModules({
         </button>
 
         <div className="reg-title-wrap">
-          <h1 className="page-title">REG</h1>
-          <p className="subtitle">Individual Taxation Modules</p>
+          <h1 className="page-title">FAR</h1>
+          <p className="subtitle">Financial Accounting & Reporting</p>
         </div>
 
         <button
           className="history-btn"
           onClick={() => {
-            setActiveSubject("reg"); // 🔑 IMPORTANT
+            setActiveSubject("far");
             setScreen("history");
           }}
         >
@@ -47,14 +39,13 @@ export default function RegModules({
         </button>
       </div>
 
-      {/* TIMELINE */}
       <div className="timeline">
         {modules.map((m, idx) => (
           <div
             key={m.id}
             className="timeline-item"
             onClick={() => {
-              setActiveSubject("reg"); // 🔑 REQUIRED
+              setActiveSubject("far");
               setActiveModule(m.id);
               setScreen("mcq");
             }}
@@ -67,7 +58,7 @@ export default function RegModules({
             <div className="timeline-card">
               <div className="timeline-title">{m.title}</div>
               <div className="timeline-meta">
-                MCQs • {m.mcqs} questions
+                MCQs • {m.mcqs}
               </div>
             </div>
           </div>

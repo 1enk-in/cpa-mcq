@@ -1,0 +1,49 @@
+{
+  "module": "B4",
+  "questions": [
+    {
+      "id": "BAR-B4-01",
+      "question": "Which valuation approach focuses on future cash flows?",
+      "options": [
+        "Market approach",
+        "Cost approach",
+        "Income approach",
+        "Book value approach"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "The income approach values future cash flows."
+        },
+        "incorrect": {
+          "A": "Market approach compares similar entities.",
+          "B": "Cost approach focuses on replacement cost.",
+          "D": "Book value is balance-sheet based."
+        }
+      }
+    },
+    {
+      "id": "BAR-B4-02",
+      "question": "Discounted cash flow analysis primarily uses:",
+      "options": [
+        "Historical costs",
+        "Market prices",
+        "Future cash flows",
+        "Net income"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "DCF analysis is based on future cash flows."
+        },
+        "incorrect": {
+          "A": "Historical costs are not forward-looking.",
+          "B": "Market prices are comparative.",
+          "D": "Net income is not cash flow."
+        }
+      }
+    }
+  ]
+}

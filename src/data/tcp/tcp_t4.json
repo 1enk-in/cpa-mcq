@@ -1,0 +1,49 @@
+{
+  "module": "T4",
+  "questions": [
+    {
+      "id": "TCP-T4-01",
+      "question": "Tax avoidance refers to:",
+      "options": [
+        "Illegal nonpayment of tax",
+        "Legal minimization of tax",
+        "Failure to file returns",
+        "Tax fraud"
+      ],
+      "correctIndex": 1,
+      "explanation": {
+        "correct": {
+          "choice": "B",
+          "text": "Tax avoidance is legal tax planning."
+        },
+        "incorrect": {
+          "A": "Illegal actions are evasion.",
+          "C": "Failure to file is noncompliance.",
+          "D": "Fraud is illegal."
+        }
+      }
+    },
+    {
+      "id": "TCP-T4-02",
+      "question": "Which strategy defers income recognition?",
+      "options": [
+        "Accelerating expenses",
+        "Accelerating income",
+        "Delaying deductions",
+        "Ignoring tax law"
+      ],
+      "correctIndex": 0,
+      "explanation": {
+        "correct": {
+          "choice": "A",
+          "text": "Accelerating expenses reduces current taxable income."
+        },
+        "incorrect": {
+          "B": "Accelerating income increases tax.",
+          "C": "Delaying deductions increases tax.",
+          "D": "Illegal and incorrect."
+        }
+      }
+    }
+  ]
+}

@@ -2,13 +2,32 @@ import { useEffect, useState } from "react";
 
 const HISTORY_KEY = "cpa_reg_history";
 
-export default function History({ setScreen, setReviewSession }) {
+const SUBJECT_PREFIX = {
+  reg: "M",
+  aud: "A",
+  far: "F",
+  bar: "B",
+  isc: "I",
+  tcp: "T"
+};
+
+export default function History({
+  setScreen,
+  setReviewSession,
+  activeSubject
+}) {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
     const raw = JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
     setHistory(raw);
   }, []);
+
+  const prefix = SUBJECT_PREFIX[activeSubject];
+
+  const filteredHistory = prefix
+    ? history.filter(s => s.module?.startsWith(prefix))
+    : history;
 
   function deleteSession(index) {
     if (!window.confirm("Delete this session?")) return;
@@ -20,82 +39,80 @@ export default function History({ setScreen, setReviewSession }) {
 
   return (
     <div className="page">
+      {/* TOP BAR */}
       <div className="top-bar">
-        <button className="back" onClick={() => setScreen("reg")}>
-          ← Back to REG
+        <button
+          className="back"
+          onClick={() =>
+            setScreen(activeSubject ? activeSubject : "home")
+          }
+        >
+          ← Back
         </button>
       </div>
 
-      <h2 className="page-title">Practice History</h2>
+      <h2 className="page-title">
+        Practice History
+        {activeSubject && ` • ${activeSubject.toUpperCase()}`}
+      </h2>
 
-      {history.length === 0 ? (
-        <p className="empty-history">No practice sessions yet.</p>
+      {filteredHistory.length === 0 ? (
+        <p className="empty-history">
+          No practice sessions for this subject yet.
+        </p>
       ) : (
         <div className="history-list">
-          {history.map((s, i) => {
-            const attempted =
-              s.attempted ?? s.answered ?? s.total;
-
-            const wrong =
-              s.wrong ?? Math.max(attempted - s.correct, 0);
-
-            return (
-              <div key={i} className="history-card">
-                {/* SCORE BLOCK */}
-                <div className="history-score">
-                  {s.correct}/{attempted}
-                </div>
-
-                {/* INFO */}
-                <div
-                  className="history-info"
-                  onClick={() => {
-                    setReviewSession(s);
-                    setScreen("review");
-                  }}
-                >
-                  <div className="history-percent">
-  {s.module}
-  {s.isRetry && (
-    <span
-      style={{
-        marginLeft: "8px",
-        padding: "2px 6px",
-        fontSize: "12px",
-        background: "#ffe0b2",
-        borderRadius: "6px"
-      }}
-    >
-      Retry
-    </span>
-  )}
-  • {s.percent}% Correct
-</div>
-
-
-                  <div className="history-stats">
-                    Attempted: {attempted} | Correct: {s.correct} | Wrong: {wrong}
-                  </div>
-
-                  <div className="history-date">
-                    {new Date(s.completedAt).toLocaleDateString("en-GB")}{" "}
-                    {new Date(s.completedAt).toLocaleTimeString("en-US", {
-                      hour: "numeric",
-                      minute: "2-digit",
-                      hour12: true
-                    })}
-                  </div>
-                </div>
-
-                <button
-                  className="delete-btn"
-                  onClick={() => deleteSession(i)}
-                >
-                  ❌
-                </button>
+          {filteredHistory.map((s, i) => (
+            <div key={i} className="history-card">
+              {/* SCORE */}
+              <div className="history-score">
+                {s.correct}/{s.total}
               </div>
-            );
-          })}
+
+              {/* INFO */}
+              <div
+                className="history-info"
+                onClick={() => {
+                  setReviewSession(s);
+                  setScreen("review");
+                }}
+              >
+                {/* MODULE + PERCENT */}
+                <div className="history-percent">
+                  <span>
+                    {s.module} • {s.percent}% Correct
+                  </span>
+
+                  {s.isRetry === true && (
+                    <span className="retry-badge">Retry</span>
+                  )}
+                </div>
+
+                {/* ATTEMPT STATS */}
+                <div className="history-stats">
+                  Attempted: {s.attempted} | Correct: {s.correct} | Wrong: {s.wrong}
+                </div>
+
+                {/* DATE */}
+                <div className="history-date">
+                  {new Date(s.completedAt).toLocaleDateString("en-GB")}{" "}
+                  {new Date(s.completedAt).toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    hour12: true
+                  })}
+                </div>
+              </div>
+
+              {/* DELETE */}
+              <button
+                className="delete-btn"
+                onClick={() => deleteSession(i)}
+              >
+                ❌
+              </button>
+            </div>
+          ))}
         </div>
       )}
     </div>

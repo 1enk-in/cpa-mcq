@@ -1,0 +1,49 @@
+{
+  "module": "A2",
+  "questions": [
+    {
+      "id": "AUD-A2-01",
+      "question": "Independence is required for which engagement?",
+      "options": [
+        "Compilation",
+        "Preparation",
+        "Audit",
+        "Tax consulting"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Auditors must be independent in fact and appearance."
+        },
+        "incorrect": {
+          "A": "Independence is not required for compilations.",
+          "B": "Preparation engagements do not require independence.",
+          "D": "Tax consulting does not require independence."
+        }
+      }
+    },
+    {
+      "id": "AUD-A2-02",
+      "question": "Which principle requires honesty and integrity?",
+      "options": [
+        "Confidentiality",
+        "Professional competence",
+        "Integrity",
+        "Objectivity"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Integrity requires honesty and fairness."
+        },
+        "incorrect": {
+          "A": "Confidentiality relates to information protection.",
+          "B": "Professional competence relates to skill.",
+          "D": "Objectivity relates to impartiality."
+        }
+      }
+    }
+  ]
+}

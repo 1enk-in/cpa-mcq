@@ -1,0 +1,49 @@
+{
+  "module": "B2",
+  "questions": [
+    {
+      "id": "BAR-B2-01",
+      "question": "Which ratio measures liquidity?",
+      "options": [
+        "Debt-to-equity",
+        "Gross margin",
+        "Current ratio",
+        "Return on assets"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "The current ratio measures short-term liquidity."
+        },
+        "incorrect": {
+          "A": "Debt-to-equity measures leverage.",
+          "B": "Gross margin measures profitability.",
+          "D": "ROA measures efficiency."
+        }
+      }
+    },
+    {
+      "id": "BAR-B2-02",
+      "question": "Which ratio measures profitability?",
+      "options": [
+        "Current ratio",
+        "Inventory turnover",
+        "Net profit margin",
+        "Debt ratio"
+      ],
+      "correctIndex": 2,
+      "explanation": {
+        "correct": {
+          "choice": "C",
+          "text": "Net profit margin measures profitability."
+        },
+        "incorrect": {
+          "A": "Current ratio measures liquidity.",
+          "B": "Inventory turnover measures efficiency.",
+          "D": "Debt ratio measures leverage."
+        }
+      }
+    }
+  ]
+}
