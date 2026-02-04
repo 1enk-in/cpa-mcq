@@ -1132,12 +1132,11 @@ body {
   color: white;
   font-weight: 600;
   font-size: 18px;
-
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 200;
+ z-index: 1000;;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 
   /* 👇 smooth entrance */
@@ -1292,10 +1291,10 @@ body {
 /* Pencil icon */
 .pencil-icon {
   position: absolute;
-    bottom: 27px;
-    left: -32px;
-    width: 133px;
-    height: 133px;
+    bottom: 96px;
+    left: -10px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background: #0000008c;
     color: white;
@@ -1314,3 +1313,177 @@ body {
   width: 20px;
   height:20px;
 }
+
+
+
+/* ===============================
+   👑 ADMIN HISTORY DASHBOARD
+   =============================== */
+
+.admin-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.admin-page h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1f2933;
+}
+
+/* Back button */
+.admin-back {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.admin-back:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   👤 USER SELECT
+   =============================== */
+
+.admin-user-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.admin-user-select label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.admin-user-select select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+}
+
+/* ===============================
+   📊 STATS CARDS
+   =============================== */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.admin-stat-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.admin-stat-card h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.admin-stat-card p {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ===============================
+   🧹 CLEAR HISTORY
+   =============================== */
+
+.admin-clear-btn {
+  margin: 20px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #b91c1c;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.admin-clear-btn:hover {
+  background: #991b1b;
+}
+
+/* ===============================
+   📜 HISTORY LIST
+   =============================== */
+
+.admin-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.history-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #1f2933;
+}
+
+.history-card strong {
+  color: #0f172a;
+}
+
+/* Empty state */
+.admin-empty {
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 30px;
+}
+
+@media (min-width: 1280px) {
+  .profile-avatar-btn {
+    position: fixed;
+    top: 60px;
+    right: 885px;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 1279px) {
+  .profile-avatar-btn {
+    position: fixed;
+    top: 60px;
+    right: 710px;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile-avatar-btn {
+    position: fixed;
+    top: 55px;
+    right: 120px;
+    z-index: 100;
+  }
+}
+
+

@@ -3,9 +3,8 @@ import { useAuth } from "../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
-
 export default function Home({ setScreen }) {
-  const { user, logout } = useAuth();
+  const { user, role, logout } = useAuth();
 
   const [showProfile, setShowProfile] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -20,44 +19,27 @@ export default function Home({ setScreen }) {
     { name: "BAR", color: "#146E8A" }
   ];
 
-  /* ===============================
-     🔄 LOAD SAVED PROFILE IMAGE
-     =============================== */
+  /* LOAD PROFILE IMAGE */
   useEffect(() => {
-    if (!user) return;
-
-    const saved = localStorage.getItem(
-      `profile_image_${user}`
-    );
-
-    if (saved) {
-      setProfileImage(saved);
-    }
+    const saved = localStorage.getItem(`profile_image_${user}`);
+    if (saved) setProfileImage(saved);
   }, [user]);
 
-  /* ===============================
-     🖼️ HANDLE IMAGE UPLOAD
-     =============================== */
   function handleImageChange(e) {
     const file = e.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
     reader.onload = () => {
-      const base64 = reader.result;
-      setProfileImage(base64);
-      localStorage.setItem(
-        `profile_image_${user}`,
-        base64
-      );
+      setProfileImage(reader.result);
+      localStorage.setItem(`profile_image_${user}`, reader.result);
     };
     reader.readAsDataURL(file);
   }
 
   return (
     <div className="page">
-
-      {/* 👤 SMALL AVATAR BUTTON */}
+      {/* AVATAR */}
       <div
         className="profile-avatar-btn"
         onClick={() => {
@@ -72,23 +54,16 @@ export default function Home({ setScreen }) {
         )}
       </div>
 
-      {/* ⬅️ PROFILE DRAWER */}
+      {/* PROFILE DRAWER */}
       {showProfile && (
         <>
-          <div
-            className="profile-backdrop"
-            onClick={() => setShowProfile(false)}
-          />
+          <div className="profile-backdrop" onClick={() => setShowProfile(false)} />
 
           <div className="profile-drawer">
-            <button
-              className="profile-close"
-              onClick={() => setShowProfile(false)}
-            >
+            <button className="profile-close" onClick={() => setShowProfile(false)}>
               ✕
             </button>
 
-            {/* BIG AVATAR */}
             <div className="profile-big-avatar">
               {profileImage ? (
                 <img src={profileImage} alt="profile" />
@@ -99,60 +74,49 @@ export default function Home({ setScreen }) {
 
             <div className="profile-username">{user}</div>
 
-            {/* SETTINGS */}
-            {!showSettings && (
+            {/* 👑 ADMIN DASHBOARD */}
+            {role === "admin" && (
               <button
                 className="profile-action"
-                onClick={() => setShowSettings(true)}
+                onClick={() => {
+                  setShowProfile(false);
+                  setScreen("admin-history");
+                }}
               >
+                👑 Admin Dashboard
+              </button>
+            )}
+
+            {!showSettings && (
+              <button className="profile-action" onClick={() => setShowSettings(true)}>
                 ⚙️ Settings
               </button>
             )}
 
-            {/* SETTINGS PANEL */}
             {showSettings && (
               <div className="profile-settings">
-                <div className="profile-image-edit">
-  <label className="profile-image-label">
-    <div className="pencil-icon">
-  <FontAwesomeIcon icon={faPenToSquare} />
-</div>
+                <label className="profile-image-label">
+                  <div className="pencil-icon">
+                    <FontAwesomeIcon icon={faPenToSquare} />
+                  </div>
+                  <input type="file" accept="image/*" onChange={handleImageChange} hidden />
+                </label>
 
-
-    <input
-      type="file"
-      accept="image/*"
-      onChange={handleImageChange}
-      hidden
-    />
-  </label>
-</div>
-
-
-                <button
-                  className="profile-action"
-                  onClick={() => setShowSettings(false)}
-                >
+                <button className="profile-action" onClick={() => setShowSettings(false)}>
                   ← Back
                 </button>
               </div>
             )}
 
-            {/* LOGOUT */}
-            <button
-              className="profile-action logout"
-              onClick={logout}
-            >
+            <button className="profile-action logout" onClick={logout}>
               🚪 Logout
             </button>
           </div>
         </>
       )}
 
-      {/* TITLE */}
       <h1 className="page-title">CPA Practice</h1>
 
-      {/* SUBJECT GRID */}
       <div className="home-grid">
         {subjects.map(sub => (
           <div

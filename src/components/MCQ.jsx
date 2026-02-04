@@ -73,26 +73,24 @@ const MODULE_DATA = {
 };
 
 
-const SESSION_KEY = "cpa_active_session";
-const HISTORY_KEY = "cpa_reg_history";
+
 
 /* 🔀 SHUFFLE HELPER */
-function shuffleArray(arr) {
-  const copy = [...arr];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
 
 export default function MCQ({
   module,
   setScreen,
   setSessionData,
   retryIndexes = null,
-  activeSubject       // 🔑 NEW
+  activeSubject,
+  user
 }) {
+
+  if (!user) return null; // 🔑 SAFETY GUARD
+
+  const HISTORY_KEY = `cpa_history_${user}`;
+  const SESSION_KEY = `cpa_session_${user}`;
+
 
   /* 🔒 SAFETY GUARD */
   if (!module) return null;
@@ -102,12 +100,22 @@ export default function MCQ({
 
   const baseQuestions = data.questions;
 
+  // STEP 3: attach stable base index (do NOT move this)
+const questionsWithBaseIndex = baseQuestions.map((q, i) => ({
+  ...q,
+  baseIndex: i
+}));
+
+
+
   const [hydrated, setHydrated] = useState(false);
 
-  /* 🔹 BUILD QUESTION SET */
-  const rawQuestions = retryIndexes
-    ? retryIndexes.map(i => baseQuestions[i])
-    : baseQuestions;
+  // STEP 5: build questions from BASE index (never retry index)
+const rawQuestions = retryIndexes
+  ? retryIndexes.map(i => questionsWithBaseIndex[i])
+  : questionsWithBaseIndex;
+
+
 
   const [questions, setQuestions] = useState(rawQuestions);
 
@@ -139,9 +147,10 @@ export default function MCQ({
       }
     }
 
-    /* 🔹 NEW SESSION → SHUFFLE */
-    setQuestions(shuffleArray(rawQuestions));
-    setHydrated(true);
+    /* 🔹 NEW SESSION → NO SHUFFLE */
+setQuestions(rawQuestions);
+setHydrated(true);
+
   }, [module, total]);
 
   /* ===============================
@@ -190,7 +199,7 @@ export default function MCQ({
       if (a === questions[i].correctIndex) {
         correct++;
       } else {
-        wrongIndexes.push(i);
+        wrongIndexes.push(questions[i].baseIndex);
       }
     });
 
@@ -213,6 +222,8 @@ export default function MCQ({
 
     history.unshift(report);
     localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+
+    console.log("History after save:", history);
 
     localStorage.removeItem(SESSION_KEY);
 

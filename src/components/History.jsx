@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-const HISTORY_KEY = "cpa_reg_history";
-
 const SUBJECT_PREFIX = {
   reg: "M",
   aud: "A",
@@ -14,8 +12,13 @@ const SUBJECT_PREFIX = {
 export default function History({
   setScreen,
   setReviewSession,
-  activeSubject
+  activeSubject,
+  user
 }) {
+
+  const HISTORY_KEY = `cpa_history_${user}`;
+
+
   const [history, setHistory] = useState([]);
 
   useEffect(() => {

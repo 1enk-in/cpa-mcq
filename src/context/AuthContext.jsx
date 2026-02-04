@@ -2,16 +2,38 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 
 const AuthContext = createContext();
 
-const SESSION_DURATION = 30 * 1000; // 🔁 TEST: 30 sec (change to 2h later)
+// 🔁 TEST: 30 sec (change to 2 * 60 * 60 * 1000 for 2 hours)
+const SESSION_DURATION = 300 * 1000;
+
+// 🔐 FIXED USERS (LOCAL ONLY)
+const USERS = {
+  admin: {
+    password: "admin123",
+    role: "admin"
+  },
+  Naved: {
+    password: "naved",
+    role: "user"
+  },
+  Faiz: {
+    password: "faiz",
+    role: "user"
+  },
+   Afzal: {
+    password: "afzal",
+    role: "user"
+  }
+};
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [role, setRole] = useState(null);
   const [expiresAt, setExpiresAt] = useState(null);
 
   const [needsReauth, setNeedsReauth] = useState(false);
   const [reauthAttempts, setReauthAttempts] = useState(0);
 
-  const timerRef = useRef(null); // 🔑 SINGLE timer source of truth
+  const timerRef = useRef(null);
 
   /* ===============================
      🔁 RESTORE SESSION ON LOAD
@@ -22,8 +44,14 @@ export function AuthProvider({ children }) {
 
     const session = JSON.parse(saved);
 
-    if (Date.now() < session.expiresAt) {
+    if (
+      session.username &&
+      session.expiresAt &&
+      Date.now() < session.expiresAt &&
+      USERS[session.username]
+    ) {
       setUser(session.username);
+      setRole(USERS[session.username].role);
       setExpiresAt(session.expiresAt);
     } else {
       localStorage.removeItem("activeSession");
@@ -31,19 +59,18 @@ export function AuthProvider({ children }) {
   }, []);
 
   /* ===============================
-     ⏱️ SESSION TIMER (NO INTERVAL RACE)
+     ⏱️ SESSION TIMER (SINGLE SOURCE)
      =============================== */
   useEffect(() => {
-    // Clear any previous timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
       timerRef.current = null;
     }
 
-    if (!user || !expiresAt) return;
-    if (needsReauth) return;
+    if (!user || !expiresAt || needsReauth) return;
 
     const remaining = expiresAt - Date.now();
+
     if (remaining <= 0) {
       setNeedsReauth(true);
       return;
@@ -65,20 +92,9 @@ export function AuthProvider({ children }) {
      🔐 LOGIN
      =============================== */
   function login(username, password) {
-    // seed test user
-    if (!localStorage.getItem("users")) {
-      localStorage.setItem(
-        "users",
-        JSON.stringify({
-          naved: { password: "1234" }
-        })
-      );
-    }
-
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-
-    if (!users[username]) return false;
-    if (users[username].password !== password) return false;
+    const record = USERS[username];
+    if (!record) return false;
+    if (record.password !== password) return false;
 
     const expiry = Date.now() + SESSION_DURATION;
 
@@ -91,6 +107,7 @@ export function AuthProvider({ children }) {
     );
 
     setUser(username);
+    setRole(record.role);
     setExpiresAt(expiry);
     setNeedsReauth(false);
     setReauthAttempts(0);
@@ -102,15 +119,13 @@ export function AuthProvider({ children }) {
      🔁 REAUTHENTICATE
      =============================== */
   function reauthenticate(password) {
-    const users = JSON.parse(localStorage.getItem("users")) || {};
-
-    if (!users[user]) {
+    if (!user || !USERS[user]) {
       logout();
       return false;
     }
 
     // ✅ correct password
-    if (users[user].password === password) {
+    if (USERS[user].password === password) {
       const newExpiry = Date.now() + SESSION_DURATION;
 
       localStorage.setItem(
@@ -150,6 +165,7 @@ export function AuthProvider({ children }) {
     }
 
     setUser(null);
+    setRole(null);
     setExpiresAt(null);
     setNeedsReauth(false);
     setReauthAttempts(0);
@@ -159,6 +175,7 @@ export function AuthProvider({ children }) {
     <AuthContext.Provider
       value={{
         user,
+        role,
         expiresAt,
         needsReauth,
         reauthAttempts,
