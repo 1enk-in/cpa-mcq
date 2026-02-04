@@ -55,8 +55,23 @@ export default function History({ setScreen, setReviewSession }) {
                   }}
                 >
                   <div className="history-percent">
-                    {s.module} • {s.percent}% Correct
-                  </div>
+  {s.module}
+  {s.isRetry && (
+    <span
+      style={{
+        marginLeft: "8px",
+        padding: "2px 6px",
+        fontSize: "12px",
+        background: "#ffe0b2",
+        borderRadius: "6px"
+      }}
+    >
+      Retry
+    </span>
+  )}
+  • {s.percent}% Correct
+</div>
+
 
                   <div className="history-stats">
                     Attempted: {attempted} | Correct: {s.correct} | Wrong: {wrong}

@@ -11,13 +11,22 @@ const MODULE_DATA = {
 const SESSION_KEY = "cpa_active_session";
 const HISTORY_KEY = "cpa_reg_history";
 
+/* 🔀 SHUFFLE HELPER */
+function shuffleArray(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 export default function MCQ({
   module,
   setScreen,
   setSessionData,
   retryIndexes = null
 }) {
-
   /* 🔒 SAFETY GUARD */
   if (!module) return null;
 
@@ -26,9 +35,14 @@ export default function MCQ({
 
   const baseQuestions = data.questions;
 
-const questions = retryIndexes
-  ? retryIndexes.map(i => baseQuestions[i])
-  : baseQuestions;
+  const [hydrated, setHydrated] = useState(false);
+
+  /* 🔹 BUILD QUESTION SET */
+  const rawQuestions = retryIndexes
+    ? retryIndexes.map(i => baseQuestions[i])
+    : baseQuestions;
+
+  const [questions, setQuestions] = useState(rawQuestions);
 
   const total = questions.length;
 
@@ -36,10 +50,9 @@ const questions = retryIndexes
   const [answers, setAnswers] = useState(Array(total).fill(null));
   const [confirmType, setConfirmType] = useState(null);
   const [error, setError] = useState("");
-  const [hydrated, setHydrated] = useState(false);
 
   /* ===============================
-     🔹 RESTORE SESSION
+     🔹 RESTORE SESSION (NO SHUFFLE)
      =============================== */
   useEffect(() => {
     const saved = localStorage.getItem(SESSION_KEY);
@@ -53,9 +66,14 @@ const questions = retryIndexes
       ) {
         setAnswers(parsed.answers);
         setIndex(parsed.index ?? 0);
+        setQuestions(parsed.questions); // 🔑 restore exact order
+        setHydrated(true);
+        return;
       }
     }
 
+    /* 🔹 NEW SESSION → SHUFFLE */
+    setQuestions(shuffleArray(rawQuestions));
     setHydrated(true);
   }, [module, total]);
 
@@ -70,10 +88,11 @@ const questions = retryIndexes
       JSON.stringify({
         module,
         answers,
-        index
+        index,
+        questions // 🔑 save order
       })
     );
-  }, [answers, index, hydrated, module]);
+  }, [answers, index, hydrated, module, questions]);
 
   const q = questions[index];
   const selected = answers[index];
@@ -96,64 +115,61 @@ const questions = retryIndexes
      🔹 GENERATE REPORT + SAVE HISTORY
      =============================== */
   function generateReport() {
-  const wrongIndexes = [];
-  let correct = 0;
+    const wrongIndexes = [];
+    let correct = 0;
 
-  answers.forEach((a, i) => {
-    if (a === null) return;
-    if (a === questions[i].correctIndex) {
-      correct++;
-    } else {
-      wrongIndexes.push(i);
-    }
-  });
+    answers.forEach((a, i) => {
+      if (a === null) return;
+      if (a === questions[i].correctIndex) {
+        correct++;
+      } else {
+        wrongIndexes.push(i);
+      }
+    });
 
-  const report = {
-  module,
-  isRetry: !!retryIndexes,     // 🔑
-  retryOf: retryIndexes ?? null,
-  total,
-  attempted: answeredCount,
-  correct,
-  wrong: wrongIndexes.length,
-  wrongIndexes,
-  percent: Math.round((correct / total) * 100),
-  completedAt: new Date().toISOString(),
-  answers
-};
+    const report = {
+      module,
+      isRetry: !!retryIndexes,
+      retryOf: retryIndexes ?? null,
+      total,
+      attempted: answeredCount,
+      correct,
+      wrong: wrongIndexes.length,
+      wrongIndexes,
+      percent: Math.round((correct / total) * 100),
+      completedAt: new Date().toISOString(),
+      answers
+    };
 
+    const history =
+      JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
 
-  const history =
-    JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+    history.unshift(report);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
 
-  history.unshift(report);
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    localStorage.removeItem(SESSION_KEY);
 
-  localStorage.removeItem(SESSION_KEY);
-
-  setSessionData(report);
-  setScreen("summary");
-}
-
-
+    setSessionData(report);
+    setScreen("summary");
+  }
 
   /* ===============================
      🔹 END SESSION (CONFIRM)
      =============================== */
   function handleEndSession() {
     if (answeredCount < 1) {
-      setError("Answer at least 1 questions to end session.");
+      setError("Answer at least 1 question to end session.");
       return;
     }
     setConfirmType("end");
   }
 
   /* ===============================
-     🔹 SUBMIT (NO CONFIRM)
+     🔹 SUBMIT
      =============================== */
   function handleSubmit() {
     if (answeredCount < 1) {
-      setError("Answer at least 1 questions to submit.");
+      setError("Answer at least 1 question to submit.");
       return;
     }
     generateReport();
