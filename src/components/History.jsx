@@ -29,6 +29,22 @@ export default function History({
     ? history.filter(s => s.module?.startsWith(prefix))
     : history;
 
+  /* 🧹 CLEAR HANDLER */
+  function clearHistory() {
+    const msg = prefix
+      ? `Clear all ${activeSubject.toUpperCase()} history?`
+      : "Clear ALL history?";
+
+    if (!window.confirm(msg)) return;
+
+    const updated = prefix
+      ? history.filter(s => !s.module?.startsWith(prefix))
+      : [];
+
+    setHistory(updated);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(updated));
+  }
+
   function deleteSession(index) {
     if (!window.confirm("Delete this session?")) return;
 
@@ -49,6 +65,14 @@ export default function History({
         >
           ← Back
         </button>
+
+        <button
+          className="clear-btn"
+          onClick={clearHistory}
+          disabled={filteredHistory.length === 0}
+        >
+          🧹 Clear All
+        </button>
       </div>
 
       <h2 className="page-title">
@@ -64,12 +88,10 @@ export default function History({
         <div className="history-list">
           {filteredHistory.map((s, i) => (
             <div key={i} className="history-card">
-              {/* SCORE */}
               <div className="history-score">
                 {s.correct}/{s.total}
               </div>
 
-              {/* INFO */}
               <div
                 className="history-info"
                 onClick={() => {
@@ -77,7 +99,6 @@ export default function History({
                   setScreen("review");
                 }}
               >
-                {/* MODULE + PERCENT */}
                 <div className="history-percent">
                   <span>
                     {s.module} • {s.percent}% Correct
@@ -88,12 +109,10 @@ export default function History({
                   )}
                 </div>
 
-                {/* ATTEMPT STATS */}
                 <div className="history-stats">
                   Attempted: {s.attempted} | Correct: {s.correct} | Wrong: {s.wrong}
                 </div>
 
-                {/* DATE */}
                 <div className="history-date">
                   {new Date(s.completedAt).toLocaleDateString("en-GB")}{" "}
                   {new Date(s.completedAt).toLocaleTimeString("en-US", {
@@ -104,7 +123,6 @@ export default function History({
                 </div>
               </div>
 
-              {/* DELETE */}
               <button
                 className="delete-btn"
                 onClick={() => deleteSession(i)}
