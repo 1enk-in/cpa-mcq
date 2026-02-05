@@ -32,6 +32,11 @@ export default function App() {
   } = useAuth();
 
   const [screen, setScreen] = useState("home");
+
+  const [theme, setTheme] = useState(
+  localStorage.getItem("theme") || "light"
+);
+
   /* ===============================
    👑 FORCE ADMIN TO DASHBOARD
 ================================ */
@@ -40,6 +45,12 @@ useEffect(() => {
     setScreen("admin-history");
   }
 }, [role]);
+
+useEffect(() => {
+  document.body.classList.toggle("dark", theme === "dark");
+  localStorage.setItem("theme", theme);
+}, [theme]);
+
 
   const [activeModule, setActiveModule] = useState(null);
   const [activeSubject, setActiveSubject] = useState(null);
@@ -129,8 +140,13 @@ useEffect(() => {
     <>
       {/* HOME */}
       {screen === "home" && (
-        <Home setScreen={setScreen} />
-      )}
+  <Home
+    setScreen={setScreen}
+    theme={theme}
+    setTheme={setTheme}
+  />
+)}
+
 
       {/* MODULE SCREENS */}
       {screen === "reg" && (

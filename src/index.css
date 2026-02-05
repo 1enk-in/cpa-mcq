@@ -26,7 +26,6 @@ body {
   max-width: 900px;
   margin: auto;
   padding: 40px 20px;
-  animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
@@ -81,6 +80,7 @@ body {
     color: #ffffff;
     padding: 10px 15px;
     border-radius: 8px;
+    border: none;
     font-weight: 700;
     cursor: pointer;
     margin-left: 10px;
@@ -174,6 +174,7 @@ body {
   color: white;
   padding: 10px 18px;
   border-radius: 8px;
+  border: none;
   font-weight: 700;
   cursor: pointer;
 }
@@ -1136,33 +1137,13 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
- z-index: 1000;;
+  z-index: 1000;;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-
-  /* 👇 smooth entrance */
-  opacity: 0;
-  animation: avatarFadeIn 0.6s ease forwards;
 }
 
 .profile-avatar-btn:hover {
   background: #1e40af;
 }
-
-/* ===============================
-   ✨ FADE-IN ANIMATION
-   =============================== */
-
-@keyframes avatarFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 
 /* ===============================
    🌫 BACKDROP
@@ -1255,7 +1236,7 @@ body {
 }
 
 .profile-action.logout {
-  margin-top: auto;
+  margin-top: 10px;
   background: #fee2e2;
   color: #b91c1c;
 }
@@ -1291,8 +1272,8 @@ body {
 /* Pencil icon */
 .pencil-icon {
   position: absolute;
-    bottom: 96px;
-    left: -10px;
+    bottom: 69px;
+    left: 13px;
     width: 90px;
     height: 90px;
     border-radius: 50%;
@@ -1487,3 +1468,527 @@ body {
 }
 
 
+.mcq-question {
+  white-space: pre-line;
+}
+
+
+
+
+
+
+
+/* ===============================
+   🎨 THEME VARIABLES
+   =============================== */
+
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+  --border: #334155;
+  --primary: #3b82f6;
+}
+
+/* Apply globally */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.home-card,
+.history-card,
+.admin-stat-card,
+.login-form,
+.profile-drawer,
+.modal-box {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===============================
+   🌙 DARK MODE TOGGLE
+   =============================== */
+
+.profile-setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+/* Toggle */
+.theme-switch {
+  position: relative;
+  width: 42px;
+  height: 22px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .slider {
+  position: absolute;
+  inset: 0;
+  background: #cbd5e1;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.theme-switch input:checked + .slider {
+  background: #2563eb;
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* ===============================
+   👤 PROFILE BUTTONS (DARK MODE FIX)
+   =============================== */
+
+.profile-action {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.profile-action:hover {
+  background: var(--border);
+}
+
+.profile-action.logout {
+  background: #b91c1c;
+  color: white;
+}
+
+.profile-action.logout:hover {
+  background: #991b1b;
+}
+
+/* ===============================
+   🧠 MCQ QUESTION PANEL (DARK MODE)
+   =============================== */
+
+.panel-box {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Active question */
+.panel-box.active {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Correct / wrong */
+.panel-box.correct {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.panel-box.wrong {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.mcq-card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.option {
+  border: 1px solid var(--border);
+}
+
+.option:hover {
+  background: var(--border);
+}
+
+
+/* ===============================
+   🎯 MCQ ANSWER COLORS — DARK MODE FIX
+   =============================== */
+
+body.dark .option.correct {
+  background: rgba(34, 197, 94, 0.25); /* soft green */
+  color: #dcfce7;                      /* readable text */
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+body.dark .option.wrong {
+  background: rgba(239, 68, 68, 0.25); /* soft red */
+  color: #fee2e2;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Keep correct answer highlight visible */
+body.dark .option.correct strong,
+body.dark .option.wrong strong {
+  color: #ffffff;
+}
+
+/* ===============================
+   👤 PROFILE USERNAME — DARK MODE FIX
+   =============================== */
+
+.profile-username {
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+body.dark .explanation {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+/* ===============================
+   🛑 MODALS — DARK MODE FIX
+   =============================== */
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.modal-box {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.modal-box h3,
+.modal-box p,
+.modal-box label {
+  color: var(--text);
+}
+
+.modal-box input {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.modal-box input::placeholder {
+  color: #94a3b8;
+}
+
+.modal-box .error {
+  color: #fca5a5;
+}
+
+.modal-box button {
+  background: var(--primary);
+  color: white;
+}
+
+.modal-box .attempts {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* ===============================
+   📊 SUMMARY REPORT — DARK MODE
+   =============================== */
+
+.summary-card,
+.summary-box {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.summary-card h2,
+.summary-card h3,
+.summary-card p {
+  color: var(--text);
+}
+
+.summary-stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+/* ===============================
+   🔘 BUTTON CONSISTENCY
+   =============================== */
+
+button {
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.dark button:not(.logout):not(.admin-clear-btn) {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===============================
+   🧠 GLOBAL DARK MODE SAFETY NET
+   =============================== */
+
+body.dark * {
+  color-scheme: dark;
+}
+
+body.dark p,
+body.dark span,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark label {
+  color: var(--text);
+}
+
+/* ===============================
+   🔐 LOGIN INPUT — DARK MODE FIX
+   =============================== */
+
+.login-form input {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-form input::placeholder {
+  color: #94a3b8;
+}
+
+/* Focus state (both modes) */
+.login-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.35);
+}
+
+/* Extra safety: remove browser glow in dark mode */
+body.dark .login-form input:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+  background: var(--card);
+}
+
+/* ===============================
+   👤 PROFILE AVATAR — GLASS FLOAT
+   =============================== */
+
+.profile-avatar-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+
+  color: var(--text);
+  font-weight: 600;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 200;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Avatar image */
+.profile-avatar-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Hover */
+.profile-avatar-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+/* Subtle idle pulse (optional but nice) */
+@keyframes avatarPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+}
+
+.profile-avatar-btn {
+  animation: avatarPulse 4s ease-in-out infinite;
+}
+
+/* ===============================
+   🟣 PROFILE CORNER HANDLE
+   =============================== */
+
+.profile-corner-handle {
+  position: fixed;
+  top: -40px;
+  right: -40px;
+
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: white;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  padding: 28px;
+
+  cursor: pointer;
+  z-index: 300;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.25s ease;
+}
+
+/* Hide when profile is open */
+.profile-corner-handle.hidden {
+  transform: scale(0.6) translate(40px, -40px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Avatar text / image */
+.profile-corner-handle span,
+.profile-corner-handle img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  object-fit: cover;
+}
+
+/* Hover feedback */
+.profile-corner-handle:hover {
+  transform: scale(1.05);
+}
+
+.profile-drawer {
+  animation: slideIn 0.35s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes cornerPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+  100% { box-shadow: 0 0 0 18px rgba(37, 99, 235, 0); }
+}
+
+.profile-corner-handle {
+  animation: cornerPulse 1.5s ease-out 1;
+}
+
+
+/* ===============================
+   🟣 PROFILE CORNER HANDLE IMAGE
+   =============================== */
+
+/* ONLY affects the corner button */
+.profile-corner-handle img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* subtle polish */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+/* fallback initial letter */
+.profile-corner-handle span {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.profile-corner-handle:hover img,
+.profile-corner-handle:hover span {
+  transform: scale(1.08);
+  transition: transform 0.2s ease;
+}

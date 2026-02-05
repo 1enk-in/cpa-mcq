@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 const AuthContext = createContext();
 
 // 🔁 TEST: 30 sec (change to 2 * 60 * 60 * 1000 for 2 hours)
-const SESSION_DURATION = 300 * 1000;
+const SESSION_DURATION = 3000 * 1000;
 
 // 🔐 FIXED USERS (LOCAL ONLY)
 const USERS = {

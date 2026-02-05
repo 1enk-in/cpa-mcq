@@ -24,158 +24,532 @@
       }
     },
     {
-      "id": "MCQ-06434",
-      "question": "A taxpayer’s spouse dies in August of the current year. What filing status may the taxpayer use for the current year?",
-      "options": [
-        "Single",
-        "Head of household",
-        "Qualifying surviving spouse",
-        "Married filing jointly"
-      ],
-      "correctIndex": 3,
-      "explanation": {
-        "correct": {
-          "choice": "D",
-          "text": "A surviving spouse is considered married for the entire year in which the spouse dies and may file a joint return for that year."
-        },
-        "incorrect": {
-          "A": "The taxpayer is not considered single for the year of the spouse’s death.",
-          "B": "Head of household is not the correct status for the year of death.",
-          "C": "Qualifying surviving spouse status applies only in years following the year of death."
-        }
-      }
+  "id": "MCQ-06434",
+  "question": "Which of the following is (are) among the requirements to enable a taxpayer to be classified as a \"qualifying surviving spouse\"?\n\nI.\tA dependent has lived with the taxpayer for six months.\nII.\tThe taxpayer has maintained the cost of the principal residence for six months.",
+  "options": [
+    "II only.",
+    "Both I and II.",
+    "Neither I nor II.",
+    "I only."
+  ],
+  "correctIndex": 2,
+  "explanation": {
+    "correct": {
+      "choice": "C",
+      "text": "The requirements that enable a taxpayer to be classified as a \"qualifying surviving spouse\" are: The taxpayer's spouse died in one of the two previous years and the taxpayer did not remarry in the current tax year; The taxpayer has a child who can be claimed as a dependent; This child lived in the taxpayer's home for all of the current tax year; The taxpayer paid over half the cost of keeping up a home for the child; and The taxpayer could have filed a joint return in the year the spouse died."
     },
-    {
-      "id": "MCQ-06435",
-      "question": "Which of the following is required to qualify as a qualifying surviving spouse?",
-      "options": [
-        "The taxpayer remarries within two years of the spouse’s death",
-        "A dependent child lived with the taxpayer for the entire year",
-        "The taxpayer lived alone during the year",
-        "The taxpayer paid exactly half of household costs"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "To qualify as a qualifying surviving spouse, the taxpayer must have a dependent child who lived in the home for the entire year and must pay more than half the cost of maintaining the home."
-        },
-        "incorrect": {
-          "A": "Remarrying disqualifies the taxpayer from qualifying surviving spouse status.",
-          "C": "Living alone is not a requirement for qualifying surviving spouse status.",
-          "D": "The taxpayer must pay more than half, not exactly half, of household costs."
-        }
-      }
-    },
-    {
-      "id": "MCQ-06436",
-      "question": "John and Theresa are married and not legally separated. John moved out of the family home in October. What filing status may Theresa use for the year?",
-      "options": [
-        "Head of household",
-        "Single",
-        "Married filing jointly or separately",
-        "Qualifying surviving spouse"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Because John and Theresa are still married and not legally separated at year-end, Theresa must file as married, either jointly or separately."
-        },
-        "incorrect": {
-          "A": "Head of household status generally requires legal separation and meeting other conditions.",
-          "B": "Theresa is not single because she is still married at year-end.",
-          "D": "Qualifying surviving spouse status applies only after a spouse has died."
-        }
-      }
-    },
-    {
-      "id": "MCQ-06437",
-      "question": "Taxpayers who are legally separated under a decree of divorce or separate maintenance are treated as:",
-      "options": [
-        "Married",
-        "Unmarried",
-        "Married filing separately only",
-        "Head of household automatically"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "Taxpayers who are legally separated under a decree of divorce or separate maintenance are considered unmarried for tax purposes."
-        },
-        "incorrect": {
-          "A": "Legally separated taxpayers are not considered married.",
-          "C": "They are not allowed to file as married filing separately because they are treated as unmarried.",
-          "D": "Head of household status is not automatic and requires additional qualifications."
-        }
-      }
-    },
-    {
-      "id": "MCQ-06438",
-      "question": "Which of the following taxpayers may file as head of household?",
-      "options": [
-        "A legally separated taxpayer with no dependents",
-        "An unmarried taxpayer who paid more than half the cost of maintaining a home for a qualifying child",
-        "A married taxpayer living with their spouse all year",
-        "A surviving spouse in the year of death"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "Head of household status requires the taxpayer to be unmarried and to pay more than half the cost of maintaining a home for a qualifying person."
-        },
-        "incorrect": {
-          "A": "Without a qualifying dependent, head of household status is not available.",
-          "C": "A married taxpayer living with their spouse does not qualify.",
-          "D": "A surviving spouse generally files married filing jointly in the year of death."
-        }
-      }
-    },
-    {
-      "id": "MCQ-06439",
-      "question": "Which of the following prevents taxpayers from filing a joint return?",
-      "options": [
-        "Living apart during the year",
-        "Being legally separated at year-end",
-        "Having no dependents",
-        "One spouse having no income"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "Taxpayers who are legally separated under state law at year-end are not considered married and therefore cannot file a joint return."
-        },
-        "incorrect": {
-          "A": "Living apart does not prevent joint filing if the taxpayers are still married.",
-          "C": "Having no dependents does not affect the ability to file jointly.",
-          "D": "A spouse having no income does not prevent joint filing."
-        }
-      }
-    },
-    {
-      "id": "MCQ-06440",
-      "question": "A surviving spouse with no dependent children in the year following the spouse’s death should generally file as:",
-      "options": [
-        "Married filing jointly",
-        "Qualifying surviving spouse",
-        "Head of household",
-        "Single"
-      ],
-      "correctIndex": 3,
-      "explanation": {
-        "correct": {
-          "choice": "D",
-          "text": "Qualifying surviving spouse status requires a dependent child. Without a dependent, the surviving spouse must file as single in the year following the spouse’s death."
-        },
-        "incorrect": {
-          "A": "Married filing jointly is not available after the year of death.",
-          "B": "Qualifying surviving spouse status requires a dependent child.",
-          "C": "Head of household status requires a qualifying dependent."
-        }
-      }
+    "incorrect": {
+      "A": "Maintaining the cost of the principal residence for only six months is not a requirement.",
+      "B": "Neither listed condition is a correct requirement.",
+      "D": "Having a dependent live with the taxpayer for only six months is not sufficient."
     }
+  }
+},
+{
+  "id": "MCQ-06435",
+  "question": "Where is the deduction for qualified business income (QBI) applied in the individual tax formula?",
+  "options": [
+    "As a deduction from adjusted gross income separate from the standard deduction and itemized deductions",
+    "As an itemized deduction",
+    "As an adjustment to arrive at adjusted gross income",
+    "As an alternative to the standard deduction"
+  ],
+  "correctIndex": 0,
+  "explanation": {
+    "correct": {
+      "choice": "A",
+      "text": "The QBI deduction is taken from adjusted gross income (\"below the line\"). It is not part of the itemized deductions."
+    },
+    "incorrect": {
+      "B": "The QBI deduction is not an itemized deduction.",
+      "C": "The QBI deduction is not an adjustment to arrive at adjusted gross income.",
+      "D": "The QBI deduction is not an alternative to the standard deduction."
+    }
+  }
+},
+{
+  "id": "MCQ-06436",
+  "question": "In which of the following situations may taxpayers file as married filing jointly?",
+  "options": [
+    "Taxpayers who were married but lived under a legal separation agreement at the end of the year.",
+    "Taxpayers who were divorced during the year.",
+    "Taxpayers who were married but lived apart during the year.",
+    "Taxpayers who were legally separated but lived together for the entire year."
+  ],
+  "correctIndex": 2,
+  "explanation": {
+    "correct": {
+      "choice": "C",
+      "text": "Taxpayers who are married but lived apart during the year are allowed to file a joint return for the year. The fact that they did not live together during the year has no bearing on the issue."
+    },
+    "incorrect": {
+      "A": "Taxpayers who are married but lived under a legal separation agreement at the end of the year may not file a joint return.",
+      "B": "Taxpayers who were divorced during the year may not file a joint return together, as they are not married at the end of the year.",
+      "D": "Taxpayers who were legally separated but lived together for the entire year may not file a joint return."
+    }
+  }
+},
+{
+  "id": "MCQ-06437",
+  "question": "A taxpayer's spouse dies in August of the current year. Which of the following is the taxpayer's filing status for the current year?",
+  "options": [
+    "Head of household.",
+    "Single.",
+    "Married filing jointly.",
+    "Qualifying surviving spouse."
+  ],
+  "correctIndex": 2,
+  "explanation": {
+    "correct": {
+      "choice": "C",
+      "text": "The surviving spouse is considered to be married (and thus able to file as married filing jointly) for the entire current year even if the spouse dies earlier in the year."
+    },
+    "incorrect": {
+      "A": "The filing status is not head of household for the current year.",
+      "B": "The filing status is not single for the current year.",
+      "D": "The filing status is not qualifying surviving spouse for the current year."
+    }
+  }
+},
+{
+  "id": "MCQ-06438",
+  "question": "Taylor, an individual, commenced business on August 4 of this year. Taylor does not keep adequate records. On which of the following dates must Taylor's tax year end?",
+  "options": [
+    "July 31",
+    "August 3",
+    "August 31",
+    "December 31"
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "Because Taylor is an individual, Taylor is required to use a calendar year as her tax year. As such, Taylor's tax year will end on December 31."
+    },
+    "incorrect": {
+      "A": "Because Taylor is an individual, she is not permitted to use a fiscal year as her tax year; rather, she must use a calendar year ending on December 31 as her tax year.",
+      "B": "Because Taylor is an individual, Taylor is not permitted to use a fiscal year as her tax year and cannot choose an end date other than December 31.",
+      "C": "Because Taylor is an individual, she is required to use a calendar year as her tax year, regardless of when the business started."
+    }
+  }
+},
+{
+  "id": "MCQ-06439",
+  "question": "John and Theresa are in the process of obtaining a divorce. Although they are not legally separated, John moved out of the family home in October of Year 1 and moved into an apartment nearby. John and Theresa's two children, Jenna and Stella, lived with Theresa in the family home for more than half of the tax year. What filing status can Theresa use to file her Year 1 tax return?",
+  "options": [
+    "Qualifying surviving spouse.",
+    "Single.",
+    "Head of household.",
+    "Married filing jointly/separately."
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "John and Theresa are still married at year-end, not legally separated, and have not lived apart for the last six months of the taxable year. Theresa must file as married, but may choose to do so either jointly with John or separately."
+    },
+    "incorrect": {
+      "A": "Qualifying surviving spouse is not an option because John is still alive.",
+      "B": "Filing as single is not an option because John and Theresa are still married and not legally separated at year-end.",
+      "C": "Head of household status is not available because the couple is not legally separated at year-end and John did not live apart for the last six months of the taxable year."
+    }
+  }
+},
+{
+  "id": "MCQ-06440",
+  "question": "Mort and Mindy met at a New Year's Eve party held December 31, Year 1. They instantly bonded, fell madly in love, and were married at 11:38 p.m. that night. Sadly, Mort passed away November 15, Year 2. What filing status should Mindy use for Year 2?",
+  "options": [
+    "Single.",
+    "Married filing jointly.",
+    "Head of household.",
+    "Surviving spouse."
+  ],
+  "correctIndex": 1,
+  "explanation": {
+    "correct": {
+      "choice": "B",
+      "text": "Mindy will be able to use the married filing jointly status for the year Mort passed away (Year 2) even though she was not married at year-end."
+    },
+    "incorrect": {
+      "A": "Single is not correct because a surviving spouse is treated as married for the year of death.",
+      "C": "Head of household does not apply in the year a spouse dies.",
+      "D": "Surviving spouse status applies in later years, not in the year of death."
+    }
+  }
+},
+{
+  "id": "MCQ-06441",
+  "question": "Thompson's spouse died in Year 1. Thompson did not remarry in Year 2 and lived alone the entire year. What is Thompson's Year 2 filing status?",
+  "options": [
+    "Single.",
+    "Head of household.",
+    "Qualifying surviving spouse.",
+    "Married filing jointly."
+  ],
+  "correctIndex": 0,
+  "explanation": {
+    "correct": {
+      "choice": "A",
+      "text": "Filing status is determined as of the last day of the year. At the end of Year 2, Thompson is not married and does not qualify for any other filing status. Therefore, his status is single."
+    },
+    "incorrect": {
+      "B": "Head of household could apply only if there were a dependent, which is not the case here.",
+      "C": "Qualifying surviving spouse status requires a dependent child, which is not present.",
+      "D": "Married filing jointly is available only in the year the spouse dies, not the following year."
+    }
+  }
+},
+{
+  "id": "MCQ-06442",
+  "question": "As of December 31, the Mitchells were legally separated and maintained separate households for the entire year. The Mitchells have no children. What filing status should Mr. Mitchell claim for the year?",
+  "options": [
+    "Married filing jointly",
+    "Married filing separately",
+    "Head of household",
+    "Single"
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "Marital status for the tax year is determined as of the last day of the year. Taxpayers who are divorced or legally separated are considered unmarried. Mr. Mitchell is legally separated and does not have a qualifying dependent, so his filing status for the year is single."
+    },
+    "incorrect": {
+      "A": "Because the taxpayer is legally separated, he is considered unmarried and cannot file married filing jointly.",
+      "B": "Because the taxpayer is legally separated, he is considered unmarried and cannot file married filing separately.",
+      "C": "Head of household status is not available because the taxpayer does not maintain a home for a qualifying dependent."
+    }
+  }
+},
+{
+  "id": "MCQ-06443",
+  "question": "In which of the following scenarios would the head of household filing status be available to the taxpayer?",
+  "options": [
+    "A single taxpayer maintains a household that is the principal home for five months of the year for his disabled child.",
+    "An unmarried taxpayer maintains a household with a 28-year-old son, who earned $10,000 during the tax year.",
+    "A single taxpayer maintains a separate home for his parent, who qualifies as a dependent.",
+    "A taxpayer with no dependents is the surviving spouse of an individual who died in the current year."
+  ],
+  "correctIndex": 2,
+  "explanation": {
+    "correct": {
+      "choice": "C",
+      "text": "Head of household filing status is available to a single taxpayer who maintains a separate home for a dependent parent. A dependent parent is not required to live with the taxpayer, provided the taxpayer maintains the parent's principal residence for the entire year."
+    },
+    "incorrect": {
+      "A": "Maintaining a household for only five months does not meet the more-than-half-year requirement for head of household status.",
+      "B": "The son does not qualify as a dependent because he fails the qualifying child and qualifying relative requirements.",
+      "D": "A taxpayer with no dependents is not eligible for head of household status and instead may file married filing jointly in the year of the spouse’s death."
+    }
+  }
+},
+{
+  "id": "MCQ-06444",
+  "question": "Parker, whose spouse died during the preceding year, has not remarried. Parker maintains a home for a dependent child. What is Parker's most advantageous filing status?",
+  "options": [
+    "Single",
+    "Head of household",
+    "Married filing separately",
+    "Qualifying surviving spouse"
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "A qualifying surviving spouse is a taxpayer who may use the married filing jointly tax return standard deduction and rates for each of two taxable years following the year of death of his or her spouse, unless he or she remarries. Parker qualifies because her spouse died in the previous tax year, she did not remarry, and she maintained a home for a dependent child."
+    },
+    "incorrect": {
+      "A": "Although Parker could file as single, this status would result in a higher tax liability than qualifying surviving spouse.",
+      "B": "Parker would not qualify as head of household during the first two years after the death of a spouse if qualifying surviving spouse status applies.",
+      "C": "Parker does not qualify to file married filing separately because she is no longer married."
+    }
+  }
+},
+{
+  "id": "MCQ-06445",
+  "question": "Mort and Mindy met at a New Year's Eve party held December 31, Year 1. They instantly bonded, fell madly in love, and were married at 11:38 p.m. that night. Sadly, Mort passed away November 15, Year 2. In January, Year 3, Mindy gave birth to triplets Mark, Mandy, and Maureen. Assuming that Mindy has not remarried, what filing status should she use for Year 4?",
+  "options": [
+    "Single.",
+    "Head of household.",
+    "Qualifying surviving spouse.",
+    "Married filing jointly."
+  ],
+  "correctIndex": 2,
+  "explanation": {
+    "correct": {
+      "choice": "C",
+      "text": "Because Mindy did not remarry and maintained a principal residence for her dependent children for the entire year, she may file using the qualifying surviving spouse status for the two taxable years following Mort's death. Year 4 is the second year after Mort's death."
+    },
+    "incorrect": {
+      "A": "Single is not the most advantageous status available to Mindy because she qualifies as a surviving spouse.",
+      "B": "Head of household is not applicable when qualifying surviving spouse status is available.",
+      "D": "Married filing jointly is not available because Mort did not die in Year 4."
+    }
+  }
+},
+{
+  "id": "MCQ-06446",
+  "question": "Mort and Mindy met at a New Year's Eve party held December 31, Year 1. They instantly bonded, fell madly in love, and were married at 11:38 p.m. that night. Sadly, Mort passed away November 15, Year 2. In January, Year 3, Mindy gave birth to triplets Mark, Mandy, and Maureen. The triplets live with Mindy and she provides all of their support. Assuming Mindy has not remarried, what filing status should she use for Year 5?",
+  "options": [
+    "Head of household.",
+    "Single.",
+    "Qualifying surviving spouse.",
+    "Married filing jointly."
+  ],
+  "correctIndex": 0,
+  "explanation": {
+    "correct": {
+      "choice": "A",
+      "text": "Mindy should file using the head of household status. She has dependent children living with her, and no longer qualifies as married or as a surviving spouse. Head of household is the most favorable filing status for which she qualifies."
+    },
+    "incorrect": {
+      "B": "Mindy qualifies for a more favorable filing status than single.",
+      "C": "At Year 5, more than two years have passed since Mort's death so Mindy no longer qualifies for surviving spouse status.",
+      "D": "Mindy is no longer married and Mort did not die in Year 5, so she is not eligible for the married filing jointly status."
+    }
+  }
+},
+{
+  "id": "MCQ-06447",
+  "question": "In Year 4, after Mindy's three children have grown and moved out of the house, Mindy (unmarried) moved her mother, Mary, into an assisted living facility for which Mindy pays 75% of the cost. Mindy had not previously lived with Mary, and Mary paid for her own living expenses while she lived in her own home. What filing status should Mindy use for Year 4, assuming Mary moved into the assisted living facility on January 1, Year 4?",
+  "options": [
+    "Single.",
+    "Head of household.",
+    "Married filing jointly.",
+    "Surviving spouse."
+  ],
+  "correctIndex": 1,
+  "explanation": {
+    "correct": {
+      "choice": "B",
+      "text": "Mindy qualifies for and should use head of household status in Year 4, because she maintained more than half of the upkeep on Mary's principal residence for the entire taxable year. It is the most favorable filing status for which she qualifies."
+    },
+    "incorrect": {
+      "A": "Mindy qualifies for a more favorable filing status than single.",
+      "C": "Mindy is not married.",
+      "D": "Mindy has not had a spouse die in the past two years."
+    }
+  }
+},
+{
+  "id": "MCQ-06448",
+  "question": "In Year 4, after Mindy's three children have grown and moved out of the house, Mindy (unmarried) moved her mother, Mary, into an assisted living facility for which Mindy pays 75% of the cost. Mindy had not previously lived with Mary, and Mary paid for her own living expenses while she lived in her own home. What filing status should Mindy use for Year 4, assuming Mary moved into the assisted living facility on August 1, Year 4?",
+  "options": [
+    "Head of household.",
+    "Surviving spouse.",
+    "Married filing jointly.",
+    "Single."
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "Mindy should file using the single status. She does not qualify for more favorable filing status."
+    },
+    "incorrect": {
+      "A": "Mindy does not qualify for head of household status because Mary did not live in the assisted living facility for the entire year.",
+      "B": "Mindy has not had a spouse die in the past two years.",
+      "C": "Mindy is not married."
+    }
+  }
+},
+{
+  "id": "MCQ-06449",
+  "question": "Four years ago, when Cox's spouse died, Cox filed a joint tax return for that year. Cox did not remarry, but continued to provide full support for a minor child who has been living with Cox. What is Cox's most advantageous filing status for the current year?",
+  "options": [
+    "Married filing separately.",
+    "Single.",
+    "Surviving spouse.",
+    "Head of household."
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "Because Cox is not married, is not a surviving spouse, and maintains a home for a minor dependent child, Cox may file as head of household. This status provides a larger standard deduction and wider tax brackets than the single status."
+    },
+    "incorrect": {
+      "A": "Cox is not married and therefore cannot file as married filing separately.",
+      "B": "Although Cox could file as single, head of household is more advantageous.",
+      "C": "Cox does not qualify as a surviving spouse because more than two years have passed since the spouse’s death."
+    }
+  }
+},
+{
+  "id": "MCQ-06450",
+  "question": "Which of the following taxpayers would not qualify for the filing status of head of household?",
+  "options": [
+    "A single taxpayer who provides one-half of the support for a dependent child who has lived almost the entire year at a U.S. university while pursuing an undergraduate degree.",
+    "A married taxpayer with a dependent child in the household who has lived apart from the taxpayer's spouse for the entire year due to abandonment.",
+    "A single taxpayer who provides over one-half of the support for a dependent parent in a nursing home but does not have a qualifying child in the household.",
+    "A single taxpayer whose spouse died in the preceding tax year and who has a dependent child living in the household."
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "A taxpayer qualifies for surviving spouse filing status for the two years following the year the taxpayer's spouse dies if the taxpayer maintains a household where a dependent child lives for the entire year."
+    },
+    "incorrect": {
+      "A": "A dependent child who is a full-time student is considered temporarily away from home, and the taxpayer may still qualify for head of household status.",
+      "B": "A married taxpayer who lived apart from a spouse for the last six months of the year and maintained a household for a dependent child may qualify for head of household status.",
+      "C": "A single taxpayer who provides more than one-half of the support for a dependent parent may qualify for head of household status even if the parent does not live with the taxpayer."
+    }
+  }
+},
+{
+  "id": "MCQ-06451",
+  "question": "The spouse of a married taxpayer died on January 15, Year 1. The taxpayer's qualifying child moved to live with grandparents in their home on August 30, Year 2. If the taxpayer did not remarry before the end of Year 2, then which filing status should the taxpayer choose for Year 2?",
+  "options": [
+    "Married filing jointly",
+    "Married filing separately",
+    "Head of household",
+    "Qualifying surviving spouse"
+  ],
+  "correctIndex": 2,
+  "explanation": {
+    "correct": {
+      "choice": "C",
+      "text": "The taxpayer should choose the head of household filing status for Year 2 because the taxpayer is unmarried and maintained a home as the principal residence for the qualifying child for more than half of the taxable year."
+    },
+    "incorrect": {
+      "A": "Married filing jointly may only be used in the year the spouse dies, which was Year 1.",
+      "B": "Married filing separately requires the taxpayer to be married, which is not the case in Year 2.",
+      "D": "Qualifying surviving spouse status requires that a dependent child live in the household for the entire year, which did not occur in Year 2."
+    }
+  }
+},
+{
+  "id": "MCQ-06452",
+  "question": "Dave and Pam Stevens contributed to the support of their three children, Lisa, Tanya, and Hannah, and Pam's divorced mother, Ellen. For the current year, Lisa, a 26-year-old sales clerk, earned $27,000. Tanya, a 23-year-old, full-time college graduate student in accounting, earned $35,000 working for a CPA firm. Hannah, a 20-year old artist, earned nothing during the year, but is still aspiring to sell her first piece and has signed on with an art studio. Ellen received $10,000 in nontaxable Social Security benefits and $2,000 in dividend income. All are U.S. citizens and are over half supported by Dave and Pam. How many dependents do Dave and Pam Stevens have under the qualifying child (QC) and qualifying relative (QR) rules?",
+  "options": [
+    "One",
+    "Three",
+    "Two",
+    "Zero"
+  ],
+  "correctIndex": 1,
+  "explanation": {
+    "correct": {
+      "choice": "B",
+      "text": "Based on the CARES (QC) and the SUPORT (QR) tests, Dave and Pam have three dependents. Tanya qualifies as a qualifying child, Hannah qualifies as a qualifying relative, and Ellen qualifies as a qualifying relative because her Social Security income is nontaxable and not included in gross income."
+    },
+    "incorrect": {
+      "A": "Tanya, Hannah, and Ellen qualify as dependents, not just one.",
+      "C": "Tanya, Hannah, and Ellen qualify as dependents, not just two.",
+      "D": "Tanya, Hannah, and Ellen qualify as dependents under the QC or QR rules."
+    }
+  }
+},
+{
+  "id": "MCQ-06453",
+  "question": "Anderson, a computer engineer, and spouse, who is unemployed, provide more than half of the support for their younger child, age 23, who is a full-time student and who earns $7,000. They also provide more than half of the support for their older child, age 33, who earns $2,000 during the year. Both children are U.S. citizens and live in their parents' home for most of the year. How many dependents meet qualifying relative or qualifying child rules for the Andersons?",
+  "options": [
+    "Zero",
+    "One",
+    "Three",
+    "Two"
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "Both children meet the dependency criteria. The 23-year-old child qualifies as a qualifying child because he is under age 24 and a full-time student, and the 33-year-old child qualifies as a qualifying relative because his income is below the gross income limitation and more than half of his support is provided by his parents."
+    },
+    "incorrect": {
+      "A": "Both children qualify as dependents.",
+      "B": "Both children qualify as dependents, not just one.",
+      "C": "Both children qualify as dependents, but an unemployed spouse is not a dependent."
+    }
+  }
+},
+{
+  "id": "MCQ-06454",
+  "question": "Nicole and Andrew Harris contribute to more than half of the support of their three children, Travis, Luke, and John. Travis, age 20, worked full time at the local deli and earned $20,000. Luke, 18, is a part-time college student who earned $5,000 working as a resident assistant in the student dormitory where he lived half of the year. John, age 25, is an aspiring actor who lives at home with Nicole and Andrew. John earned $2,500 for the three commercials he starred in. Who qualifies as a dependent for Nicole and Andrew under either the rules of qualifying child or qualifying relative?",
+  "options": [
+    "Luke and John",
+    "Travis and Luke",
+    "Travis, Luke, and John",
+    "Travis"
+  ],
+  "correctIndex": 0,
+  "explanation": {
+    "correct": {
+      "choice": "A",
+      "text": "Luke and John satisfy dependency requirements. Luke meets the qualifying child rules because he is under the age of 19 and lives away from home only while attending college. John meets the qualifying relative rules because his parents provide more than half of his support and his gross income is under the limitation."
+    },
+    "incorrect": {
+      "B": "Travis does not qualify because his income exceeds the gross income limitation for qualifying relative and he does not meet the age test for qualifying child.",
+      "C": "Travis does not qualify as a dependent, so not all three children qualify.",
+      "D": "Travis does not meet the dependency requirements."
+    }
+  }
+},
+{
+  "id": "MCQ-06455",
+  "question": "Jim and Kay Ross contributed to the support of their two children, Dale and Kim, and Jim's widowed parent, Grant. For Year 27, Dale, a 19-year-old full-time college student, earned $4,500 as a babysitter. Kim, a 23-year-old bank teller, earned $12,000. Grant received $8,000 in dividend income and $4,000 in nontaxable Social Security benefits. Grant and Kim are U.S. citizens and were over one-half supported by Jim and Kay, but neither of the two currently reside with Jim and Kay. Dale's main place of residence is with Jim and Kay, and he is currently on a temporary absence to attend school. How many people meet the definition of either qualifying child or qualifying relative on the Year 27 joint income tax return for Jim and Kay Ross?",
+  "options": [
+    "Zero",
+    "One",
+    "Two",
+    "Three"
+  ],
+  "correctIndex": 1,
+  "explanation": {
+    "correct": {
+      "choice": "B",
+      "text": "Only one person meets the criteria for either qualifying child or qualifying relative. Dale meets the definition of qualifying child because he is a full-time student under the age of 24 and meets all CARES requirements."
+    },
+    "incorrect": {
+      "A": "Dale meets the qualifying child requirements.",
+      "C": "Kim fails the age test for qualifying child and the gross income test for qualifying relative, and Grant fails the gross income test for qualifying relative.",
+      "D": "Only Dale meets the definition of either qualifying child or qualifying relative."
+    }
+  }
+},
+{
+  "id": "MCQ-06456",
+  "question": "John earned $500,000 in his business during the current year, and his wife received investment income of $15,000. John provides more than half of the support of his 50-year-old widowed sister, who lives with John and earned $45,000 in salary in the current year. John also provides full support for his two children, an 18-year-old daughter and a 20-year-old son, who is a full-time college student. The family employs a live-in housekeeper and a live-in butler to assist them with their residence. Both the live-in housekeeper and the live-in butler provided all of their own support. How many people qualify as either a qualifying child or qualifying relative for John?",
+  "options": [
+    "Zero",
+    "Five",
+    "Four",
+    "Two"
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "John's two children meet the requirements for qualifying child (QC) under the CARES criteria. John's sister does not qualify because her taxable gross income exceeds the gross income limit for a qualifying relative, and the housekeeper and butler do not qualify because they provide all of their own support."
+    },
+    "incorrect": {
+      "A": "John's children meet the qualifying child requirements, so the answer is not zero.",
+      "B": "Only John's children qualify; the sister, housekeeper, and butler do not meet QC or QR requirements.",
+      "C": "Only John's children qualify as dependents under the QC rules."
+    }
+  }
+},
+{
+  "id": "MCQ-06457",
+  "question": "The Clarks have a 21-year-old son, Alex, who is a full-time student at the state university. Alex received $10,000 in scholarships this year for academic achievement. He also works part time at the university bookstore and earned $7,500 this year. The Clarks paid $10,000 to support Alex this year. Alex was home for two months in the summer and at school for the rest of the year. Alex used the scholarship, the earnings from the part-time job, and the money from his parents as his only source of support this year. Which of the following definitions does Alex meet for the Clarks?",
+  "options": [
+    "Qualifying relative",
+    "Exemption",
+    "Qualifying person",
+    "Qualifying child"
+  ],
+  "correctIndex": 3,
+  "explanation": {
+    "correct": {
+      "choice": "D",
+      "text": "Alex meets the definition of qualifying child for the Clarks. He is their son, is under age 24, is a full-time student, meets the residency requirement, and did not provide more than half of his own support. Scholarship income does not count as support provided by Alex."
+    },
+    "incorrect": {
+      "A": "Alex does not qualify as a qualifying relative because he meets the definition of a qualifying child.",
+      "B": "Exemptions for dependents are not allowed for tax years 2018 and later.",
+      "C": "Qualifying person is not a dependency definition type."
+    }
+  }
+}
   ]
 }

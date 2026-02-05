@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
-export default function Home({ setScreen }) {
+export default function Home({ setScreen, theme, setTheme }) {
   const { user, role, logout } = useAuth();
 
   const [showProfile, setShowProfile] = useState(false);
@@ -41,18 +41,18 @@ export default function Home({ setScreen }) {
     <div className="page">
       {/* AVATAR */}
       <div
-        className="profile-avatar-btn"
-        onClick={() => {
-          setShowProfile(true);
-          setShowSettings(false);
-        }}
-      >
-        {profileImage ? (
-          <img src={profileImage} alt="profile" />
-        ) : (
-          user?.charAt(0).toUpperCase()
-        )}
-      </div>
+  className={`profile-corner-handle ${showProfile ? "hidden" : ""}`}
+  onClick={() => {
+    setShowProfile(true);
+    setShowSettings(false);
+  }}
+>
+  {profileImage ? (
+    <img src={profileImage} alt="profile" />
+  ) : (
+    <span>{user?.charAt(0).toUpperCase()}</span>
+  )}
+</div>
 
       {/* PROFILE DRAWER */}
       {showProfile && (
@@ -101,6 +101,21 @@ export default function Home({ setScreen }) {
                   </div>
                   <input type="file" accept="image/*" onChange={handleImageChange} hidden />
                 </label>
+                <div className="profile-setting-row">
+  <span>Dark Mode</span>
+
+  <label className="theme-switch">
+    <input
+      type="checkbox"
+      checked={theme === "dark"}
+      onChange={() =>
+        setTheme(theme === "dark" ? "light" : "dark")
+      }
+    />
+    <span className="slider" />
+  </label>
+</div>
+
 
                 <button className="profile-action" onClick={() => setShowSettings(false)}>
                   ← Back
