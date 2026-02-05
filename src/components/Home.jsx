@@ -2,10 +2,46 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { getUserStreak } from "../utils/streak";
+
 
 export default function Home({ setScreen, theme, setTheme }) {
-  const { user, role, logout } = useAuth();
+  function launchConfetti(isActive, event) {
+  const emojis = isActive
+    ? ["🔥", "🔥", "🥳", "🎉", "👍", "💪"]
+    : ["💔", "💔", "🥀", "😢"];
 
+  const rect = event.currentTarget.getBoundingClientRect();
+  const originX = rect.left + rect.width / 2;
+  const originY = rect.top + rect.height / 2;
+
+  emojis.forEach((emoji) => {
+    const el = document.createElement("div");
+    el.className = "emoji-burst";
+    el.textContent = emoji;
+
+    // start exactly from badge center
+    el.style.left = `${originX}px`;
+    el.style.top = `${originY}px`;
+
+    // random blast direction
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = 80 + Math.random() * 40;
+    const x = Math.cos(angle) * distance;
+    const y = Math.sin(angle) * distance;
+
+    el.style.setProperty("--x", `${x}px`);
+    el.style.setProperty("--y", `${y}px`);
+
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 900);
+  });
+}
+
+
+  const { user, role, logout } = useAuth();
+  const [streak, setStreak] = useState(null);
   const [showProfile, setShowProfile] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
@@ -25,6 +61,14 @@ export default function Home({ setScreen, theme, setTheme }) {
     if (saved) setProfileImage(saved);
   }, [user]);
 
+  useEffect(() => {
+  if (!user) return;
+
+  const data = getUserStreak(user);
+  setStreak(data);
+}, [user]);
+
+
   function handleImageChange(e) {
     const file = e.target.files[0];
     if (!file) return;
@@ -40,19 +84,41 @@ export default function Home({ setScreen, theme, setTheme }) {
   return (
     <div className="page">
       {/* AVATAR */}
-      <div
-  className={`profile-corner-handle ${showProfile ? "hidden" : ""}`}
-  onClick={() => {
-    setShowProfile(true);
-    setShowSettings(false);
-  }}
+      {/* 🧊 GLASS TOP BAR */}
+<div className="top-glass-bar">
+  <div className="top-title">CPA PRACTICE</div>
+
+{streak && (
+  <div
+  className={`streak-badge ${
+    streak.currentStreak === 0 ? "inactive" : "active"
+  }`}
+  onClick={(e) =>
+  launchConfetti(streak.currentStreak > 0, e)
+}
 >
-  {profileImage ? (
-    <img src={profileImage} alt="profile" />
-  ) : (
-    <span>{user?.charAt(0).toUpperCase()}</span>
-  )}
+    {streak.currentStreak === 0
+      ? "💔"
+      : `🔥 ${streak.currentStreak}`}
+  </div>
+)}
+
+
+  <div
+    className="top-profile"
+    onClick={() => {
+      setShowProfile(true);
+      setShowSettings(false);
+    }}
+  >
+    {profileImage ? (
+      <img src={profileImage} alt="profile" />
+    ) : (
+      user.charAt(0).toUpperCase()
+    )}
+  </div>
 </div>
+
 
       {/* PROFILE DRAWER */}
       {showProfile && (
@@ -130,7 +196,7 @@ export default function Home({ setScreen, theme, setTheme }) {
         </>
       )}
 
-      <h1 className="page-title">CPA Practice</h1>
+      
 
       <div className="home-grid">
         {subjects.map(sub => (

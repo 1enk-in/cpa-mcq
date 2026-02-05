@@ -389,7 +389,10 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 2 x 4 feel on wide screens */
   gap: 24px;
-  margin-top: 40px;
+  position: relative;
+    top: 65px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* Center nicely on smaller screens */
@@ -1272,10 +1275,10 @@ body {
 /* Pencil icon */
 .pencil-icon {
   position: absolute;
-    bottom: 69px;
-    left: 13px;
-    width: 90px;
-    height: 90px;
+    bottom: 67px;
+    left: 11px;
+    width: 92px;
+    height: 92px;
     border-radius: 50%;
     background: #0000008c;
     color: white;
@@ -1873,122 +1876,218 @@ body.dark .login-form input:focus {
 }
 
 /* ===============================
-   🟣 PROFILE CORNER HANDLE
+   🧊 GLASS TOP BAR
    =============================== */
 
-.profile-corner-handle {
+.top-glass-bar {
   position: fixed;
-  top: -40px;
-  right: -40px;
-
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-
-  background: var(--primary);
-  color: white;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 720px;
+  height: 56px;
 
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
 
-  padding: 28px;
+  background: rgb(74 74 74 / 30%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 999px;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  z-index: 300;
+}
+
+/* Dark mode support */
+.dark .top-glass-bar {
+  background: rgb(255 255 255 / 30%);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Title */
+.top-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  margin-left: 15px;
+
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.dark .top-title {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 6px 20px rgb(0 0 0 / 68%);
+}
+
+
+/* Profile avatar */
+.top-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   cursor: pointer;
-  z-index: 300;
-
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-
-  transition:
-    transform 0.35s ease,
-    opacity 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hide when profile is open */
-.profile-corner-handle.hidden {
-  transform: scale(0.6) translate(40px, -40px);
-  opacity: 0;
-  pointer-events: none;
+.top-profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgb(0, 0, 0);
 }
 
-/* Avatar text / image */
-.profile-corner-handle span,
-.profile-corner-handle img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+.dark .top-profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(12, 125, 223, 0.749);
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 18px;
-  font-weight: 600;
-
+.top-profile img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Hover feedback */
-.profile-corner-handle:hover {
+.page {
+  padding-top: 96px;
+}
+
+/* 🔥 STREAK BADGE */
+.streak-badge {
+  position: relative;
+    top: 0px;
+    left: 180px;
+    margin-top: 0px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  animation: streakPop 0.4s ease-out;
+}
+
+.streak-badge:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 14px #ff7e22d5;
 }
 
-.profile-drawer {
-  animation: slideIn 0.35s ease forwards;
-}
-
-@keyframes slideIn {
+/* subtle pop animation */
+@keyframes streakPop {
   from {
-    transform: translateX(-100%);
+    transform: scale(0.9);
+    opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-@keyframes cornerPulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
-  100% { box-shadow: 0 0 0 18px rgba(37, 99, 235, 0); }
+/* dark mode tweak */
+.dark .streak-badge {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-.profile-corner-handle {
-  animation: cornerPulse 1.5s ease-out 1;
+.dark .streak-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px #ff7e22d5;
+}
+
+/* 📱 STREAK — SMALL DEVICES */
+@media (max-width: 600px) {
+  .streak-badge {
+    position: relative;
+    top: -3px;
+    left: 27px;
+    margin-top: 0px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+
+  .streak-badge::before {
+    font-size: 13px;
+  }
+}
+
+/* 📱📱 EXTRA SMALL (very compact phones) */
+@media (max-width: 400px) {
+  .streak-badge {
+    padding: 3px 8px;
+    font-size: 11px;
+    border-radius: 999px;
+  }
+}
+
+/* 💤 INACTIVE STREAK */
+.streak-badge.inactive {
+  background: #e1a3a3; /* gray */
+  color: #1f2937;
+  opacity: 0.85;
+}
+
+/* dark mode inactive */
+.dark .streak-badge.inactive {
+  background: aliceblue;
+  color: #e5e7eb;
+  box-shadow: inherit;
 }
 
 
-/* ===============================
-   🟣 PROFILE CORNER HANDLE IMAGE
-   =============================== */
-
-/* ONLY affects the corner button */
-.profile-corner-handle img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-
-  /* subtle polish */
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+/* 🎆 EMOJI BURST CONFETTI */
+.emoji-burst {
+  position: fixed;
+  font-size: 22px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: burst 0.9s ease-out forwards;
+  z-index: 9999;
 }
 
-/* fallback initial letter */
-.profile-corner-handle span {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 16px;
-  font-weight: 600;
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+      )
+      scale(1.4)
+      rotate(20deg);
+    opacity: 0;
+  }
 }
 
-.profile-corner-handle:hover img,
-.profile-corner-handle:hover span {
-  transform: scale(1.08);
-  transition: transform 0.2s ease;
+
+/* global */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* title only */
+.top-title {
+  user-select: none;
+  -webkit-user-select: none;
 }

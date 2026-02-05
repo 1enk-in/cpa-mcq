@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { updateUserStreak } from "../utils/streak";
+
 
 import regM1 from "../data/reg/reg_m1.json";
 import regM2 from "../data/reg/reg_m2.json";
@@ -226,7 +228,8 @@ setHydrated(true);
     console.log("History after save:", history);
 
     localStorage.removeItem(SESSION_KEY);
-
+     
+    updateUserStreak(user);
     setSessionData(report);
     setScreen("summary");
   }
