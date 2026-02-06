@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { updateUserStreak } from "../utils/streak";
 
 
+
+
 import regM1 from "../data/reg/reg_m1.json";
 import regM2 from "../data/reg/reg_m2.json";
 import regM3 from "../data/reg/reg_m3.json";
@@ -77,8 +79,6 @@ const MODULE_DATA = {
 
 
 
-/* 🔀 SHUFFLE HELPER */
-
 export default function MCQ({
   module,
   setScreen,
@@ -87,46 +87,64 @@ export default function MCQ({
   activeSubject,
   user
 }) {
+  /* ===============================
+     🔹 ALL HOOKS FIRST — NO RETURNS
+     =============================== */
 
-  if (!user) return null; // 🔑 SAFETY GUARD
+  const [hydrated, setHydrated] = useState(false);
+  const [questions, setQuestions] = useState([]);
+  const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState([]);
+  const [confirmType, setConfirmType] = useState(null);
+  const [error, setError] = useState("");
+  const isRetry = !!retryIndexes;
+const isExam = !retryIndexes;
 
-  const HISTORY_KEY = `cpa_history_${user}`;
-  const SESSION_KEY = `cpa_session_${user}`;
 
 
-  /* 🔒 SAFETY GUARD */
+  /* ===============================
+     🔹 EFFECTS (STILL BEFORE RETURNS)
+     =============================== */
+
+  useEffect(() => {
+    if (!user || !module) return;
+
+    localStorage.setItem(
+      "cpa_active_mcq",
+      JSON.stringify({
+        screen: "mcq",
+        module
+      })
+    );
+  }, [user, module]);
+
+  /* ===============================
+     🔑 NOW SAFETY GUARDS
+     =============================== */
+
+  if (!user) return null;
   if (!module) return null;
+
+  const SESSION_KEY = `cpa_session_${user.uid}`;
 
   const data = MODULE_DATA[module];
   if (!data) return null;
 
   const baseQuestions = data.questions;
 
-  // STEP 3: attach stable base index (do NOT move this)
-const questionsWithBaseIndex = baseQuestions.map((q, i) => ({
-  ...q,
-  baseIndex: i
-}));
+  const questionsWithBaseIndex = baseQuestions.map((q, i) => ({
+    ...q,
+    baseIndex: i
+  }));
 
+  const rawQuestions = retryIndexes
+    ? retryIndexes.map(i => questionsWithBaseIndex[i])
+    : questionsWithBaseIndex;
 
-
-  const [hydrated, setHydrated] = useState(false);
-
-  // STEP 5: build questions from BASE index (never retry index)
-const rawQuestions = retryIndexes
-  ? retryIndexes.map(i => questionsWithBaseIndex[i])
-  : questionsWithBaseIndex;
-
-
-
-  const [questions, setQuestions] = useState(rawQuestions);
 
   const total = questions.length;
 
-  const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState(Array(total).fill(null));
-  const [confirmType, setConfirmType] = useState(null);
-  const [error, setError] = useState("");
+
 
   /* ===============================
      🔹 RESTORE SESSION (NO SHUFFLE)
@@ -138,20 +156,28 @@ const rawQuestions = retryIndexes
       const parsed = JSON.parse(saved);
 
       if (
-        parsed.module === module &&
-        parsed.answers?.length === total
-      ) {
-        setAnswers(parsed.answers);
-        setIndex(parsed.index ?? 0);
-        setQuestions(parsed.questions); // 🔑 restore exact order
-        setHydrated(true);
-        return;
-      }
+  parsed.module === module &&
+  parsed.answers?.some(a => a !== null)
+) {
+  setAnswers(parsed.answers);
+  setIndex(parsed.index ?? 0);
+  setQuestions(parsed.questions);
+  setHydrated(true);
+  return;
+}
+
     }
 
+    
+
+
     /* 🔹 NEW SESSION → NO SHUFFLE */
-setQuestions(rawQuestions);
+/* 🔹 NEW SESSION → RESET ANSWERS */
+
+setAnswers(Array(rawQuestions.length).fill(null));
+setIndex(0);
 setHydrated(true);
+
 
   }, [module, total]);
 
@@ -159,20 +185,52 @@ setHydrated(true);
      🔹 AUTO SAVE
      =============================== */
   useEffect(() => {
-    if (!hydrated) return;
+  if (!hydrated) return;
 
-    localStorage.setItem(
-      SESSION_KEY,
-      JSON.stringify({
-        module,
-        answers,
-        index,
-        questions // 🔑 save order
-      })
-    );
-  }, [answers, index, hydrated, module, questions]);
+  localStorage.setItem(
+    SESSION_KEY,
+    JSON.stringify({
+      module,
+      answers,
+      index,
+      questions
+    })
+  );
+}, [answers, index, hydrated, module, questions]);
+
+  
+useEffect(() => {
+  const saved = localStorage.getItem(SESSION_KEY);
+
+  if (saved) {
+    const parsed = JSON.parse(saved);
+    if (parsed.module === module) {
+      setQuestions(parsed.questions);
+      setAnswers(parsed.answers);
+      setIndex(parsed.index ?? 0);
+      setHydrated(true);
+      return;
+    }
+  }
+
+  // fresh exam or retry
+  setQuestions(rawQuestions);
+  setAnswers(Array(rawQuestions.length).fill(null));
+  setIndex(0);
+  setHydrated(true);
+}, [module, retryIndexes]);
+
+
+
+
+
+
+if (!questions.length || !questions[index]) {
+  return null;
+}
 
   const q = questions[index];
+  
   const selected = answers[index];
 
   const answeredCount = answers.filter(a => a !== null).length;
@@ -189,50 +247,59 @@ setHydrated(true);
     setAnswers(copy);
   }
 
+
+
+
+
+
   /* ===============================
      🔹 GENERATE REPORT + SAVE HISTORY
      =============================== */
   function generateReport() {
-    const wrongIndexes = [];
-    let correct = 0;
+  const wrongIndexes = [];
+  let correct = 0;
 
-    answers.forEach((a, i) => {
-      if (a === null) return;
-      if (a === questions[i].correctIndex) {
-        correct++;
-      } else {
-        wrongIndexes.push(questions[i].baseIndex);
-      }
-    });
+  answers.forEach((a, i) => {
+    if (a === null) return;
+    if (a === questions[i].correctIndex) {
+      correct++;
+    } else {
+      wrongIndexes.push(questions[i].baseIndex);
+    }
+  });
 
-    const report = {
-      module,
-      isRetry: !!retryIndexes,
-      retryOf: retryIndexes ?? null,
-      total,
-      attempted: answeredCount,
-      correct,
-      wrong: wrongIndexes.length,
-      wrongIndexes,
-      percent: Math.round((correct / total) * 100),
-      completedAt: new Date().toISOString(),
-      answers
-    };
+  // 🔥 map answers to BASE index
+  const answersByBaseIndex = {};
+  answers.forEach((ans, i) => {
+    if (ans !== null) {
+      answersByBaseIndex[questions[i].baseIndex] = ans;
+    }
+  });
 
-    const history =
-      JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+  const report = {
+    module,
+    isRetry: !!retryIndexes,
+    retryOf: retryIndexes ?? null,
+    total,
+    attempted: answeredCount,
+    correct,
+    wrong: wrongIndexes.length,
+    wrongIndexes,
+    percent: Math.round((correct / total) * 100),
+    completedAt: new Date().toISOString(),
+    answers: answersByBaseIndex
+  };
 
-    history.unshift(report);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  localStorage.removeItem(SESSION_KEY);
 
-    console.log("History after save:", history);
+if (isExam || isRetry) {
+  updateUserStreak(user);
+}
 
-    localStorage.removeItem(SESSION_KEY);
-     
-    updateUserStreak(user);
-    setSessionData(report);
-    setScreen("summary");
-  }
+  setSessionData(report);
+  setScreen("summary");
+}
+
 
   /* ===============================
      🔹 END SESSION (CONFIRM)
@@ -258,14 +325,21 @@ setHydrated(true);
 
   function confirmAction() {
   if (confirmType === "exit") {
+    // cleanup
+    localStorage.removeItem("cpa_active_mcq");
     localStorage.removeItem(SESSION_KEY);
-
-    // 🔑 Go back to the correct subject
     setScreen(activeSubject || "home");
+
+
+    setConfirmType(null);
+    return;
   }
 
-  if (confirmType === "end") generateReport();
+  if (confirmType === "end") {
+    generateReport();
+  }
 }
+
 
 
   return (
@@ -276,8 +350,9 @@ setHydrated(true);
           ← Modules
         </button>
         <button className="end-btn" onClick={handleEndSession}>
-          END SESSION
-        </button>
+  END SESSION
+</button>
+
       </div>
 
       {/* QUESTION PANEL */}
@@ -302,8 +377,18 @@ setHydrated(true);
 
       {/* MCQ CARD */}
       <div className="mcq-card">
+        <div className="progress">
+  <div
+    className="progress-fill"
+    style={{ width: `${(answeredCount / total) * 100}%` }}
+  />
+</div>
+
         <div className="mcq-id">{q.id}</div>
-        <div className="mcq-question">{q.question}</div>
+
+
+<div className="mcq-question">{q.question}</div>
+
 
         {q.options.map((opt, i) => {
           let cls = "option";
@@ -361,11 +446,12 @@ setHydrated(true);
         </div>
 
         {/* SUBMIT */}
-        {allAnswered && (
-          <button className="submit-btn" onClick={handleSubmit}>
-            SUBMIT
-          </button>
-        )}
+        {(isExam || isRetry) && allAnswered && (
+  <button className="submit-btn" onClick={handleSubmit}>
+    SUBMIT
+  </button>
+)}
+
 
         {error && <p className="error">{error}</p>}
       </div>

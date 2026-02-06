@@ -821,21 +821,20 @@ body {
   text-transform: uppercase;
 }
 
+body.dark .retry-badge {
+  background: rgba(255, 149, 0, 0.18);
+  color: #ffb347;
+  box-shadow: 0 0 0 1px rgba(255, 149, 0, 0.35);
+}
+
+
 .history-percent {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.retry-badge {
-  background: #ffcc00;
-  color: #000;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
+
 
 .history-stats {
   font-size: 14px;
@@ -1226,7 +1225,7 @@ body {
   margin-top: 20px;
   width: 100%;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 40px;
   border: none;
   background: #f1f5f9;
   cursor: pointer;
@@ -1275,10 +1274,10 @@ body {
 /* Pencil icon */
 .pencil-icon {
   position: absolute;
-    bottom: 69px;
-    left: 11px;
-    width: 92px;
-    height: 92px;
+    bottom: 66px;
+    left: 73px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     background: #0000008c;
     color: white;
@@ -1588,7 +1587,7 @@ button {
    =============================== */
 
 .profile-action {
-  background: var(--card);
+  background: #d1d1d1;
   color: var(--text);
   border: 1px solid var(--border);
   transition: background 0.2s ease, color 0.2s ease;
@@ -2090,4 +2089,185 @@ body.dark .login-form input:focus {
 .top-title {
   user-select: none;
   -webkit-user-select: none;
+}
+
+/* =========================
+   USERNAME SETTING (ISOLATED)
+   ========================= */
+
+.username-setting {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dark .username-setting {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.username-setting-label {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.username-setting-input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.dark .username-setting-input {
+  background: #1c1c1c;
+  color: #fff;
+  border-color: #333;
+}
+
+.username-setting-btn {
+  position: relative;
+    left: 30px;
+  align-self: flex-start;
+  padding: 7px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #c70000;
+  transition: background 0.2s ease;
+}
+
+.username-setting-btn:hover:not(:disabled) {
+  background: #ddd;
+}
+
+.username-setting-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dark .username-setting-btn {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.dark .username-setting-btn:hover:not(:disabled) {
+  background: #333;
+}
+
+/* =========================
+   USERNAME SUCCESS
+   ========================= */
+
+.username-success,
+.password-success {
+  font-size: 13px;
+  color: #2e7d32;
+  animation: fadePop 0.4s ease;
+}
+
+.dark .username-success,
+.dark .password-success {
+  color: #7cff9a;
+}
+
+@keyframes fadePop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   PASSWORD SETTINGS
+   ========================= */
+
+.password-setting {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dark .password-setting {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.password-setting-label {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.password-setting-input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.dark .password-setting-input {
+  background: #1c1c1c;
+  color: #fff;
+  border-color: #333;
+}
+
+.password-setting-btn {
+  position: relative;
+    left: 30px;
+  align-self: flex-start;
+  padding: 7px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #c70000;
+}
+
+.dark .password-setting-btn {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.password-setting-btn:hover:not(:disabled) {
+  background: #ddd;
+}
+
+.password-setting-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dark .password-setting-btn {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.dark .password-setting-btn:hover:not(:disabled) {
+  background: #333;
+}
+
+.progress {
+  height: 6px;
+  background: #eee;
+  border-radius: 999px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4a90e2;
+  border-radius: 999px;
+  transition: width 0.3s ease;
 }

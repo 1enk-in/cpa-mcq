@@ -2,10 +2,19 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { getUserStreak } from "../utils/streak";
+
+import { doc, updateDoc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
+import { uploadToCloudinary } from "../utils/uploadToCloudinary";
+import {
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  updatePassword
+} from "firebase/auth";
 
 
-export default function Home({ setScreen, theme, setTheme }) {
+
+export default function Home({ setScreen, screen, theme, setTheme }) {
   function launchConfetti(isActive, event) {
   const emojis = isActive
     ? ["🔥", "🔥", "🥳", "🎉", "👍", "💪"]
@@ -40,8 +49,77 @@ export default function Home({ setScreen, theme, setTheme }) {
 }
 
 
-  const { user, role, logout } = useAuth();
+
+
+
+
+  const { user, logout } = useAuth();
+  
+  const [usernameSuccess, setUsernameSuccess] = useState(false);
+  const [showCredSettings, setShowCredSettings] = useState(false);
+
+
+  const [currentPassword, setCurrentPassword] = useState("");
+const [newPassword, setNewPassword] = useState("");
+const [updatingPassword, setUpdatingPassword] = useState(false);
+const [passwordSuccess, setPasswordSuccess] = useState(false);
+
+  const [username, setUsername] = useState("");
+const [newUsername, setNewUsername] = useState("");
+const [updatingUsername, setUpdatingUsername] = useState(false);
+
+
+  console.log("USER ROLE:", user?.role);
+
   const [streak, setStreak] = useState(null);
+  useEffect(() => {
+  if (!user) return;
+
+  async function loadStreak() {
+    const snap = await getDoc(doc(db, "users", user.uid));
+    if (snap.exists()) {
+      setStreak({
+        currentStreak: snap.data().streak ?? 0
+      });
+    }
+  }
+
+  loadStreak();
+}, [user]);
+
+useEffect(() => {
+  if (!user) return;
+
+  async function loadUsername() {
+    const snap = await getDoc(doc(db, "users", user.uid));
+    if (snap.exists()) {
+      setUsername(snap.data().username || "");
+      setNewUsername(snap.data().username || "");
+    }
+  }
+
+  loadUsername();
+}, [user]);
+
+
+
+useEffect(() => {
+  if (screen !== "home") return;
+  if (!user) return;
+
+  async function refreshStreak() {
+    const snap = await getDoc(doc(db, "users", user.uid));
+    if (snap.exists()) {
+      setStreak({
+        currentStreak: snap.data().streak ?? 0
+      });
+    }
+  }
+
+  refreshStreak();
+}, [screen, user]);
+
+
   const [showProfile, setShowProfile] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
@@ -57,29 +135,50 @@ export default function Home({ setScreen, theme, setTheme }) {
 
   /* LOAD PROFILE IMAGE */
   useEffect(() => {
-    const saved = localStorage.getItem(`profile_image_${user}`);
-    if (saved) setProfileImage(saved);
-  }, [user]);
-
-  useEffect(() => {
   if (!user) return;
 
-  const data = getUserStreak(user);
-  setStreak(data);
+  async function loadProfileImage() {
+    const snap = await getDoc(doc(db, "users", user.uid));
+    if (snap.exists() && snap.data().photoURL) {
+      setProfileImage(snap.data().photoURL);
+    }
+  }
+
+  loadProfileImage();
 }, [user]);
 
 
-  function handleImageChange(e) {
-    const file = e.target.files[0];
-    if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      setProfileImage(reader.result);
-      localStorage.setItem(`profile_image_${user}`, reader.result);
-    };
-    reader.readAsDataURL(file);
+
+
+  async function handleImageChange(e) {
+  const file = e.target.files[0];
+
+  // 🔒 ADD THIS BLOCK HERE
+  if (!file || !user) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("Please select an image file (jpg, png, etc.)");
+    return;
   }
+  // 🔒 END BLOCK
+
+  try {
+    const imageUrl = await uploadToCloudinary(file);
+
+    await updateDoc(doc(db, "users", user.uid), {
+      photoURL: imageUrl
+    });
+
+    setProfileImage(imageUrl);
+  } catch (err) {
+    alert("Image upload failed");
+    console.error(err);
+  }
+}
+
+
+
 
   return (
     <div className="page">
@@ -114,10 +213,11 @@ export default function Home({ setScreen, theme, setTheme }) {
     {profileImage ? (
       <img src={profileImage} alt="profile" />
     ) : (
-      user.charAt(0).toUpperCase()
+      (user.email || "U").charAt(0).toUpperCase()
     )}
   </div>
 </div>
+
 
 
       {/* PROFILE DRAWER */}
@@ -134,24 +234,27 @@ export default function Home({ setScreen, theme, setTheme }) {
               {profileImage ? (
                 <img src={profileImage} alt="profile" />
               ) : (
-                user?.charAt(0).toUpperCase()
+                (user?.email || "U").charAt(0).toUpperCase()
               )}
             </div>
 
-            <div className="profile-username">{user}</div>
+            <div className="profile-username">
+  {username}
+</div>
 
-            {/* 👑 ADMIN DASHBOARD */}
-            {role === "admin" && (
-              <button
-                className="profile-action"
-                onClick={() => {
-                  setShowProfile(false);
-                  setScreen("admin-history");
-                }}
-              >
-                👑 Admin Dashboard
-              </button>
-            )}
+
+            {user.role === "admin" && (
+  <button
+    className="profile-action"
+    onClick={() => {
+      setShowProfile(false);
+      setScreen("admin-history");
+    }}
+  >
+    👑 Admin Dashboard
+  </button>
+)}
+
 
             {!showSettings && (
               <button className="profile-action" onClick={() => setShowSettings(true)}>
@@ -159,39 +262,199 @@ export default function Home({ setScreen, theme, setTheme }) {
               </button>
             )}
 
+
+
+      
+
+
             {showSettings && (
-              <div className="profile-settings">
-                <label className="profile-image-label">
-                  <div className="pencil-icon">
-                    <FontAwesomeIcon icon={faPenToSquare} />
-                  </div>
-                  <input type="file" accept="image/*" onChange={handleImageChange} hidden />
-                </label>
-                <div className="profile-setting-row">
-  <span>Dark Mode</span>
+  <div className="profile-settings">
 
-  <label className="theme-switch">
-    <input
-      type="checkbox"
-      checked={theme === "dark"}
-      onChange={() =>
-        setTheme(theme === "dark" ? "light" : "dark")
-      }
-    />
-    <span className="slider" />
-  </label>
-</div>
+    {/* =====================
+       NORMAL SETTINGS VIEW
+       ===================== */}
+    {!showCredSettings && (
+      <>
+        {/* PROFILE IMAGE */}
+        <label className="profile-image-label">
+          <div className="pencil-icon">
+            <FontAwesomeIcon icon={faPenToSquare} />
+          </div>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            hidden
+          />
+        </label>
 
+        {/* DARK MODE */}
+        <div className="profile-setting-row">
+          <span>Dark Mode</span>
 
-                <button className="profile-action" onClick={() => setShowSettings(false)}>
-                  ← Back
-                </button>
-              </div>
-            )}
+          <label className="theme-switch">
+            <input
+              type="checkbox"
+              checked={theme === "dark"}
+              onChange={() =>
+                setTheme(theme === "dark" ? "light" : "dark")
+              }
+            />
+            <span className="slider" />
+          </label>
+        </div>
 
-            <button className="profile-action logout" onClick={logout}>
+        {/* OPEN CREDENTIALS */}
+        <button
+          className="profile-action"
+          onClick={() => setShowCredSettings(true)}
+        >
+          🔐 Change Username / Password
+        </button>
+
+        {/* BACK TO PROFILE */}
+        <button
+          className="profile-action"
+          onClick={() => setShowSettings(false)}
+        >
+          ← Back
+        </button>
+        <button className="profile-action logout" onClick={logout}>
               🚪 Logout
             </button>
+      </>
+    )}
+
+    {/* =====================
+       CREDENTIALS VIEW
+       ===================== */}
+    {showCredSettings && (
+      <div className="credential-settings">
+
+        {/* USERNAME */}
+        <div className="username-setting">
+          <div className="username-setting-label">
+            Username
+          </div>
+
+          <input
+            className="username-setting-input"
+            type="text"
+            value={newUsername}
+            onChange={(e) => setNewUsername(e.target.value)}
+            placeholder="New username"
+          />
+
+          <button
+            className="username-setting-btn"
+            disabled={
+              updatingUsername ||
+              newUsername.trim() === username
+            }
+            onClick={async () => {
+              try {
+                setUpdatingUsername(true);
+
+                await updateDoc(doc(db, "users", user.uid), {
+                  username: newUsername.trim(),
+                });
+
+                setUsername(newUsername.trim());
+                setUsernameSuccess(true);
+                setTimeout(() => setUsernameSuccess(false), 1200);
+              } finally {
+                setUpdatingUsername(false);
+              }
+            }}
+          >
+            {updatingUsername ? "Updating..." : "Update Username"}
+          </button>
+
+          {usernameSuccess && (
+            <div className="username-success">
+              ✔ Username updated
+            </div>
+          )}
+        </div>
+
+        {/* PASSWORD */}
+        <div className="password-setting">
+          <div className="password-setting-label">
+            Change Password
+          </div>
+
+          <input
+            className="password-setting-input"
+            type="password"
+            placeholder="Current password"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+          />
+
+          <input
+            className="password-setting-input"
+            type="password"
+            placeholder="New password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+          />
+
+          <button
+            className="password-setting-btn"
+            disabled={
+              updatingPassword ||
+              !currentPassword ||
+              !newPassword
+            }
+            onClick={async () => {
+              try {
+                setUpdatingPassword(true);
+
+                const credential =
+                  EmailAuthProvider.credential(
+                    user.email,
+                    currentPassword
+                  );
+
+                await reauthenticateWithCredential(
+                  user,
+                  credential
+                );
+                await updatePassword(user, newPassword);
+
+                setPasswordSuccess(true);
+                setCurrentPassword("");
+                setNewPassword("");
+                setTimeout(() => setPasswordSuccess(false), 1500);
+              } catch (err) {
+                alert(err.message);
+              } finally {
+                setUpdatingPassword(false);
+              }
+            }}
+          >
+            {updatingPassword ? "Updating..." : "Update Password"}
+          </button>
+
+          {passwordSuccess && (
+            <div className="password-success">
+              ✔ Password updated
+            </div>
+          )}
+        </div>
+
+        {/* BACK TO SETTINGS */}
+        <button
+          className="profile-action"
+          onClick={() => setShowCredSettings(false)}
+        >
+          ← Back
+        </button>
+      </div>
+    )}
+  </div>
+)}
+            
           </div>
         </>
       )}
@@ -213,3 +476,4 @@ export default function Home({ setScreen, theme, setTheme }) {
     </div>
   );
 }
+

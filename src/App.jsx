@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Profile from "./screens/Profile";
+
 
 import Home from "./components/Home";
 import AdminHistory from "./components/AdminHistory";
@@ -13,6 +15,7 @@ import Summary from "./components/Summary";
 import History from "./components/History";
 import Review from "./components/Review";
 
+
 import { useAuth } from "./context/AuthContext";
 import Login from "./screens/Login";
 
@@ -22,14 +25,13 @@ export default function App() {
   /* ===============================
      🔑 AUTH
      =============================== */
-  const {
-    user,
-    role,                 // ✅ FIXED
-    logout,
-    needsReauth,
-    reauthAttempts,
-    reauthenticate
-  } = useAuth();
+  const { user, loading, logout } = useAuth();
+  console.log("AUTH USER:", user);
+console.log("ROLE:", user?.role);
+
+  console.log("AUTH STATE:", { user, loading });
+
+
 
   const [screen, setScreen] = useState("home");
 
@@ -41,10 +43,24 @@ export default function App() {
    👑 FORCE ADMIN TO DASHBOARD
 ================================ */
 useEffect(() => {
-  if (role === "admin") {
+  if (user?.role === "admin") {
     setScreen("admin-history");
   }
-}, [role]);
+}, [user]);
+
+useEffect(() => {
+  const saved = localStorage.getItem("cpa_active_mcq");
+  if (!saved) return;
+
+  const { screen, module } = JSON.parse(saved);
+
+  if (screen === "mcq" && module) {
+    setActiveModule(module);
+    setScreen("mcq");
+  }
+}, []);
+
+
 
 useEffect(() => {
   document.body.classList.toggle("dark", theme === "dark");
@@ -56,38 +72,36 @@ useEffect(() => {
   const [activeSubject, setActiveSubject] = useState(null);
   const [sessionData, setSessionData] = useState(null);
   const [reviewSession, setReviewSession] = useState(null);
+  const [startIndex, setStartIndex] = useState(0);
+
 
   /* ===============================
      🔐 REAUTH MODAL STATE
      =============================== */
-  const [reauthPassword, setReauthPassword] = useState("");
-  const [reauthError, setReauthError] = useState("");
+  /* const [reauthPassword, setReauthPassword] = useState("");
+  const [reauthError, setReauthError] = useState(""); */
 
   /* ===============================
      🔁 RESTORE ACTIVE MCQ SESSION
      =============================== */
-  useEffect(() => {
-    const session = localStorage.getItem(SESSION_KEY);
-    if (!session) return;
-
-    const parsed = JSON.parse(session);
-    if (parsed.module) {
-      setActiveModule(parsed.module);
-      setScreen("mcq");
-    }
-  }, []);
+  
 
   /* ===============================
      🔐 LOGIN GATE
      =============================== */
-  if (!user) {
-    return <Login setScreen={setScreen} />;
-  }
+  if (loading) {
+  return null;
+}
+
+if (!user) {
+  return <Login />;
+}
+
 
   /* ===============================
      🔐 REAUTH HANDLER
      =============================== */
-  function handleReauthSubmit(e) {
+  /* function handleReauthSubmit(e) {
     e.preventDefault();
 
     const success = reauthenticate(reauthPassword);
@@ -100,13 +114,13 @@ useEffect(() => {
       setReauthPassword("");
       setReauthError("");
     }
-  }
+  } */
 
   return (
     <>
       <>
   {/* 🔐 REAUTH MODAL */}
-  {needsReauth && (
+  {/* {needsReauth && (
     <div className="modal-overlay">
       <div className="modal-box danger">
         <h3>Are you still alive?</h3>
@@ -131,21 +145,32 @@ useEffect(() => {
         </p>
       </div>
     </div>
-  )}
+  )} */}
 
   {/* 👑 ADMIN — HARD LOCK */}
-  {role === "admin" ? (
-    <AdminHistory setScreen={setScreen} />
-  ) : (
+  {user.role === "admin" ? (
+  <AdminHistory setScreen={setScreen} />
+) : (
+
     <>
       {/* HOME */}
       {screen === "home" && (
   <Home
-    setScreen={setScreen}
-    theme={theme}
-    setTheme={setTheme}
-  />
+  setScreen={setScreen}
+  screen={screen}
+  theme={theme}
+  setTheme={setTheme}
+/>
+
 )}
+{/* PROFILE */}
+{screen === "profile" && (
+  <Profile setScreen={setScreen} />
+)}
+
+
+
+
 
 
       {/* MODULE SCREENS */}
@@ -191,6 +216,7 @@ useEffect(() => {
         />
       )}
 
+
       {/* SUMMARY */}
       {screen === "summary" && sessionData && (
         <Summary sessionData={sessionData} setScreen={setScreen} />
@@ -198,13 +224,13 @@ useEffect(() => {
 
       {/* HISTORY */}
       {screen === "history" && (
-        <History
-          setScreen={setScreen}
-          setReviewSession={setReviewSession}
-          activeSubject={activeSubject}
-          user={user}
-        />
-      )}
+  <History
+    setScreen={setScreen}
+    setReviewSession={setReviewSession}
+    activeSubject={activeSubject}
+  />
+)}
+
 
       {/* REVIEW */}
       {screen === "review" && reviewSession && (

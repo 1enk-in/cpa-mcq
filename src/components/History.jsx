@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../firebase";
+import { useAuth } from "../context/AuthContext";
 
 const SUBJECT_PREFIX = {
   reg: "M",
@@ -9,51 +12,60 @@ const SUBJECT_PREFIX = {
   tcp: "T"
 };
 
+
 export default function History({
   setScreen,
   setReviewSession,
-  activeSubject,
-  user
+  activeSubject
 }) {
-
-  const HISTORY_KEY = `cpa_history_${user}`;
-
+  const { user } = useAuth();
 
   const [history, setHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  /* ===============================
+     📥 LOAD HISTORY FROM FIRESTORE
+     =============================== */
   useEffect(() => {
-    const raw = JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
-    setHistory(raw);
-  }, []);
+    if (!user) return;
 
-  const prefix = SUBJECT_PREFIX[activeSubject];
+    async function loadHistory() {
+      try {
+        const ref = collection(db, "users", user.uid, "mcqHistory");
+        const q = query(ref, orderBy("completedAt", "desc"));
+        const snap = await getDocs(q);
 
-  const filteredHistory = prefix
-    ? history.filter(s => s.module?.startsWith(prefix))
-    : history;
+        const rows = snap.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
 
-  /* 🧹 CLEAR HANDLER */
-  function clearHistory() {
-    const msg = prefix
-      ? `Clear all ${activeSubject.toUpperCase()} history?`
-      : "Clear ALL history?";
+        setHistory(rows);
+      } catch (err) {
+        console.error("Failed to load history:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
 
-    if (!window.confirm(msg)) return;
+    loadHistory();
+  }, [user]);
 
-    const updated = prefix
-      ? history.filter(s => !s.module?.startsWith(prefix))
-      : [];
+  /* ===============================
+     🎯 SUBJECT FILTER (SAFE)
+     =============================== */
+  const filteredHistory = activeSubject
+  ? history.filter(h =>
+      h.module?.startsWith(SUBJECT_PREFIX[activeSubject])
+    )
+  : history;
 
-    setHistory(updated);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(updated));
-  }
 
-  function deleteSession(index) {
-    if (!window.confirm("Delete this session?")) return;
-
-    const updated = history.filter((_, i) => i !== index);
-    setHistory(updated);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(updated));
+  /* ===============================
+     ⏳ LOADING STATE
+     =============================== */
+  if (loading) {
+    return <div className="page">Loading history…</div>;
   }
 
   return (
@@ -68,14 +80,6 @@ export default function History({
         >
           ← Back
         </button>
-
-        <button
-          className="clear-btn"
-          onClick={clearHistory}
-          disabled={filteredHistory.length === 0}
-        >
-          🧹 Clear All
-        </button>
       </div>
 
       <h2 className="page-title">
@@ -89,49 +93,47 @@ export default function History({
         </p>
       ) : (
         <div className="history-list">
-          {filteredHistory.map((s, i) => (
-            <div key={i} className="history-card">
+          {filteredHistory.map(item => (
+            <div key={item.id} className="history-card">
               <div className="history-score">
-                {s.correct}/{s.total}
+                {item.correct}/{item.total}
               </div>
 
               <div
                 className="history-info"
                 onClick={() => {
-                  setReviewSession(s);
+                  setReviewSession({
+                    ...item,
+                    wrongIndexes: item.wrongIndexes ?? []
+                  });
                   setScreen("review");
                 }}
               >
                 <div className="history-percent">
                   <span>
-                    {s.module} • {s.percent}% Correct
+                    {item.module?.toUpperCase()} • {item.percent}% Correct
                   </span>
 
-                  {s.isRetry === true && (
+                  {item.isRetry === true && (
                     <span className="retry-badge">Retry</span>
                   )}
                 </div>
 
                 <div className="history-stats">
-                  Attempted: {s.attempted} | Correct: {s.correct} | Wrong: {s.wrong}
+                  Attempted: {item.attempted ?? item.total} |{" "}
+                  Correct: {item.correct} |{" "}
+                  Wrong: {item.wrong}
                 </div>
 
                 <div className="history-date">
-                  {new Date(s.completedAt).toLocaleDateString("en-GB")}{" "}
-                  {new Date(s.completedAt).toLocaleTimeString("en-US", {
+                  {item.completedAt?.toDate().toLocaleDateString("en-GB")}{" "}
+                  {item.completedAt?.toDate().toLocaleTimeString("en-US", {
                     hour: "numeric",
                     minute: "2-digit",
                     hour12: true
                   })}
                 </div>
               </div>
-
-              <button
-                className="delete-btn"
-                onClick={() => deleteSession(i)}
-              >
-                ❌
-              </button>
             </div>
           ))}
         </div>
