@@ -6,6 +6,12 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { uploadToCloudinary } from "../utils/uploadToCloudinary";
+import { getSessionStreakStatus } from "../utils/streak";
+
+
+
+
+
 import {
   EmailAuthProvider,
   reauthenticateWithCredential,
@@ -67,57 +73,54 @@ const [passwordSuccess, setPasswordSuccess] = useState(false);
   const [username, setUsername] = useState("");
 const [newUsername, setNewUsername] = useState("");
 const [updatingUsername, setUpdatingUsername] = useState(false);
+const [showSearch, setShowSearch] = useState(false);
+const [searchQuery, setSearchQuery] = useState("");
 
 
   console.log("USER ROLE:", user?.role);
 
-  const [streak, setStreak] = useState(null);
-  useEffect(() => {
+  const [streak, setStreak] = useState({
+  streak: 0,
+  status: "inactive",
+  message: ""
+});
+
+// 🔁 helper to sync streak from localStorage
+function refreshStreak() {
   if (!user) return;
-
-  async function loadStreak() {
-    const snap = await getDoc(doc(db, "users", user.uid));
-    if (snap.exists()) {
-      setStreak({
-        currentStreak: snap.data().streak ?? 0
-      });
-    }
-  }
-
-  loadStreak();
-}, [user]);
-
-useEffect(() => {
-  if (!user) return;
-
-  async function loadUsername() {
-    const snap = await getDoc(doc(db, "users", user.uid));
-    if (snap.exists()) {
-      setUsername(snap.data().username || "");
-      setNewUsername(snap.data().username || "");
-    }
-  }
-
-  loadUsername();
-}, [user]);
+  const data = getSessionStreakStatus(user.uid);
+  setStreak(data);
+}
 
 
 
 useEffect(() => {
-  if (screen !== "home") return;
-  if (!user) return;
+  if (!user || screen !== "home") return;
 
-  async function refreshStreak() {
-    const snap = await getDoc(doc(db, "users", user.uid));
-    if (snap.exists()) {
-      setStreak({
-        currentStreak: snap.data().streak ?? 0
-      });
-    }
-  }
-
+  // initial load
   refreshStreak();
-}, [screen, user]);
+
+  // refresh when tab becomes active again
+  const onFocus = () => refreshStreak();
+  window.addEventListener("focus", onFocus);
+
+  return () => {
+    window.removeEventListener("focus", onFocus);
+  };
+}, [user, screen]);
+
+
+
+
+
+useEffect(() => {
+  if (!user || screen !== "home") return;
+  refreshStreak();
+}, [user, screen]);
+
+
+
+
 
 
   const [showProfile, setShowProfile] = useState(false);
@@ -185,22 +188,65 @@ useEffect(() => {
       {/* AVATAR */}
       {/* 🧊 GLASS TOP BAR */}
 <div className="top-glass-bar">
-  <div className="top-title">CPA PRACTICE</div>
-
-{streak && (
-  <div
-  className={`streak-badge ${
-    streak.currentStreak === 0 ? "inactive" : "active"
-  }`}
-  onClick={(e) =>
-  launchConfetti(streak.currentStreak > 0, e)
+  <div className="top-title-wrap">
+  {!showSearch ? (
+    <div
+      className="top-title"
+      onClick={() => setShowSearch(true)}
+    >
+      CPA PRACTICE
+    </div>
+  ) : (
+    <input
+      className="top-search"
+      autoFocus
+      placeholder="Search anything…"
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && searchQuery.trim()) {
+  window.open(
+    `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`,
+    "_blank",
+    "noopener,noreferrer"
+  );
 }
->
-    {streak.currentStreak === 0
-      ? "💔"
-      : `🔥 ${streak.currentStreak}`}
+
+        if (e.key === "Escape") {
+          setShowSearch(false);
+          setSearchQuery("");
+        }
+      }}
+      onBlur={() => {
+        setShowSearch(false);
+        setSearchQuery("");
+      }}
+    />
+  )}
+</div>
+
+
+<div className="streak-wrap">
+  <div
+    className={`streak-badge ${
+      streak.status === "active" ? "active" : "inactive"
+    }`}
+    onClick={(e) =>
+      launchConfetti(streak.status === "active", e)
+    }
+  >
+    {streak.streak === 0 ? "💔 0" : `🔥 ${streak.streak}`}
   </div>
-)}
+
+  {streak.message && (
+    <div className="streak-message">
+      {streak.message}
+    </div>
+  )}
+</div>
+
+
+
 
 
   <div
@@ -243,17 +289,7 @@ useEffect(() => {
 </div>
 
 
-            {user.role === "admin" && (
-  <button
-    className="profile-action"
-    onClick={() => {
-      setShowProfile(false);
-      setScreen("admin-history");
-    }}
-  >
-    👑 Admin Dashboard
-  </button>
-)}
+            
 
 
             {!showSettings && (
@@ -261,6 +297,7 @@ useEffect(() => {
                 ⚙️ Settings
               </button>
             )}
+
 
 
 

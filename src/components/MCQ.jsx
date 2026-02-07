@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { updateUserStreak } from "../utils/streak";
-
-
+import { updateSessionStreak } from "../utils/streak";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 
 import regM1 from "../data/reg/reg_m1.json";
@@ -96,6 +96,7 @@ export default function MCQ({
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [confirmType, setConfirmType] = useState(null);
+  const [sessionActive, setSessionActive] = useState(true);
   const [error, setError] = useState("");
   const isRetry = !!retryIndexes;
 const isExam = !retryIndexes;
@@ -107,16 +108,22 @@ const isExam = !retryIndexes;
      =============================== */
 
   useEffect(() => {
-    if (!user || !module) return;
+  if (!user || !module || !sessionActive) return;
 
-    localStorage.setItem(
-      "cpa_active_mcq",
-      JSON.stringify({
-        screen: "mcq",
-        module
-      })
-    );
-  }, [user, module]);
+  localStorage.setItem(
+    "cpa_active_mcq",
+    JSON.stringify({
+      screen: "mcq",
+      module
+    })
+  );
+
+  return () => {
+    // cleanup on unmount
+    localStorage.removeItem("cpa_active_mcq");
+  };
+}, [user, module, sessionActive]);
+
 
   /* ===============================
      🔑 NOW SAFETY GUARDS
@@ -255,7 +262,7 @@ if (!questions.length || !questions[index]) {
   /* ===============================
      🔹 GENERATE REPORT + SAVE HISTORY
      =============================== */
-  function generateReport() {
+  async function generateReport() {
   const wrongIndexes = [];
   let correct = 0;
 
@@ -268,7 +275,6 @@ if (!questions.length || !questions[index]) {
     }
   });
 
-  // 🔥 map answers to BASE index
   const answersByBaseIndex = {};
   answers.forEach((ans, i) => {
     if (ans !== null) {
@@ -290,15 +296,19 @@ if (!questions.length || !questions[index]) {
     answers: answersByBaseIndex
   };
 
+  localStorage.removeItem("cpa_active_mcq");
   localStorage.removeItem(SESSION_KEY);
 
-if (isExam || isRetry) {
-  updateUserStreak(user);
+  if (isExam || isRetry) {
+  updateSessionStreak(user.uid);
+
 }
+
 
   setSessionData(report);
   setScreen("summary");
 }
+
 
 
   /* ===============================
@@ -325,15 +335,14 @@ if (isExam || isRetry) {
 
   function confirmAction() {
   if (confirmType === "exit") {
-    // cleanup
-    localStorage.removeItem("cpa_active_mcq");
-    localStorage.removeItem(SESSION_KEY);
-    setScreen(activeSubject || "home");
+  setSessionActive(false);
+  localStorage.removeItem("cpa_active_mcq");
+  localStorage.removeItem(SESSION_KEY);
+  setScreen(activeSubject || "home");
+  setConfirmType(null);
+  return;
+}
 
-
-    setConfirmType(null);
-    return;
-  }
 
   if (confirmType === "end") {
     generateReport();

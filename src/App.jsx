@@ -3,7 +3,6 @@ import Profile from "./screens/Profile";
 
 
 import Home from "./components/Home";
-import AdminHistory from "./components/AdminHistory";
 import RegModules from "./components/RegModules";
 import AudModules from "./components/AudModules";
 import FarModules from "./components/FarModules";
@@ -14,6 +13,7 @@ import MCQ from "./components/MCQ";
 import Summary from "./components/Summary";
 import History from "./components/History";
 import Review from "./components/Review";
+import Loader from "./components/Loader";
 
 
 import { useAuth } from "./context/AuthContext";
@@ -22,9 +22,6 @@ import Login from "./screens/Login";
 const SESSION_KEY = "cpa_active_session";
 
 export default function App() {
-  /* ===============================
-     🔑 AUTH
-     =============================== */
   const { user, loading, logout } = useAuth();
   console.log("AUTH USER:", user);
 console.log("ROLE:", user?.role);
@@ -39,26 +36,38 @@ console.log("ROLE:", user?.role);
   localStorage.getItem("theme") || "light"
 );
 
-  /* ===============================
-   👑 FORCE ADMIN TO DASHBOARD
-================================ */
+
+
 useEffect(() => {
-  if (user?.role === "admin") {
-    setScreen("admin-history");
+  if (!user) return;
+
+  const SESSION_KEY = `cpa_session_${user.uid}`;
+  const savedSession = localStorage.getItem(SESSION_KEY);
+
+  if (!savedSession) return; // ✅ nothing to restore
+
+  try {
+    const parsed = JSON.parse(savedSession);
+
+    const hasProgress =
+      Array.isArray(parsed.answers) &&
+      parsed.answers.some(a => a !== null);
+
+    if (parsed.module && hasProgress) {
+      setActiveModule(parsed.module);
+      setScreen("mcq");
+    } else {
+      // stale or completed session → cleanup
+      localStorage.removeItem(SESSION_KEY);
+      localStorage.removeItem("cpa_active_mcq");
+    }
+  } catch {
+    localStorage.removeItem(SESSION_KEY);
+    localStorage.removeItem("cpa_active_mcq");
   }
 }, [user]);
 
-useEffect(() => {
-  const saved = localStorage.getItem("cpa_active_mcq");
-  if (!saved) return;
 
-  const { screen, module } = JSON.parse(saved);
-
-  if (screen === "mcq" && module) {
-    setActiveModule(module);
-    setScreen("mcq");
-  }
-}, []);
 
 
 
@@ -67,100 +76,67 @@ useEffect(() => {
   localStorage.setItem("theme", theme);
 }, [theme]);
 
+useEffect(() => {
+  if (loading) return;
+
+  // Decide splash BEFORE rendering app
+  if (user && user !== prevUser) {
+    setShowSplash(true);
+    setAppReady(false);
+
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+      setAppReady(true);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }
+
+  // No splash needed
+  setShowSplash(false);
+  setAppReady(true);
+  setPrevUser(user);
+}, [loading, user]);
 
   const [activeModule, setActiveModule] = useState(null);
   const [activeSubject, setActiveSubject] = useState(null);
   const [sessionData, setSessionData] = useState(null);
   const [reviewSession, setReviewSession] = useState(null);
   const [startIndex, setStartIndex] = useState(0);
+  const [showSplash, setShowSplash] = useState(true);
+const [appReady, setAppReady] = useState(false);
+const [prevUser, setPrevUser] = useState(null);
 
-
-  /* ===============================
-     🔐 REAUTH MODAL STATE
-     =============================== */
-  /* const [reauthPassword, setReauthPassword] = useState("");
-  const [reauthError, setReauthError] = useState(""); */
-
-  /* ===============================
-     🔁 RESTORE ACTIVE MCQ SESSION
-     =============================== */
   
 
-  /* ===============================
-     🔐 LOGIN GATE
-     =============================== */
-  if (loading) {
-  return null;
-}
+// 1️⃣ Wait for auth
+if (loading) return null;
 
-if (!user) {
-  return <Login />;
-}
+// 2️⃣ Show splash (blocks app render completely)
+if (showSplash) return <Loader />;
+
+// 3️⃣ App not ready yet (extra safety)
+if (!appReady) return null;
+
+// 4️⃣ Not logged in
+if (!user) return <Login />;
 
 
-  /* ===============================
-     🔐 REAUTH HANDLER
-     =============================== */
-  /* function handleReauthSubmit(e) {
-    e.preventDefault();
 
-    const success = reauthenticate(reauthPassword);
-
-    if (!success) {
-      setReauthError(
-        `Wrong password. ${Math.max(0, 3 - (reauthAttempts + 1))} attempts left`
-      );
-    } else {
-      setReauthPassword("");
-      setReauthError("");
-    }
-  } */
 
   return (
-    <>
-      <>
-  {/* 🔐 REAUTH MODAL */}
-  {/* {needsReauth && (
-    <div className="modal-overlay">
-      <div className="modal-box danger">
-        <h3>Are you still alive?</h3>
-        <p>Please re-enter your password.</p>
-
-        <form onSubmit={handleReauthSubmit}>
-          <input
-            type="password"
-            placeholder="Password"
-            value={reauthPassword}
-            onChange={e => setReauthPassword(e.target.value)}
-            autoFocus
-          />
-
-          {reauthError && <p className="error">{reauthError}</p>}
-
-          <button type="submit">Continue</button>
-        </form>
-
-        <p className="attempts">
-          Attempts left: {3 - reauthAttempts}
-        </p>
-      </div>
-    </div>
-  )} */}
-
-  {/* 👑 ADMIN — HARD LOCK */}
-  {user.role === "admin" ? (
-  <AdminHistory setScreen={setScreen} />
-) : (
-
     <>
       {/* HOME */}
       {screen === "home" && (
   <Home
+  key="home" 
   setScreen={setScreen}
   screen={screen}
   theme={theme}
   setTheme={setTheme}
 />
+
+
 
 )}
 {/* PROFILE */}
@@ -236,9 +212,16 @@ if (!user) {
       {screen === "review" && reviewSession && (
         <Review reviewSession={reviewSession} setScreen={setScreen} />
       )}
-    </>
-  )}
-</>
+
+      {screen !== "mcq" && screen !== "retry" && (
+  <footer className="app-footer">
+    <span>
+      © {new Date().getFullYear()} · Built by <strong>Naved</strong>
+    </span>
+  </footer>
+)}
+
+
     </>
   );
 }

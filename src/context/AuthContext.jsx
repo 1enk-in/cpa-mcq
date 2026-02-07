@@ -6,7 +6,6 @@ import { auth, db } from "../firebase";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  // ✅ HOOKS MUST BE HERE (inside component)
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,24 +22,27 @@ export function AuthProvider({ children }) {
       const userRef = doc(db, "users", firebaseUser.uid);
       const snap = await getDoc(userRef);
 
-      // 🔥 First login → create Firestore user doc
+      // ✅ First login → create Firestore user doc
+      // 🚫 NO streak logic here (very important)
       if (!snap.exists()) {
-        await setDoc(userRef, {
-          uid: firebaseUser.uid,
-          email: firebaseUser.email,
-          username: firebaseUser.email?.split("@")[0] ?? "user",
-          role: "user",
-          streak: 0,
-          lastActiveDate: null,
-          photoURL: null,
-          createdAt: serverTimestamp()
-        });
+        await setDoc(
+          userRef,
+          {
+            uid: firebaseUser.uid,
+            email: firebaseUser.email,
+            username: firebaseUser.email?.split("@")[0] ?? "user",
+            role: "user",
+            photoURL: null,
+            createdAt: serverTimestamp()
+          },
+          { merge: true } // 🔒 safety: never overwrite existing fields
+        );
       }
 
       const userData = (await getDoc(userRef)).data();
 
-      setUser(firebaseUser);     // Firebase auth user
-      setRole(userData.role);   // App role
+      setUser(firebaseUser);      // Firebase auth user
+      setRole(userData?.role);   // App role
       setLoading(false);
     });
 
@@ -48,6 +50,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   async function logout() {
+    localStorage.removeItem("cpa_active_mcq");
     await signOut(auth);
     setUser(null);
     setRole(null);
