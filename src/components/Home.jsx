@@ -7,6 +7,9 @@ import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { uploadToCloudinary } from "../utils/uploadToCloudinary";
 import { getSessionStreakStatus } from "../utils/streak";
+import Cropper from "react-easy-crop";
+import getCroppedImg from "../utils/cropImage";
+
 
 
 
@@ -72,6 +75,32 @@ const [passwordSuccess, setPasswordSuccess] = useState(false);
 
   const [username, setUsername] = useState("");
 const [newUsername, setNewUsername] = useState("");
+// 🔁 Load username from Firestore (single source of truth)
+useEffect(() => {
+  if (!user) return;
+
+  let alive = true;
+
+  const loadUsername = async () => {
+    try {
+      const snap = await getDoc(doc(db, "users", user.uid));
+      if (snap.exists() && alive) {
+        const name = snap.data().username || "";
+        setUsername(name);
+        setNewUsername(name);
+      }
+    } catch (err) {
+      console.error("Failed to load username", err);
+    }
+  };
+
+  loadUsername();
+
+  return () => {
+    alive = false;
+  };
+}, [user]);
+
 const [updatingUsername, setUpdatingUsername] = useState(false);
 const [showSearch, setShowSearch] = useState(false);
 const [searchQuery, setSearchQuery] = useState("");
@@ -85,38 +114,34 @@ const [searchQuery, setSearchQuery] = useState("");
   message: ""
 });
 
-// 🔁 helper to sync streak from localStorage
-function refreshStreak() {
-  if (!user) return;
-  const data = getSessionStreakStatus(user.uid);
-  setStreak(data);
-}
-
 
 
 useEffect(() => {
   if (!user || screen !== "home") return;
 
-  // initial load
-  refreshStreak();
+  let alive = true;
 
-  // refresh when tab becomes active again
-  const onFocus = () => refreshStreak();
-  window.addEventListener("focus", onFocus);
+  const syncStreak = async () => {
+    const data = await getSessionStreakStatus(user.uid);
+    if (alive) setStreak(data);
+  };
+
+  // 1️⃣ Initial load
+  syncStreak();
+
+  // 2️⃣ When MCQ updates streak
+  window.addEventListener("streak-updated", syncStreak);
+
+  // 3️⃣ When tab regains focus (next day / background)
+  window.addEventListener("focus", syncStreak);
 
   return () => {
-    window.removeEventListener("focus", onFocus);
+    alive = false;
+    window.removeEventListener("streak-updated", syncStreak);
+    window.removeEventListener("focus", syncStreak);
   };
 }, [user, screen]);
 
-
-
-
-
-useEffect(() => {
-  if (!user || screen !== "home") return;
-  refreshStreak();
-}, [user, screen]);
 
 
 
@@ -126,6 +151,13 @@ useEffect(() => {
   const [showProfile, setShowProfile] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
+  // 🖼️ Image crop states
+const [cropSrc, setCropSrc] = useState(null);
+const [crop, setCrop] = useState({ x: 0, y: 0 });
+const [zoom, setZoom] = useState(1);
+const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+const [showCrop, setShowCrop] = useState(false);
+
 
   const subjects = [
     { name: "REG", color: "#784f6e" },
@@ -156,29 +188,21 @@ useEffect(() => {
 
   async function handleImageChange(e) {
   const file = e.target.files[0];
-
-  // 🔒 ADD THIS BLOCK HERE
   if (!file || !user) return;
 
   if (!file.type.startsWith("image/")) {
-    alert("Please select an image file (jpg, png, etc.)");
+    alert("Please select an image file");
     return;
   }
-  // 🔒 END BLOCK
 
-  try {
-    const imageUrl = await uploadToCloudinary(file);
-
-    await updateDoc(doc(db, "users", user.uid), {
-      photoURL: imageUrl
-    });
-
-    setProfileImage(imageUrl);
-  } catch (err) {
-    alert("Image upload failed");
-    console.error(err);
-  }
+  const reader = new FileReader();
+  reader.onload = () => {
+    setCropSrc(reader.result);   // base64 image
+    setShowCrop(true);          // open crop modal
+  };
+  reader.readAsDataURL(file);
 }
+
 
 
 
@@ -276,13 +300,31 @@ useEffect(() => {
               ✕
             </button>
 
-            <div className="profile-big-avatar">
-              {profileImage ? (
-                <img src={profileImage} alt="profile" />
-              ) : (
-                (user?.email || "U").charAt(0).toUpperCase()
-              )}
-            </div>
+            <div className="avatar-wrapper">
+  {profileImage ? (
+    <img src={profileImage} alt="profile" className="avatar-img" />
+  ) : (
+    <div className="avatar-fallback">
+      {(user?.email || "U").charAt(0).toUpperCase()}
+    </div>
+  )}
+
+  {showSettings && !showCredSettings && (
+    <label className="profile-image-label">
+      <div className="pencil-icon">
+        <FontAwesomeIcon icon={faPenToSquare} />
+      </div>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        hidden
+      />
+    </label>
+  )}
+</div>
+
+
 
             <div className="profile-username">
   {username}
@@ -313,17 +355,7 @@ useEffect(() => {
     {!showCredSettings && (
       <>
         {/* PROFILE IMAGE */}
-        <label className="profile-image-label">
-          <div className="pencil-icon">
-            <FontAwesomeIcon icon={faPenToSquare} />
-          </div>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            hidden
-          />
-        </label>
+        
 
         {/* DARK MODE */}
         <div className="profile-setting-row">
@@ -510,6 +542,74 @@ useEffect(() => {
           </div>
         ))}
       </div>
+
+
+      {showCrop && (
+  <div className="crop-backdrop">
+    <div className="crop-modal">
+      <Cropper
+        image={cropSrc}
+        crop={crop}
+        zoom={zoom}
+        aspect={1}
+        cropShape="round"
+        onCropChange={setCrop}
+        onZoomChange={setZoom}
+        onCropComplete={(_, pixels) =>
+          setCroppedAreaPixels(pixels)
+        }
+      />
+
+      <div className="crop-controls">
+        <input
+          type="range"
+          min={1}
+          max={3}
+          step={0.1}
+          value={zoom}
+          onChange={(e) => setZoom(e.target.value)}
+        />
+
+        <button
+          onClick={async () => {
+            try {
+              const croppedFile = await getCroppedImg(
+                cropSrc,
+                croppedAreaPixels
+              );
+
+              const imageUrl =
+                await uploadToCloudinary(croppedFile);
+
+              await updateDoc(
+                doc(db, "users", user.uid),
+                { photoURL: imageUrl }
+              );
+
+              setProfileImage(imageUrl);
+              setShowCrop(false);
+            } catch (err) {
+              console.error(err);
+              alert("Image crop failed");
+            }
+          }}
+        >
+          Save
+        </button>
+
+        <button onClick={() => setShowCrop(false)}>
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
+
+
+
     </div>
   );
 }

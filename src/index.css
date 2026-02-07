@@ -1304,31 +1304,87 @@ body.dark .retry-badge {
   cursor: pointer;
 }
 
-/* Pencil icon */
+/* 🔒 Avatar anchor */
+.avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image fills exactly */
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Letter fallback behaves EXACTLY like image */
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 42px;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+}
+
+/* 🖊️ Pencil — fixed, smooth, stable */
 .pencil-icon {
   position: absolute;
-    bottom: 45px;
-    left: 73px;
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background: #0000008c;
-    color: white;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  bottom: -60px;
+    right: 0px;
+    width: 120px;
+    height: 120px;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.22),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .profile-image-label:hover .pencil-icon {
-  background: #1e40af;
+  background: rgba(30, 64, 175, 0.75);
+  transform: scale(1.05);
 }
 
 .pencil-icon svg {
-  width: 20px;
-  height:20px;
+  width: 16px;
+  height: 16px;
 }
+
+
+
+
+.profile-image-label {
+  position: relative; /* 🔑 anchor point */
+  display: inline-block;
+}
+
 
 
 .history-card {
@@ -2052,7 +2108,7 @@ body.dark .login-form input:focus {
 }
 
 .dark .username-setting-btn {
-  background: #2a2a2a;
+  background: #2563eb;
   color: #fff;
 }
 
@@ -2137,7 +2193,7 @@ body.dark .login-form input:focus {
 }
 
 .dark .password-setting-btn {
-  background: #2a2a2a;
+  background: #2563eb;
   color: #fff;
 }
 
@@ -2148,11 +2204,6 @@ body.dark .login-form input:focus {
 .password-setting-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.dark .password-setting-btn {
-  background: #2a2a2a;
-  color: #fff;
 }
 
 .dark .password-setting-btn:hover:not(:disabled) {
@@ -2560,3 +2611,38 @@ body.dark .top-search::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.crop-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crop-modal {
+  width: 320px;
+  height: 380px;
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
+}
+
+.crop-controls {
+  position: relative;
+    top: 370px;
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.crop-controls button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

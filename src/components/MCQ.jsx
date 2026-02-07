@@ -298,6 +298,7 @@ if (!questions.length || !questions[index]) {
 
   localStorage.removeItem("cpa_active_mcq");
   localStorage.removeItem(SESSION_KEY);
+  await updateSessionStreak(user.uid);
 
   if (isExam || isRetry) {
   updateSessionStreak(user.uid);

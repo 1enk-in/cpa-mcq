@@ -1,6 +1,8 @@
-// ===============================
-// 📅 DATE HELPERS (LOCAL SAFE)
-// ===============================
+import { supabase } from "../supabaseClient";
+
+/* ===============================
+   📅 DATE HELPERS (LOCAL SAFE)
+   =============================== */
 function getLocalDateString(date = new Date()) {
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, "0");
@@ -14,63 +16,73 @@ function getYesterday() {
   return getLocalDateString(d);
 }
 
-// ===============================
-// 🔥 UPDATE STREAK (CALL FROM MCQ)
-// ===============================
-export function updateSessionStreak(userId) {
+/* ===============================
+   🔥 UPDATE STREAK (CALL FROM MCQ)
+   =============================== */
+export async function updateSessionStreak(userId) {
   if (!userId) return null;
 
-  const key = `cpa_streak_${userId}`;
   const today = getLocalDateString();
 
-  const saved =
-    JSON.parse(localStorage.getItem(key)) || {
-      streak: 0,
-      lastActiveDate: null
-    };
+  // 1️⃣ fetch existing streak
+  const { data: existing } = await supabase
+    .from("user_streaks")
+    .select("*")
+    .eq("user_id", userId)
+    .single();
 
   // 🚫 already counted today
-  if (saved.lastActiveDate === today) {
-    return saved;
+  if (existing?.last_active_date === today) {
+    return existing;
   }
 
   let newStreak = 1;
 
-  if (saved.lastActiveDate) {
+  if (existing?.last_active_date) {
     const diff =
-      (new Date(today) - new Date(saved.lastActiveDate)) /
+      (new Date(today) - new Date(existing.last_active_date)) /
       (1000 * 60 * 60 * 24);
 
-    // ✅ continue only if exactly yesterday
-    newStreak = diff === 1 ? saved.streak + 1 : 1;
+    newStreak = diff === 1 ? existing.streak + 1 : 1;
   }
 
-  const updated = {
-    streak: newStreak,
-    lastActiveDate: today
-  };
+  // 2️⃣ upsert
+  const { data, error } = await supabase
+    .from("user_streaks")
+    .upsert({
+      user_id: userId,
+      streak: newStreak,
+      last_active_date: today
+    })
+    .select()
+    .single();
 
-  localStorage.setItem(key, JSON.stringify(updated));
+  if (error) {
+    console.error("❌ Streak update failed", error);
+    return null;
+  }
 
-  // 🔔 notify Home immediately
-  window.dispatchEvent(
-    new CustomEvent("streak-updated", { detail: updated })
-  );
-
-  return updated;
+  return data;
 }
 
-// ===============================
-// 🏠 READ STREAK FOR HOME SCREEN
-// ===============================
-export function getSessionStreakStatus(userId) {
+/* ===============================
+   🏠 READ STREAK FOR HOME
+   =============================== */
+export async function getSessionStreakStatus(userId) {
   if (!userId) {
     return { streak: 0, status: "inactive", message: "" };
   }
 
-  const raw = localStorage.getItem(`cpa_streak_${userId}`);
+  const today = getLocalDateString();
+  const yesterday = getYesterday();
 
-  if (!raw) {
+  const { data } = await supabase
+    .from("user_streaks")
+    .select("*")
+    .eq("user_id", userId)
+    .single();
+
+  if (!data) {
     return {
       streak: 0,
       status: "inactive",
@@ -78,20 +90,10 @@ export function getSessionStreakStatus(userId) {
     };
   }
 
-  let data;
-  try {
-    data = JSON.parse(raw);
-  } catch {
-    return { streak: 0, status: "inactive", message: "" };
-  }
-
-  const today = getLocalDateString();
-  const yesterday = getYesterday();
-
-  // ❌ missed at least one full day → reset
+  // ❌ missed day
   if (
-    data.lastActiveDate !== today &&
-    data.lastActiveDate !== yesterday
+    data.last_active_date !== today &&
+    data.last_active_date !== yesterday
   ) {
     return {
       streak: 0,
@@ -100,8 +102,8 @@ export function getSessionStreakStatus(userId) {
     };
   }
 
-  // ⚠️ yesterday only → inactive but preserved
-  if (data.lastActiveDate === yesterday) {
+  // ⚠️ yesterday only
+  if (data.last_active_date === yesterday) {
     return {
       streak: data.streak,
       status: "inactive",
@@ -109,7 +111,7 @@ export function getSessionStreakStatus(userId) {
     };
   }
 
-  // ✅ completed today
+  // ✅ today
   return {
     streak: data.streak,
     status: "active",
