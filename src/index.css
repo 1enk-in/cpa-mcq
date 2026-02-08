@@ -2688,3 +2688,75 @@ body.dark .top-search::placeholder {
   font-family: monospace;
 }
 
+/* Clickable explanation image */
+.explanation-img.clickable {
+  cursor: zoom-in;
+}
+
+/* Overlay */
+.img-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scroll + pinch container */
+.img-zoom-container {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  touch-action: manipulation; /* 👈 allow pinch zoom */
+}
+
+/* Zoomable image */
+.img-zoomed {
+  display: block;
+  max-width: none;      /* 👈 allow scaling */
+  max-height: none;
+  width: auto;
+  height: auto;
+}
+
+/* Close button */
+.img-zoom-close {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ===== Smooth open animation ===== */
+
+/* Overlay fade */
+.img-zoom-overlay {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.img-zoom-overlay.animate {
+  opacity: 1;
+}
+
+/* Image scale-in */
+.img-zoom-container {
+  transform: scale(0.96);
+  opacity: 0;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.img-zoom-overlay.animate .img-zoom-container {
+  transform: scale(1);
+  opacity: 1;
+}

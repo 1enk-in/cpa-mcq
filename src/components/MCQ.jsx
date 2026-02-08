@@ -93,6 +93,7 @@ export default function MCQ({
 
   const [hydrated, setHydrated] = useState(false);
   const [questions, setQuestions] = useState([]);
+  const [zoomImg, setZoomImg] = useState(null);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [confirmType, setConfirmType] = useState(null);
@@ -453,10 +454,16 @@ if (!questions.length || !questions[index]) {
     <img
       src={`/explanations/${subjectFolder}/${moduleFolder}/${q.id}.png`}
       alt={`Explanation for ${q.id}`}
-      className="explanation-img"
+      className="explanation-img clickable"
+      onClick={() =>
+        setZoomImg(
+          `/explanations/${subjectFolder}/${moduleFolder}/${q.id}.png`
+        )
+      }
     />
   </div>
 )}
+
 
 
 
@@ -506,6 +513,35 @@ if (!questions.length || !questions[index]) {
           </div>
         </div>
       )}
+
+{zoomImg && (
+  <div
+    className="img-zoom-overlay animate"
+    onClick={() => setZoomImg(null)}
+  >
+    <div
+      className="img-zoom-container"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img
+        src={zoomImg}
+        className="img-zoomed"
+        alt="Zoomed explanation"
+      />
     </div>
+
+    <button
+      className="img-zoom-close"
+      onClick={() => setZoomImg(null)}
+    >
+      ✕
+    </button>
+  </div>
+)}
+
+
+      
+    </div>
+    
   );
 }
