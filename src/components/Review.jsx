@@ -76,6 +76,8 @@ const MODULE_DATA = {
 
 export default function Review({ reviewSession, setScreen }) {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [zoomImg, setZoomImg] = useState(null);
+
 
   /* ===============================
      🛑 SAFETY CHECK
@@ -197,8 +199,14 @@ const moduleFolder = module.toLowerCase(); // M1 → m1, A2 → a2
   <img
   src={`/explanations/${subjectFolder}/${moduleFolder}/${q.id}.png`}
   alt={`Explanation for ${q.id}`}
-  className="explanation-img"
+  className="explanation-img clickable"
+  onClick={() =>
+    setZoomImg(
+      `/explanations/${subjectFolder}/${moduleFolder}/${q.id}.png`
+    )
+  }
 />
+
 
 </div>
 
@@ -215,6 +223,34 @@ const moduleFolder = module.toLowerCase(); // M1 → m1, A2 → a2
           Retry These Questions
         </button>
       </div>
+
+{zoomImg && (
+  <div
+    className="img-zoom-overlay animate"
+    onClick={() => setZoomImg(null)}
+  >
+    <div
+      className="img-zoom-container"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img
+        src={zoomImg}
+        className="img-zoomed"
+        alt="Zoomed explanation"
+      />
+    </div>
+
+    <button
+      className="img-zoom-close"
+      onClick={() => setZoomImg(null)}
+    >
+      ✕
+    </button>
+  </div>
+)}
+
+
+
     </div>
   );
 }
