@@ -74,7 +74,12 @@ const MODULE_DATA = {
   T4: tcpT4
 };
 
-export default function Review({ reviewSession, setScreen }) {
+export default function Review({
+  reviewSession,
+  setScreen,
+  setSessionData
+}) {
+
   const [activeIndex, setActiveIndex] = useState(null);
   const [zoomImg, setZoomImg] = useState(null);
 
@@ -217,11 +222,16 @@ const moduleFolder = module.toLowerCase(); // M1 → m1, A2 → a2
       {/* 🔁 RETRY WRONG QUESTIONS */}
       <div style={{ marginTop: "24px", textAlign: "center" }}>
         <button
-          className="end-btn"
-          onClick={() => setScreen("retry")}
-        >
-          Retry These Questions
-        </button>
+  className="end-btn"
+  onClick={() => {
+    setSessionData(reviewSession);
+    setScreen("retry");
+  }}
+>
+  Retry These Questions
+</button>
+
+
       </div>
 
 {zoomImg && (

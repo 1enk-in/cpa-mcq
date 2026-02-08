@@ -210,8 +210,13 @@ if (!user) return <Login />;
 
       {/* REVIEW */}
       {screen === "review" && reviewSession && (
-        <Review reviewSession={reviewSession} setScreen={setScreen} />
-      )}
+  <Review
+    reviewSession={reviewSession}
+    setScreen={setScreen}
+    setSessionData={setSessionData}
+  />
+)}
+
 
       {screen !== "mcq" && screen !== "retry" && (
   <footer className="app-footer">
