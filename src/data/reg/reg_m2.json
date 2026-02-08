@@ -1,8 +1,8 @@
 {
   "module": "M2",
   "questions": [
-    {
-  "id": "MCQ-06458",
+{
+  "id": "REG-M2-01",
   "question": "Clark did not itemize deductions on his Year 8 federal income tax return. In July Year 9, Clark received a state income tax refund of $900 plus interest of $10, for overpayment of Year 8 state income tax. What amount of the state tax refund and interest is taxable on Clark's Year 9 federal income tax return?",
   "options": [
     "$0",
@@ -10,813 +10,406 @@
     "$900",
     "$910"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Except for interest from state and local government bonds, interest income is fully taxable, so the $10 is included in income. Because Clark did not itemize deductions in Year 8, the state tax refund is not taxable under the tax benefit rule."
-    },
-    "incorrect": {
-      "A": "Interest income of $10 is taxable, so the taxable amount is not zero.",
-      "C": "The $900 refund is not taxable because Clark did not deduct state taxes in the prior year.",
-      "D": "Only the $10 of interest is taxable, not the full $910."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06459",
-  "question": "John and Mary were divorced in 2017. The divorce decree provides that John pay alimony of $10,000 per year, to be reduced by 20 percent on their child's 18th birthday. During the current year, John paid $7,000 directly to Mary and $3,000 to Spring College for Mary's tuition. What amount of these payments should be reported as income in Mary's current year income tax return?",
+  "id": "REG-M2-02",
+  "question": "John and Mary were divorced in 2017. The divorce decree (executed June 30, 2017) provides that John pay alimony of $10,000 per year, to be reduced by 20 percent on their child's 18th birthday. During the current year, the $10,000 was paid in the following way: John paid $7,000 directly to Mary and $3,000 to Spring College for Mary's tuition. What amount of these payments should be reported as income in Mary's current year income tax return?",
   "options": [
-    "$10,000",
-    "$5,600",
     "$8,600",
-    "$8,000"
+    "$10,000",
+    "$8,000",
+    "$5,600"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Because the divorce agreement was executed before December 31, 2018, alimony is taxable to the recipient. The 20% reduction tied to the child's age makes $2,000 child support, which is nontaxable. The remaining $8,000 is alimony and taxable to Mary."
-    },
-    "incorrect": {
-      "A": "The $2,000 treated as child support is not taxable to Mary.",
-      "B": "The calculation is based on the $10,000 obligation, not the $7,000 paid directly to Mary.",
-      "C": "Only $8,000 qualifies as alimony under the decree, not $8,600."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06460",
-  "question": "DAC Foundation awarded Kent $75,000 in recognition of lifelong literary achievement.\n\nI.Kent was not required to render future services as a condition to receive the $75,000. What condition(s) must have been met for the award to be excluded from Kent's gross income?\n\nI.Kent was selected for the award by DAC without any action on Kent's part.\n\nII.Pursuant to Kent's designation, DAC paid the amount of the award either to a governmental unit or to a charitable organization.",
+  "id": "REG-M2-03",
+  "question": "DAC Foundation awarded Kent $75,000 in recognition of lifelong literary achievement. Kent was not required to render future services as a condition to receive the $75,000. What condition(s) must have been met for the award to be excluded from Kent's gross income?\n\n[BOX]I. Kent was selected for the award by DAC without any action on Kent's part.\n\nII. Pursuant to Kent's designation, DAC paid the amount of the award either to a governmental unit or to a charitable organization.[/BOX]",
   "options": [
+    "I only.",
     "II only.",
     "Both I and II.",
-    "Neither I nor II.",
-    "I only."
+    "Neither I nor II."
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Generally, prizes and awards are taxable income. An exclusion applies only if the recipient was selected without any action on his part and the award is assigned directly to a governmental unit or a charitable organization. Therefore, both conditions I and II must be met."
-    },
-    "incorrect": {
-      "A": "Condition I is also required for the exclusion to apply.",
-      "C": "Both conditions are required for the award to be excluded from income.",
-      "D": "Condition II is also required for the exclusion to apply."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06461",
+  "id": "REG-M2-04",
   "question": "Klein, a master's degree candidate at Blair University, was awarded a $12,000 scholarship from Blair in Year 8. The scholarship was used to pay Klein's Year 8 university tuition and fees. Also in Year 8, Klein received $5,000 for teaching two courses at a nearby college. What amount is includable in Klein's Year 8 gross income?",
   "options": [
     "$0",
-    "$12,000",
     "$17,000",
+    "$12,000",
     "$5,000"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Scholarships used by degree-seeking students for tuition and fees are not taxable. The $5,000 received for teaching courses is taxable compensation for services rendered and must be included in gross income."
-    },
-    "incorrect": {
-      "A": "The $5,000 for teaching courses is taxable compensation and must be included in income.",
-      "B": "The scholarship is not taxable, but the $5,000 for teaching is taxable compensation.",
-      "C": "The scholarship is excluded from income; only the $5,000 for teaching is taxable."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06462",
+  "id": "REG-M2-05",
   "question": "Which one of the following will result in an accruable expense for an accrual-basis taxpayer?",
   "options": [
     "A repair completed prior to year end and paid upon completion.",
-    "A signed contract for repair work to be done and the work is to be completed at a later date.",
     "A repair completed prior to year end but not invoiced.",
+    "A signed contract for repair work to be done and the work is to be completed at a later date.",
     "An invoice dated prior to year end but the repair completed after year end."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "An accruable expense exists when services have been performed but not yet paid for by year end. A repair completed prior to year end but not invoiced indicates the service was received but unpaid."
-    },
-    "incorrect": {
-      "A": "If the repair was completed and paid prior to year end, no accrual is needed.",
-      "B": "If the work has not yet been completed, the benefit has not been received and no accrual is appropriate.",
-      "D": "If the repair is completed after year end, the expense is not accruable regardless of invoice date."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06463",
+  "id": "REG-M2-06",
   "question": "A cash basis taxpayer should report gross income:",
   "options": [
+    "\t\nOnly for the year in which income is actually received whether in cash or in property.",
     "For the year in which income is either actually or constructively received in cash only.",
     "Only for the year in which income is actually received in cash.",
-    "Only for the year in which income is actually received whether in cash or in property.",
     "For the year in which income is either actually or constructively received, whether in cash or in property."
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Cash basis taxpayers report income in the year it is actually or constructively received, whether received in cash or in property."
-    },
-    "incorrect": {
-      "A": "Income may be received in property, not only cash.",
-      "B": "Income may be constructively received, not only actually received.",
-      "C": "Income may be constructively received, not only actually received."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06464",
+  "id": "REG-M2-07",
   "question": "Linda is an employee of JRH Corporation. Which of the following would be included in Linda’s gross income?",
   "options": [
-    "$1,000 of tuition paid by JRH Corporation to State University for Linda’s master’s degree program.",
-    "A $2,000 trip given to Linda by JRH Corporation for meeting sales goals.",
     "$2,500 paid by JRH Corporation for an annual parking pass for Linda.",
-    "Premiums paid by JRH Corporation for a group term life insurance policy for $50,000 of coverage for Linda."
+    "A $2,000 trip given to Linda by JRH Corporation for meeting sales goals.",
+    "Premiums paid by JRH Corporation for a group term life insurance policy for $50,000 of coverage for Linda.",
+    "$1,000 of tuition paid by JRH Corporation to State University for Linda’s master’s degree program."
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "The $2,000 trip is considered an award and is included in Linda’s gross income."
-    },
-    "incorrect": {
-      "A": "Up to $5,250 of employer-paid educational assistance may be excluded from gross income.",
-      "C": "Employer-provided parking within the allowable monthly limit may be excluded from gross income.",
-      "D": "Employer-paid premiums for up to $50,000 of group term life insurance coverage are excludable."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06465",
-  "question": "Jensen reported the following items during the current year: \n\nFair rent value of a condominium owned by Jensen's employer ($1,400);\n\n Cash found in a desk purchased for $30 at a flea market ($400);\n\n Inheritance ($11,000).\n\n The employer allowed Jensen to use the condominium for free in recognition of outstanding achievement. Based on this information, what is Jensen's gross income for the year?",
+  "id": "REG-M2-08",
+  "question": "Jensen reported the following items during the current year:[BOX]\n\nFair rent value of a condominium owned by Jensen's employer - \t $1,400\n\nCash found in a desk purchased for $30 at a flea market - \t $400\n\nInheritance - \t $11,000[/BOX]\n\nThe employer allowed Jensen to use the condominium for free in recognition of outstanding achievement. Based on this information, what is Jensen's gross income for the year?",
   "options": [
-    "$1,770",
     "$12,400",
+    "$1,400",
     "$1,800",
-    "$1,400"
+    "$1,770"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Gross income includes the fair rental value of lodging provided as an achievement award and the value of treasure troves. The inheritance is excluded from gross income, resulting in total gross income of $1,800."
-    },
-    "incorrect": {
-      "A": "This amount does not properly include the value of the treasure trove.",
-      "B": "Inheritance is excluded from gross income.",
-      "D": "This amount omits the taxable treasure trove."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06466",
+  "id": "REG-M2-09",
   "question": "Johnson worked for ABC Co. and earned a salary of $100,000. Johnson also received, as a fringe benefit, group term-life insurance at twice Johnson's salary. Assume the annual IRS-established uniform cost of insurance is $2.76 per $1,000 of coverage. What amount must Johnson include in gross income?",
   "options": [
-    "$100,276",
     "$100,000",
     "$100,414",
+    "$100,276",
     "$100,552"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "The first $50,000 of group term life insurance is excludable. Coverage above $50,000 is taxable. Johnson received $200,000 of coverage, so $150,000 is taxable. $150,000 ÷ $1,000 × $2.76 = $414. Total gross income is $100,414."
-    },
-    "incorrect": {
-      "A": "$100,276 reflects taxation of only $100,000 of coverage instead of $150,000.",
-      "B": "$100,000 ignores the taxable portion of the group term life insurance.",
-      "D": "$100,552 incorrectly taxes the full $200,000 of coverage."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06467",
+  "id": "REG-M2-10",
   "question": "A painter and an accountant agree to trade their services. The painter provides services valued at $550, and the accountant provides services worth $500. What amount should the accountant report as income or expense?",
   "options": [
-    "$550 income.",
     "$50 expense.",
     "$50 income.",
-    "$500 income."
+    "$500 income.",
+    "$550 income."
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "In a barter transaction, income is measured by the fair market value of services received. The accountant received services valued at $550 and must report $550 as income."
-    },
-    "incorrect": {
-      "B": "The difference in value between services exchanged does not create an expense.",
-      "C": "Income is not limited to the difference between values exchanged.",
-      "D": "Income is based on the value of services received, not services rendered."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06468",
+  "id": "REG-M2-11",
   "question": "In Year 2, Carson was hired as an employee of Barton Co. As part of his employment contract, Barton provided a company car for Carson's spouse, Mary, who is not employed. The value for the use of the automobile in Year 2 was $8,000. Carson does not use the automobile. Carson and Mary file separate individual income tax returns. What amounts, if any, should be reported as a taxable fringe benefit on Carson and Mary's Year 2 income tax returns for the personal use of the automobile?",
   "options": [
-    "Carson $4,000; Mary $4,000",
     "Carson $8,000; Mary $0",
     "Carson $0; Mary $8,000",
-    "Carson $0; Mary $0"
+    "Carson $0; Mary $0",
+    "Carson $4,000; Mary $4,000"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "The value of the use of a company car is a taxable employee fringe benefit. Carson is the employee who received the benefit from his employer, even though his spouse used the car. Mary is not an employee, so no taxable fringe benefit is reported by her."
-    },
-    "incorrect": {
-      "A": "The entire taxable fringe benefit is attributable to Carson, not split with Mary.",
-      "C": "Mary is not an employee, so the fringe benefit is not taxable to her.",
-      "D": "The use of a company car is a taxable fringe benefit to the employee."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06469",
-  "question": "In the current year Jensen had the following items:\n\n Salary $50,000;\n\n Inheritance $25,000;\n\n Alimony from ex-spouse (divorce agreement finalized in 2015) $12,000;\n\n Child support from ex-spouse $9,000.\n\n What is Jensen's adjusted gross income (AGI) for the current year?",
+  "id": "REG-M2-12",
+  "question": "In the current year Jensen had the following items:[BOX]\n\nSalary - \t $50,000\n\nInheritance - \t $25,000\n\nAlimony from ex-spouse (divorce agreement finalized in 2015) - \t $12,000\n\nChild support from ex-spouse - \t $9,000[/BOX]\n\nWhat is Jensen's adjusted gross income (AGI) for the current year?",
   "options": [
+    "$62,000",
     "$96,000",
-    "$50,000",
     "$71,000",
-    "$62,000"
+    "$50,000"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "AGI equals gross income because there are no adjustments listed. Salary and pre-2019 alimony are taxable, while inheritance and child support are excluded. Thus, AGI is $62,000."
-    },
-    "incorrect": {
-      "A": "Inheritance and child support are not included in taxable income.",
-      "B": "Pre-2019 alimony is taxable and must be included.",
-      "C": "Both salary and pre-2019 alimony are taxable, totaling more than $71,000."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06470",
+  "id": "REG-M2-13",
   "question": "Mosh, a sole proprietor, uses the cash basis of accounting. At the beginning of the current year, accounts receivable were $25,000. During the year, Mosh collected $100,000 from customers. At the end of the year, accounts receivable were $15,000. What was Mosh's gross taxable income for the current year?",
   "options": [
+    "$110,000",
     "$100,000",
     "$90,000",
-    "$75,000",
-    "$110,000"
+    "$75,000"
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "As a cash basis taxpayer, gross taxable income is based on cash collected during the year. Mosh collected $100,000 from customers, which is the amount included in gross income."
-    },
-    "incorrect": {
-      "B": "$90,000 would apply under the accrual method, not the cash method.",
-      "C": "Cash basis income is not reduced by beginning or ending accounts receivable.",
-      "D": "There is no basis for including $110,000 under the cash method."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06471",
+  "id": "REG-M2-14",
   "question": "A taxpayer moved over 500 miles at the request of the taxpayer's employer. The taxpayer incurred ordinary moving costs to transport personal property during the move. The taxpayer's employer reimbursed 80 percent of those costs. How will this move affect the taxpayer's taxable income for the year?",
   "options": [
-    "The reimbursement increases taxable income, and the expenses are deductible.",
-    "The reimbursement increases taxable income, and the expenses are not deductible.",
     "The reimbursement is excluded from taxable income, and the expenses are deductible.",
-    "The reimbursement is excluded from income, and the expenses are not deductible."
+    "The reimbursement increases taxable income, and the expenses are not deductible.",
+    "The reimbursement is excluded from income, and the expenses are not deductible.",
+    "The reimbursement increases taxable income, and the expenses are deductible."
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Employer reimbursement of moving expenses is a taxable fringe benefit. Moving expenses are not deductible unless incurred by members of the U.S. Armed Forces pursuant to a military order."
-    },
-    "incorrect": {
-      "A": "Moving expenses are generally not deductible for non-military taxpayers.",
-      "C": "The reimbursement is not excluded from income for non-military taxpayers.",
-      "D": "The reimbursement is taxable, even though the expenses are not deductible."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06472",
+  "id": "REG-M2-15",
   "question": "A taxpayer received a parcel of land valued at $20,000 in exchange for performing services valued at $20,000 for another individual. What is the tax consequence, if any, of the taxpayer's receipt of the land?",
   "options": [
-    "$20,000 of portfolio income",
-    "There is no tax effect",
     "$20,000 of capital gain income",
-    "$20,000 of ordinary income"
+    "$20,000 of portfolio income",
+    "$20,000 of ordinary income",
+    "There is no tax effect"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "The fair market value of property received in exchange for services is taxable as ordinary income. The land received represents compensation for services and must be included in gross income at its fair market value of $20,000."
-    },
-    "incorrect": {
-      "A": "Portfolio income generally consists of investment income, not compensation for services.",
-      "B": "Property received as compensation for services is taxable and not tax-free.",
-      "C": "Capital gain treatment applies to the sale or exchange of capital assets, not to compensation for services."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06473",
-  "question": "The following Year 1 annual report was received by Clark from the qualified traditional defined contribution plan provided by Clark's employer:\n\n Beginning balance $12,700;\n\n Employer contribution $600;\n\n Plan earnings $250;\n\n Ending balance $13,550.\n\n What income must be included in Clark's gross income for Year 1?",
+  "id": "REG-M2-16",
+  "question": "The following Year 1 annual report was received by Clark from the qualified traditional defined contribution plan provided by Clark's employer:[BOX]\n\nBeginning balance - \t $12,700\nEmployer contribution - \t $600\nPlan earnings - \t $250\nEnding balance - \t $13,550[/BOX]\nWhat income must be included in Clark's gross income for Year 1?",
   "options": [
-    "$600",
     "$850",
+    "$600",
     "$250",
     "$0"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Employer contributions and earnings in a qualified traditional defined contribution plan are not taxable to the employee until they are distributed. Therefore, no amount is included in gross income for Year 1."
-    },
-    "incorrect": {
-      "A": "Employer contributions are not taxable until distributed.",
-      "B": "Neither contributions nor earnings are taxable until distribution.",
-      "C": "Plan earnings are not taxable to the employee until distributed."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06474",
-  "question": "In a tax year where the taxpayer pays qualified education expenses, interest income on the redemption of qualified U.S. Series EE Bonds may be excluded from gross income. The exclusion is subject to a modified gross income limitation and a limit of aggregate bond proceeds in excess of qualified higher-education expenses. Which of the following is (are) true?.\n\n I.The exclusion applies for education expenses incurred by the taxpayer, the taxpayer's spouse, or any person whom the taxpayer may claim as a dependent for the year. \n\n II.\"Otherwise qualified higher-education expenses\" must be reduced by qualified scholarships not includible in gross income.",
+  "id": "REG-M2-17",
+  "question": "In a tax year where the taxpayer pays qualified education expenses, interest income on the redemption of qualified U.S. Series EE Bonds may be excluded from gross income. The exclusion is subject to a modified gross income limitation and a limit of aggregate bond proceeds in excess of qualified higher-education expenses. Which of the following is (are) true?\n\n[BOX]I. The exclusion applies for education expenses incurred by the taxpayer, the taxpayer's spouse, or any person whom the taxpayer may claim as a dependent for the year.\n\nII. \"Otherwise qualified higher-education expenses\" must be reduced by qualified scholarships not includible in gross income.[/BOX]",
   "options": [
-    "II only.",
     "Neither I nor II.",
     "Both I and II.",
-    "I only."
-  ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Interest earned on Series EE bonds issued after 1989 may qualify for exclusion if used to pay qualified higher-education expenses for the taxpayer, the taxpayer's spouse, or a dependent. Otherwise qualified higher-education expenses must be reduced by qualified scholarships that are not includible in gross income."
-    },
-    "incorrect": {
-      "A": "The exclusion also applies to education expenses incurred by the taxpayer, spouse, or dependent.",
-      "B": "Both statements are true.",
-      "D": "Otherwise qualified higher-education expenses must be reduced by qualified scholarships not includible in gross income."
-    }
-  }
-},
-{
-  "id": "MCQ-06475",
-  "question": "In a tax year where the taxpayer pays qualified education expenses, interest income on the redemption of qualified U.S. Series EE Bonds may be excluded from gross income. The exclusion is subject to a modified gross income limitation and a limit of aggregate bond proceeds in excess of qualified higher-education expenses. Which of the following is (are) true?",
-  "options": [
     "II only.",
-    "Neither I nor II.",
-    "Both I and II.",
     "I only."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Interest earned on Series EE bonds issued after 1989 may qualify for exclusion when used for tuition and fees for the taxpayer, spouse, or dependent. The exclusion is reduced by qualified scholarships and other nontaxable educational assistance."
-    },
-    "incorrect": {
-      "A": "The exclusion also applies to education expenses incurred by the taxpayer, spouse, or dependent.",
-      "B": "Both statements are true.",
-      "D": "Qualified higher-education expenses must be reduced by qualified scholarships not includible in gross income."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06476",
-  "question": "During the year Kay received interest income as follows:\n\n On U.S. Treasury certificates $4,000;\n\n On refund of prior year's federal income tax $500.\n\n The total amount of interest subject to tax in Kay's current year tax return is:",
+  "id": "REG-M2-18",
+  "question": "Clark bought Series EE U.S. Savings Bonds after 1989. Redemption proceeds will be used for payment of college tuition for Clark's dependent child. One of the conditions that must be met for tax exemption of accumulated interest on these bonds is that the:",
   "options": [
-    "$4,000",
-    "$500",
+    "Purchaser of the bonds must be the sole owner of the bonds (or joint owner with his or her spouse).",
+    "Bonds must be transferred to the college for redemption by the college rather than by the owner of the bonds.",
+    "Bonds must be bought by the owner of the bonds before the owner reaches the age of 24.",
+    "Bonds must be bought by a parent (or both parents) and put in the name of the dependent child."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M2-19",
+  "question": "During the year Kay received interest income as follows:[BOX] On U.S. Treasury certificates - \t $4,000\n\nOn refund of prior year's federal income tax - \t $500[/BOX]\n\nThe total amount of interest subject to tax in Kay's current year tax return is:",
+  "options": [
     "$0",
-    "$4,500"
-  ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Interest income from U.S. obligations is taxable for federal income tax purposes, and interest received on a federal income tax refund is also taxable. Therefore, the total taxable interest is $4,500."
-    },
-    "incorrect": {
-      "A": "Interest on a federal tax refund is also taxable.",
-      "B": "Interest from U.S. Treasury obligations is taxable.",
-      "C": "Both items of interest are taxable."
-    }
-  }
-},
-{
-  "id": "MCQ-06477",
-  "question": "Charles and Marcia are married cash-basis taxpayers. In Year 8, they had interest income as follows:\n\n $500 interest on federal income tax refund;\n\n $600 interest on state income tax refund;\n\n $800 interest on federal government obligations;\n\n $1,000 interest on state government obligations.\n\n What amount of interest income is taxable on Charles and Marcia's Year 8 joint income tax return?",
-  "options": [
-    "$2,900",
-    "$1,100",
     "$500",
-    "$1,900"
+    "$4,500",
+    "$4,000"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Interest on federal and state income tax refunds and interest on federal government obligations are taxable. Interest on state government obligations is generally not taxable. Thus, taxable interest is $1,900."
-    },
-    "incorrect": {
-      "A": "Interest on state government obligations is generally excluded from taxable income.",
-      "B": "Interest on federal government obligations is also taxable.",
-      "C": "Interest on state income tax refunds and federal obligations must also be included."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06478",
-  "question": "Seth Silver had the following items of income during the taxable year:\n\n Interest income from a checking account $1,000;\n\n Interest income from a money market account $2,050;\n\n Interest income from a municipal bond purchased during the current year $250;\n\n Interest income from federal bonds purchased two years ago $750.\n\n On his current year tax return, what amount is taxable income?",
+  "id": "REG-M2-20",
+  "question": "Charles and Marcia are married cash-basis taxpayers. In Year 8, they had interest income as follows:\n\n * $500 interest on federal income tax refund.\n * $600 interest on state income tax refund.\n * $800 interest on federal government obligations.\n * $1,000 interest on state government obligations.\nWhat amount of interest income is taxable on Charles and Marcia's Year 8 joint income tax return?",
   "options": [
+    "\t\n$1,100",
+    "$500",
+    "$1,900",
+    "$2,900"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M2-21",
+  "question": "Seth Silver had the following items of income during the taxable year:[BOX] Interest income from a checking account - \t $1,000\n\nInterest income from a money market account - \t $2,050\n\nInterest income from a municipal bond he purchased during the current year - \t $250\n\nInterest income from federal bonds he purchased 2 years ago - \t $750[/BOX]\n\nOn his current year tax return, what amount is taxable income?",
+  "options": [
+    "\t\n$3,300",
     "$3,050",
     "$3,800",
-    "$3,300",
     "$4,050"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Taxable interest includes interest from checking accounts, money market accounts, and federal bonds. Interest from municipal bonds is excluded from gross income. Therefore, taxable interest is $1,000 + $2,050 + $750 = $3,800."
-    },
-    "incorrect": {
-      "A": "This amount excludes taxable interest from federal bonds.",
-      "C": "This amount incorrectly includes municipal bond interest or omits taxable interest.",
-      "D": "This amount incorrectly includes tax-exempt municipal bond interest."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06479",
+  "id": "REG-M2-22",
   "question": "A taxpayer received $200 in interest from U.S. Treasury bonds and $300 in interest from municipal bonds. What amount of interest should be included in the taxpayer's gross income?",
   "options": [
-    "$200",
-    "$500",
+    "\t\n$500",
     "$0",
-    "$300"
+    "$300",
+    "$200"
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "Interest on U.S. Treasury bonds is taxable. Interest on municipal bonds is excluded from gross income. Therefore, only $200 is included."
-    },
-    "incorrect": {
-      "B": "Municipal bond interest is tax-exempt and should not be included.",
-      "C": "Interest on U.S. Treasury bonds is taxable and must be included.",
-      "D": "Municipal bond interest is excluded from gross income."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06480",
-  "question": "Falconer received the following interest payments:\n\n Municipal bonds $500;\n\n U.S. Treasury bonds $1,000;\n\n Interest on state tax refund $300;\n\n Corporate bonds $800.\n\n What amount is taxable interest?",
+  "id": "REG-M2-23",
+  "question": "Falconer received the following interest payments:[BOX] Municipal bonds - \t $500\nU.S. Treasury bonds - \t $1,000\nInterest on state tax refund - \t $$300\nCorporate bonds - \t $800[/BOX]\nWhat amount is taxable interest?",
   "options": [
-    "$2,600",
     "$1,100",
     "$1,800",
-    "$2,100"
+    "$2,100",
+    "$2,600"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Taxable interest includes interest from U.S. Treasury bonds, interest on a state tax refund, and interest from corporate bonds. Municipal bond interest is tax-exempt. Thus, taxable interest is $1,000 + $300 + $800 = $2,100."
-    },
-    "incorrect": {
-      "A": "This amount incorrectly includes tax-exempt municipal bond interest.",
-      "B": "This amount omits taxable interest from U.S. Treasury bonds.",
-      "C": "This amount omits taxable interest from the state tax refund."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06481",
+  "id": "REG-M2-24",
   "question": "Darr, an employee of Sorce C Corporation, is not a shareholder. Which of the following would be included in Darr's taxable gross income?",
   "options": [
+    "\t\nThe dividend income on shares of stock that the taxpayer received for services rendered.",
     "A $10,000 gift from the taxpayer's grandparents.",
-    "Employer-provided medical insurance coverage under a health plan.",
-    "The dividend income on shares of stock that the taxpayer received for services rendered.",
-    "The fair market value of land that the taxpayer inherited from an uncle."
+    "The fair market value of land that the taxpayer inherited from an uncle.",
+    "Employer-provided medical insurance coverage under a health plan."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "An individual receiving stock for services rendered must recognize the fair market value as ordinary income, and any dividends received on that stock are also taxable."
-    },
-    "incorrect": {
-      "A": "Gifts are excluded from gross income to the recipient.",
-      "B": "Employer-provided medical insurance is a tax-free fringe benefit.",
-      "D": "Inheritances are excluded from gross income to the recipient."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06482",
-  "question": "Terry received an ordinary dividend of $5,000 and capital gain distributions of $7,000 from a mutual fund company. Terry reinvested all of the dividends and capital gain distributions. What is Terry's gross income?",
+  "id": "REG-M2-25",
+  "question": "Terry received an ordinary dividend of $5,000 and capital gain distributions of $7,000 from a mutual fund company. Terry took no cash out of the account, but reinvested all of the dividends and capital gain distributions. What is Terry's gross income?",
   "options": [
-    "$7,000",
     "$5,000",
+    "$0",
     "$12,000",
-    "$0"
+    "$7,000"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Both ordinary dividends and capital gain distributions are taxable when received, regardless of whether they are reinvested. The total taxable amount is $12,000."
-    },
-    "incorrect": {
-      "A": "Ordinary dividends are also taxable and must be included.",
-      "B": "Capital gain distributions are also taxable and must be included.",
-      "D": "Reinvesting income does not exclude it from gross income."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06483",
-  "question": "Robbe, a cash-basis single taxpayer, reported $50,000 of adjusted gross income last year and claimed itemized deductions of $13,550, including $5,500 of state income taxes paid. The itemized deductions exceeded the standard deduction by $1,150. In the current year, Robbe received a $1,500 state tax refund relating to the prior year. What is the proper treatment of the state tax refund?",
+  "id": "REG-M2-26",
+  "question": "Robbe, a cash-basis single taxpayer, reported $50,000 of adjusted gross income last year and claimed itemized deductions of $13,550, which included $5,500 of state income taxes paid last year. Robbe's itemized deduction amount exceeded the standard deduction available to single taxpayers for last year by $1,150. In the current year, Robbe received a $1,500 state tax refund relating to the prior year. What is the proper treatment of the state tax refund?",
   "options": [
-    "Amend the prior-year's return and reduce the claimed itemized deductions for that year.",
+    "\t\nAmend the prior-year's return and reduce the claimed itemized deductions for that year.",
     "Include $1,500 in income in the current year.",
     "Include $1,150 in income in the current year.",
     "Include none of the refund in income in the current year."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Under the tax benefit rule, only the portion of the state tax refund that produced a tax benefit in the prior year is included in income. Robbe received a tax benefit of $1,150, so that amount is taxable in the current year."
-    },
-    "incorrect": {
-      "A": "The tax benefit rule requires inclusion in current-year income, not amendment of a prior return.",
-      "B": "Only the portion that produced a prior-year tax benefit is taxable.",
-      "D": "Because a prior-year tax benefit was received, part of the refund is taxable."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06484",
-  "question": "Randolph is a single individual who always claims the standard deduction. Randolph received the following in the current year:\n\n Wages $22,000; Unemployment compensation $6,000;\n\n Pension distribution (100% taxable) $4,000;\n\n A state tax refund from the previous year $425.\n\n What is Randolph’s gross income?",
+  "id": "REG-M2-27",
+  "question": "Randolph is a single individual who always claims the standard deduction. Randolph received the following in the current year:[BOX] Wages - \t $22,000\n\nUnemployment compensation - \t $6,000\n\nPension distribution (100% taxable) - \t $4,000\n\nA state tax refund from the previous year - \t $425[/BOX]\n\nWhat is Randolph’s gross income?",
   "options": [
-    "$22,000",
     "$28,425",
+    "$22,000",
     "$32,000",
     "$32,425"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Wages, unemployment compensation, and fully taxable pension distributions are included in gross income. Because Randolph always claims the standard deduction, the prior-year state tax refund is not taxable under the tax benefit rule. Total gross income is $32,000."
-    },
-    "incorrect": {
-      "A": "Unemployment compensation and pension distributions are also taxable.",
-      "B": "The state tax refund is not taxable because no prior tax benefit was received.",
-      "D": "The state tax refund is excluded from gross income."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06485",
-  "question": "Kurstie received an $800 state income tax refund this year. Kurstie deducted $3,000 of state income taxes paid in the prior year as part of her itemized deductions. Which of the following statements regarding the taxability of Kurstie’s refund is true?",
+  "id": "REG-M2-28",
+  "question": "Kurstie received a $800 state income tax refund this year. Kurstie deducted $3,000 of state income taxes paid in the prior year as part of her itemized deductions. Which of the following statements regarding the taxability of Kurstie’s refund is true?",
   "options": [
+    "\t\nIf Kurstie claimed the standard deduction instead, then the $800 refund is taxable.",
     "If Kurstie’s itemized deductions exceeded the standard deduction by $200, then $200 of the refund is included in gross income.",
-    "If Kurstie’s itemized deductions exceeded the standard deduction by $200, then the $800 refund is included in gross income.",
     "Kurstie must include $3,000 in gross income in the current year.",
-    "If Kurstie claimed the standard deduction instead, then the $800 refund is taxable."
+    "If Kurstie’s itemized deductions exceeded the standard deduction by $200, then the $800 refund is included in gross income."
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "Under the tax benefit rule, a state tax refund is includable in gross income only to the extent the prior deduction produced a tax benefit. If the benefit was $200, then only $200 of the refund is taxable."
-    },
-    "incorrect": {
-      "B": "Only the amount that produced a prior-year tax benefit is taxable.",
-      "C": "Kurstie did not receive $3,000 in the current year.",
-      "D": "If the standard deduction was claimed, no tax benefit was received and the refund would not be taxable."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06486",
+  "id": "REG-M2-29",
   "question": "Which of the following is taxable as gross income?",
   "options": [
     "Alimony received based on a divorce agreement executed in 2019",
-    "Alimony received based on a divorce agreement executed in 2015",
     "Child support received based on a divorce agreement executed in 2015",
+    "Alimony received based on a divorce agreement executed in 2015",
     "Child support received based on a divorce agreement executed in 2019"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Alimony received under a divorce agreement executed on or before December 31, 2018, is taxable as gross income to the recipient."
-    },
-    "incorrect": {
-      "A": "Alimony from agreements executed after December 31, 2018, is not taxable to the recipient.",
-      "C": "Child support is not taxable as gross income.",
-      "D": "Child support is not taxable as gross income."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06487",
+  "id": "REG-M2-30",
   "question": "Which of the following should be included when determining adjusted gross income?",
   "options": [
+    "\t\nAlimony received pursuant to a divorce decree executed in 2014.",
     "Compensation for injuries or sickness.",
-    "Rental value of parsonages.",
-    "Alimony received pursuant to a divorce decree executed in 2014.",
-    "Tuition scholarship."
+    "Tuition scholarship.",
+    "Rental value of parsonages."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Alimony received pursuant to a divorce agreement executed on or before December 31, 2018, is included in gross income and therefore included in adjusted gross income."
-    },
-    "incorrect": {
-      "A": "Compensation for injuries or sickness is excluded from gross income.",
-      "B": "The rental value of a parsonage is excluded from gross income.",
-      "D": "Tuition scholarships used for qualified education expenses are excluded from gross income."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06488",
+  "id": "REG-M2-31",
   "question": "In a 2017 divorce settlement, the ex-husband was required by court order to pay his ex-wife $36,000 in alimony. She received $25,000 in cash, a painting valued at $10,000, and the use of his beach house, valued at $3,000. What amount of gross income should she report as alimony?",
   "options": [
+    "\t\n$36,000",
     "$38,000",
-    "$36,000",
     "$35,000",
     "$25,000"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Only cash or cash-equivalent payments qualify as alimony. The $25,000 received in cash is included in gross income as alimony."
-    },
-    "incorrect": {
-      "A": "Property and use of property are not cash-equivalent alimony payments.",
-      "B": "The court-ordered amount does not determine taxable alimony.",
-      "C": "Noncash items such as property are not included as alimony."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06489",
-  "question": "As a result of a divorce settled in 2016, a taxpayer received the following during the current year:\n\n Cash from the property settlement $100,000;\n\n Child support $12,000;\n\n Alimony payments $30,000.\n\n What amount, if any, must be included in gross income for the current year?",
+  "id": "REG-M2-32",
+  "question": "As a result of a divorce settled in 2016, a taxpayer received the following during the current year:[BOX] Cash from the property settlement - \t $100,000\n\nChild support - \t $12,000\n\nAlimony payments - \t $30,000[/BOX]\n\nWhat amount, if any, must be included in gross income for the current year?",
   "options": [
-    "$0",
-    "$142,000",
+    "\t\n$0",
+    "$130,000",
     "$30,000",
-    "$130,000"
+    "$142,000"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Alimony paid under a divorce agreement executed on or before December 31, 2018, is included in gross income. Property settlements and child support are excluded."
-    },
-    "incorrect": {
-      "A": "Alimony payments are included in gross income.",
-      "B": "Property settlements and child support are not included in gross income.",
-      "D": "Cash from property settlements is excluded from gross income."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06490",
+  "id": "REG-M2-33",
   "question": "An individual received $50,000 during the current year pursuant to a divorce decree executed in 2015. A check for $25,000 was identified as annual alimony, checks totaling $10,000 as annual child support, and a check for $15,000 as a property settlement. What amount should be included in the individual's gross income?",
   "options": [
-    "$40,000",
-    "$50,000",
     "$25,000",
-    "$0"
+    "$40,000",
+    "$0",
+    "$50,000"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Only alimony received pursuant to a divorce agreement executed on or before December 31, 2018, is included in gross income. Child support and property settlements are not taxable."
-    },
-    "incorrect": {
-      "A": "Property settlements are not included in gross income.",
-      "B": "Child support and property settlements are not included in gross income.",
-      "D": "Alimony received under a pre-2019 divorce agreement is taxable."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06491",
-  "question": "Merrill and Joe's divorce was finalized in June of 2012. As part of the settlement,\n\n Joe was to receive $3,000 per month in alimony,\n\n $1,000 per month in child support,\n\n and a lump-sum property settlement of $125,000.\n\n Payments began in July 2012, but Merrill paid only $15,000 during the year. What amount must Joe include in gross income for the current year?",
+  "id": "REG-M2-34",
+  "question": "Merrill and Joe's divorce was finalized in June of 2012. As part of the settlement, Joe received the following:[BOX] Alimony - \t $3,000 /per month\n\nChild support - \t $1,000/ per month\n\nLump-sum property settlement payment - \t $125,000[/BOX]\n\n \n\nPayments began in July, 2012; however, Merrill only paid a total of $15,000 during the year. For the current year, what amount must Joe include in gross income on his individual income tax return?",
   "options": [
-    "$140,000",
     "$134,000",
+    "$15,000",
     "$9,000",
-    "$15,000"
+    "$140,000"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Payments are first applied to child support, which is not taxable. Of the $15,000 paid, $6,000 is allocated to child support, leaving $9,000 as taxable alimony under a pre-2019 divorce agreement."
-    },
-    "incorrect": {
-      "A": "Property settlements are not taxable.",
-      "B": "Property settlements are not included in gross income.",
-      "D": "Only the portion treated as alimony is taxable."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06492",
-  "question": "Hall, a divorced person and custodian of her 12-year-old child, received only $5,000 during the current year under a divorce agreement executed in 2017 that required $600 per month in child support. What amount should be reported as alimony income?",
+  "id": "REG-M2-35",
+  "question": "Hall, a divorced person and custodian of her 12-year-old child, filed her current year federal income tax return as head of a household. The divorce agreement, executed in 2017, provides for Hall to receive $3,000 per month, of which $600 is designated as child support. After the child reaches 18, the monthly payments are to be reduced to $2,400 and are to continue until remarriage or death. However, for the current year, Hall received a total of only $5,000 from her former husband. Hall paid an attorney $2,000 in the current year in a suit to collect the alimony owed.\n\nWhat amount should be reported in Hall's current year tax return as alimony income?",
   "options": [
+    "\t\n$36,000",
     "$28,800",
-    "$36,000",
     "$5,000",
     "$0"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Payments are first applied to child support obligations. Because required child support for the year was $7,200 and only $5,000 was received, none of the payments are treated as alimony."
-    },
-    "incorrect": {
-      "A": "Payments did not exceed required child support.",
-      "B": "Payments did not exceed required child support.",
-      "C": "Amounts received are fully allocated to child support."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06493",
+  "id": "REG-M2-36",
   "question": "A 65-year-old taxpayer has a traditional IRA. The taxpayer has made deductible contributions to the plan totaling $20,000. The current balance in the account is $28,000. The taxpayer withdraws $10,000 from the plan. What portion of the withdrawal is taxable?",
   "options": [
-    "$8,000",
+    "\t\n$0",
     "$2,857",
-    "$10,000",
-    "$0"
+    "$8,000",
+    "$10,000"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Distributions from a deductible traditional IRA are fully taxable as ordinary income. Both contributions and earnings are taxable when withdrawn."
-    },
-    "incorrect": {
-      "A": "Not only the earnings but also the deductible contributions are taxable when withdrawn.",
-      "B": "Pro-rata allocation applies only to nondeductible traditional IRAs, not deductible IRAs.",
-      "D": "Withdrawals from deductible traditional IRAs are taxable."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06494",
+  "id": "REG-M2-37",
   "question": "A 60-year-old taxpayer established a Roth IRA six years ago. The taxpayer's contributions to the plan total $12,000, and the plan has a current balance of $15,000. The taxpayer withdraws $5,000 from the plan. What amount of the withdrawal is taxable?",
   "options": [
-    "$5,000",
+    "\t\n$1,000",
     "$3,000",
-    "$0",
-    "$1,000"
+    "$5,000",
+    "$0"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "This is a qualified Roth IRA distribution because the taxpayer is over age 59½ and the account has been open more than five years. Qualified Roth distributions are completely tax-free."
-    },
-    "incorrect": {
-      "A": "Qualified Roth IRA distributions are not taxable.",
-      "B": "Earnings from qualified Roth IRA distributions are not taxable.",
-      "D": "Pro-rata taxation applies to traditional IRAs, not qualified Roth IRAs."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06495",
+  "id": "REG-M2-38",
   "question": "Sanderson has made deductible contributions to his traditional IRA for many years. Sanderson recently retired at age 60 and received a distribution of $150,000. In which way, if any, will the distribution be taxed?",
   "options": [
     "As a capital gain.",
@@ -824,349 +417,172 @@
     "Subject to a 10 percent penalty tax.",
     "It will not be taxed."
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Withdrawals from deductible traditional IRAs are taxed as ordinary income. Because Sanderson is over age 59½, the distribution is not subject to the 10 percent early withdrawal penalty."
-    },
-    "incorrect": {
-      "A": "Traditional IRA distributions are not taxed as capital gains.",
-      "C": "The 10 percent penalty does not apply because Sanderson is over age 59½.",
-      "D": "Withdrawals from deductible traditional IRAs are taxable."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06496",
+  "id": "REG-M2-39",
   "question": "A 33-year-old taxpayer withdrew $30,000 from a deductible traditional IRA. The taxpayer has a 33% effective tax rate and a 35% marginal tax rate. What is the total tax liability associated with the withdrawal?",
   "options": [
-    "$10,000",
-    "$13,000",
+    "\t\n$10,000",
+    "$13,500",
     "$10,500",
-    "$13,500"
+    "$13,000"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "The withdrawal is taxed at the marginal rate of 35% and is also subject to a 10% early distribution penalty because the taxpayer is under age 59½. Total tax equals $10,500 of income tax plus a $3,000 penalty, for a total of $13,500."
-    },
-    "incorrect": {
-      "A": "This uses the effective tax rate and ignores the early withdrawal penalty.",
-      "B": "This uses the effective tax rate instead of the marginal tax rate.",
-      "C": "This includes only income tax and ignores the 10% penalty."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06497",
-  "question": "Mr. and Mrs. Williams decided during the current tax year to purchase their first new home. The cost of the home was $275,000, and a 20 percent down payment was required to secure a mortgage in the amount of $220,000. The Williamses decided to utilize $10,000 that was kept in a traditional individual retirement account (IRA) owned by Mrs. Williams. This amount was withdrawn on June 12 and used to fund the down payment on July 1. These amounts had been previously deducted as an adjustment by her on an individual tax return in the year of contribution. The remaining $45,000 for the down payment was drawn from a savings account. How much of the distribution from the IRA is subject to the premature distribution penalty tax, and how much must be included in gross income on the Williamses' current year joint income tax return?",
+  "id": "REG-M2-40",
+  "question": "Mr. and Mrs. Williams decided during the current tax year to purchase their first new home. The cost of the home was $275,000, and a 20 percent down payment was required to secure a mortgage in the amount of $220,000. The Williamses decided to utilize $10,000 that was kept in a traditional individual retirement account (IRA) owned by Mrs. Williams. This amount was withdrawn on June 12 and used to fund the down payment on July 1. These amounts had been previously deducted as an adjustment by her on an individual tax return in the year of contribution. The remaining $45,000 for the down payment was drawn from a savings account. How much of the distribution from the IRA is subject to the premature distribution penalty tax, and how much must be included in gross income on the Williamses' current year joint income tax return? \n [BOX] Penalty Tax        -----------------------------       Gross Income[/BOX]",
   "options": [
-    "Penalty $10,000; Gross income $0",
-    "Penalty $0; Gross income $10,000",
-    "Penalty $10,000; Gross income $10,000",
-    "Penalty $0; Gross income $0"
+    "\t\n$0 ---------------------------------- $10,000",
+    "$10,000 ----------------------------- $10,000",
+    "$10,000 ----------------------------- $0",
+    "$0 ---------------------------------- $0"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "The $10,000 qualifies for the first-time homebuyer exception to the 10% penalty. However, because the IRA contributions were deductible, the full $10,000 distribution is taxable as ordinary income."
-    },
-    "incorrect": {
-      "A": "Although the penalty is avoided, the distribution is still taxable.",
-      "C": "The first-time homebuyer exception eliminates the penalty.",
-      "D": "Distributions from deductible traditional IRAs are taxable."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06498",
-  "question": "For a cash basis taxpayer, gain or loss on a year-end sale of listed stock arises on which date?",
+  "id": "REG-M2-41",
+  "question": "For a cash basis taxpayer, gain or loss on a year-end sale of listed stock arises on the:",
   "options": [
-    "Date of delivery of stock certificate.",
     "Date of receipt of cash proceeds.",
+    "Date of delivery of stock certificate.",
     "Settlement date.",
     "Trade date."
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Gain or loss on the sale of listed securities is recognized on the trade date, regardless of whether the taxpayer uses the cash or accrual method of accounting."
-    },
-    "incorrect": {
-      "A": "Delivery of the certificate does not determine recognition of gain or loss.",
-      "B": "Receipt of cash does not control recognition for securities transactions.",
-      "C": "Settlement date is not used to determine gain or loss."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06499",
-  "question": "Which of the following conditions must be present in a divorce agreement executed on or before December 31, 2018, for a payment to qualify as deductible alimony?\n\nI.Payments must be in cash or its equivalent. \n\nII.The payments must end at the recipient's death.",
+  "id": "REG-M2-42",
+  "question": "Which of the following conditions must be present in a divorce agreement executed on or before December 31, 2018, for a payment to qualify as deductible alimony?\n\n[BOX] I. Payments must be in cash or its equivalent.\n\nII. The payments must end at the recipient's death.[/BOX]",
   "options": [
+    "II only.",
     "Neither I nor II.",
     "I only.",
-    "Both I and II.",
-    "II only."
+    "Both I and II."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "To qualify as deductible alimony under a divorce agreement executed on or before December 31, 2018, payments must be made in cash or its equivalent and must terminate upon the death of the recipient spouse."
-    },
-    "incorrect": {
-      "A": "Both listed conditions are required for payments to qualify as alimony.",
-      "B": "Payments must also end at the recipient’s death to qualify as alimony.",
-      "D": "Payments must also be made in cash or its equivalent to qualify as alimony."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06500",
+  "id": "REG-M2-43",
   "question": "A retiree invested $100,000 in an annuity that pays $12,000 annually for 10 years. What portion of the first payment should be included in the retiree's gross income?",
   "options": [
-    "$12,000",
+    "\t\n$12,000",
     "$10,000",
     "$2,000",
     "$0"
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "The retiree recovers $10,000 of basis each year ($100,000 ÷ 10 years). The remaining $2,000 of the $12,000 payment is taxable income."
-    },
-    "incorrect": {
-      "A": "Only the portion exceeding the return of capital is taxable.",
-      "B": "The $10,000 portion is a nontaxable return of capital.",
-      "D": "The annuity payment includes taxable income beyond the return of capital."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06501",
+  "id": "REG-M2-44",
   "question": "With regard to the inclusion of Social Security benefits in gross income for the tax year, which of the following statements is correct?",
   "options": [
+    "Fifty percent of the Social Security benefits is the maximum amount of benefits to be included in gross income.",
     "One hundred percent of the Social Security benefits received is included in gross income.",
     "Social Security benefits received are never included in gross income.",
-    "Fifty percent of the Social Security benefits is the maximum amount of benefits to be included in gross income.",
     "Eighty-five percent of the Social Security benefits is the maximum amount of benefits to be included in gross income."
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "For higher-income taxpayers, up to 85 percent of Social Security benefits may be included in gross income, depending on modified adjusted gross income."
-    },
-    "incorrect": {
-      "A": "The maximum taxable portion of Social Security benefits is 85 percent, not 100 percent.",
-      "B": "Social Security benefits may be partially taxable depending on income level.",
-      "C": "Up to 50 percent of benefits may be taxable for some taxpayers, but higher-income taxpayers may have up to 85 percent taxed."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06502",
-  "question": "During the current year, Adler had the following cash receipts:\n\n Wages $18,000;\n\n Interest income from investments in municipal bonds $400;\n\n Unemployment compensation $3,900.\n\n What is the total amount that must be included in gross income on Adler's current year income tax return?",
+  "id": "REG-M2-45",
+  "question": "During the current year, Adler had the following cash receipts:[BOX] Wages - \t $18,000\n\nInterest income from investments in municipal bonds - \t $400\n\nUnemployment compensation - \t $3,900[/BOX]\n\nWhat is the total amount that must be included in gross income on Adler's current year income tax return?",
   "options": [
     "$22,300",
     "$21,900",
     "$18,400",
     "$18,000"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Gross income includes wages and unemployment compensation. Municipal bond interest is excluded from gross income."
-    },
-    "incorrect": {
-      "A": "Municipal bond interest is excluded from gross income.",
-      "C": "Unemployment compensation must be included in gross income.",
-      "D": "Unemployment compensation must be included in gross income."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06503",
+  "id": "REG-M2-46",
   "question": "Porter was unemployed for part of the current year. Porter received $35,000 of wages, $6,400 from a state unemployment compensation plan, and $2,000 from his former employer's company-paid supplemental unemployment benefit plan. What is the amount of Porter's gross income for the current year?",
   "options": [
-    "$41,400",
-    "$43,400",
+    "\t\n$43,400",
     "$37,000",
+    "$41,400",
     "$35,000"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Gross income includes wages and all forms of unemployment compensation, including employer-paid supplemental unemployment benefits."
-    },
-    "incorrect": {
-      "A": "Employer-paid supplemental unemployment benefits are included in gross income.",
-      "C": "State unemployment compensation is included in gross income.",
-      "D": "Unemployment compensation is included in gross income."
-    }
-  }
+  "correctIndex": 0
 },
 {
-  "id": "MCQ-06504",
-  "question": "Daisy Dunn, a single calendar-year taxpayer with no dependents, died on March 1, Year 1. What is the due date for Daisy's Year 1 final federal income tax return?",
+  "id": "REG-M2-47",
+  "question": "Daisy Dunn, a single calendar-year taxpayer with no dependents, died on March 1, Year 1. Daisy earned $20,000 from her job in Year 1 before she died and had interest income from bank accounts of $500. Her estate received another $1,500 of interest from her bank accounts in Year 1 after her death.\n\nWhat is the due date for Daisy's Year 1 final federal income tax return?",
   "options": [
-    "April 15, Year 2",
     "March 1, Year 2",
+    "December 31, Year 1",
     "April 15, Year 1",
-    "December 31, Year 1"
+    "April 15, Year 2"
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "A decedent’s final income tax return is due on the normal filing date for that tax year. For a calendar-year taxpayer, this is April 15 of the year following death."
-    },
-    "incorrect": {
-      "B": "The due date is not one year from the date of death.",
-      "C": "The return is due in the year following death, not the year of death.",
-      "D": "The tax year does not end the filing requirement on December 31."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06505",
-  "question": "Daisy Dunn is a single, calendar-year, cash-basis taxpayer with no dependents. Daisy died on March 1, Year 1. Daisy earned $20,000 from her job and $500 of interest income from bank accounts in Year 1 before she died. Her estate received another $1,500 of interest from her bank accounts in Year 1 after her death. What is Daisy's taxable gross income on her Year 1 final federal income tax return?",
+  "id": "REG-M2-48",
+  "question": "Daisy Dunn is a single, calendar-year, cash-basis taxpayer with no dependents. Daisy died on March 1, Year 1. Daisy earned $20,000 from her job and $500 of interest income from bank accounts in Year 1 before she died. Her estate received another $1,500 of interest from her bank accounts in Year 1 after her death.\n\nWhat is Daisy's taxable gross income on her Year 1 final federal income tax return?",
   "options": [
-    "$20,500",
-    "$20,000",
+    "\t\n$20,000",
     "$22,000",
+    "$20,500",
     "$0"
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "Only income earned and received by a cash-basis taxpayer before death is included on the final return. Daisy must include $20,000 of wages and $500 of interest earned before death. The $1,500 interest received after death is income of the estate."
-    },
-    "incorrect": {
-      "B": "Interest income earned and received before death must also be included.",
-      "C": "Interest received after death is reported by the estate, not on the decedent’s final return.",
-      "D": "Income earned and received before death is included on the final return."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06506",
-  "question": "Sullivan sustained personal injuries from an automobile accident and was awarded $200,000 for physical personal injury and $2,000,000 in punitive damages. What amount is includible in Sullivan's gross income?",
+  "id": "REG-M2-49",
+  "question": "Sullivan sustained personal injuries from an automobile accident. Sullivan was awarded $200,000 in damages for physical personal injury and $2,000,000 in punitive damages. What amount is includible in Sullivan's gross income?",
   "options": [
-    "$2,000,000",
-    "$200,000",
+    "\t\n$200,000",
+    "$0",
     "$2,200,000",
-    "$0"
+    "$2,000,000"
   ],
-  "correctIndex": 0,
-  "explanation": {
-    "correct": {
-      "choice": "A",
-      "text": "Punitive damages are fully taxable. Damages received on account of physical personal injury are excluded from gross income."
-    },
-    "incorrect": {
-      "B": "Damages for physical personal injury are excluded from gross income.",
-      "C": "Only punitive damages are taxable; physical injury damages are excluded.",
-      "D": "Punitive damages are taxable and must be included in gross income."
-    }
-  }
+  "correctIndex": 3
 },
 {
-  "id": "MCQ-06507",
-  "question": "During Year 9, Ash had the following cash receipts:\n\n Wages $13,000;\n\n Interest income from U.S. Treasury bonds $350;\n\n Workers' compensation following a job-related injury $8,500.\n\n What is the total amount that must be included in gross income on Ash's Year 9 income tax return?",
+  "id": "REG-M2-50",
+  "question": "During Year 9, Ash had the following cash receipts:[BOX] Wages - \t $13,000\n\nInterest income from U.S. Treasury bonds - \t $350\n\nWorkers' compensation following a job-related injury - \t $8,500[/BOX]\n\nWhat is the total amount that must be included in gross income on Ash's Year 9 income tax return?",
   "options": [
     "$21,500",
-    "$13,350",
     "$21,850",
+    "$13,350",
     "$13,000"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Wages and interest on U.S. Treasury bonds are included in gross income. Workers’ compensation for a job-related injury is excluded. Therefore, gross income is $13,350."
-    },
-    "incorrect": {
-      "A": "Workers’ compensation is excluded from gross income.",
-      "C": "Workers’ compensation is excluded from gross income.",
-      "D": "Interest on U.S. Treasury bonds must also be included in gross income."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06508",
-  "question": "Which payment(s) is (are) included in a recipient's gross income?\n\n I. Payment to a graduate assistant for a part-time teaching assignment at a university when teaching is not a requirement for the degree.\n\n II. A grant to a Ph.D. candidate for participation in a university-sponsored research project for the benefit of the university.",
+  "id": "REG-M2-51",
+  "question": "Which payment(s) is (are) included in a recipient's gross income?[BOX] I. Payment to a graduate assistant for a part-time teaching assignment at a university. Teaching is not a requirement toward obtaining the degree.\n\nII. A grant to a Ph.D. candidate for his participation in a university-sponsored research project for the benefit of the university.[/BOX]",
   "options": [
+    "\t\nII only.",
     "I only.",
-    "II only.",
     "Both I and II.",
     "Neither I nor II."
   ],
-  "correctIndex": 2,
-  "explanation": {
-    "correct": {
-      "choice": "C",
-      "text": "Payments for teaching assignments and payments for participation in university-sponsored research are taxable compensation and are included in gross income."
-    },
-    "incorrect": {
-      "A": "Research payments are also taxable.",
-      "B": "Teaching payments are also taxable.",
-      "D": "Both payments represent taxable compensation."
-    }
-  }
+  "correctIndex": 2
 },
 {
-  "id": "MCQ-06509",
+  "id": "REG-M2-52",
   "question": "Under a $150,000 insurance policy on her deceased father's life, May Green is to receive $12,000 per year for 15 years. Of the $12,000 received in the current year, the amount subject to income tax is:",
   "options": [
-    "$1,000",
-    "$2,000",
     "$12,000",
-    "$0"
+    "$2,000",
+    "$0",
+    "$1,000"
   ],
-  "correctIndex": 1,
-  "explanation": {
-    "correct": {
-      "choice": "B",
-      "text": "Life insurance proceeds are generally excluded from gross income, but when paid in installments, the portion representing interest is taxable. The return of principal is $10,000 per year ($150,000 ÷ 15 years), leaving $2,000 taxable as interest."
-    },
-    "incorrect": {
-      "A": "The taxable interest portion is greater than $1,000.",
-      "C": "Only the interest portion of the installment payment is taxable.",
-      "D": "The interest portion of the installment payment is taxable."
-    }
-  }
+  "correctIndex": 1
 },
 {
-  "id": "MCQ-06510",
+  "id": "REG-M2-53",
   "question": "A grandparent gave her only granddaughter a gift of $25,000. What amount, if any, should the granddaughter report as income on her tax return?",
   "options": [
-    "$12,000",
-    "$13,000",
     "$25,000",
-    "$0"
+    "$13,000",
+    "$0",
+    "$12,000"
   ],
-  "correctIndex": 3,
-  "explanation": {
-    "correct": {
-      "choice": "D",
-      "text": "Gifts are excluded from gross income to the recipient. Therefore, the granddaughter does not report any portion of the gift as income."
-    },
-    "incorrect": {
-      "A": "Gifts are not partially taxable to the recipient.",
-      "B": "Gifts are not partially taxable to the recipient.",
-      "C": "Gifts are not taxable income to the recipient."
-    }
-  }
+  "correctIndex": 2
 }
-
   ]
 }

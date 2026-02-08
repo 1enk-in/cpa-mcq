@@ -2,70 +2,268 @@
   "module": "M7",
   "questions": [
     {
-      "id": "M7-MCQ-01",
-      "question": "Which penalty applies for late filing?",
-      "options": [
-        "Failure to pay",
-        "Failure to file",
-        "Accuracy-related",
-        "Fraud penalty"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "Failure to file penalty applies for late returns."
-        },
-        "incorrect": {
-          "A": "Failure to pay applies when tax is unpaid.",
-          "C": "Accuracy penalty applies to understatements.",
-          "D": "Fraud penalty applies to intentional fraud."
-        }
-      }
-    },
-    {
-      "id": "M7-MCQ-02",
-      "question": "Which form is used to request an extension?",
-      "options": [
-        "Form 4868",
-        "Form 941",
-        "Form 1120",
-        "Form 1065"
-      ],
-      "correctIndex": 0,
-      "explanation": {
-        "correct": {
-          "choice": "A",
-          "text": "Form 4868 requests an automatic extension."
-        },
-        "incorrect": {
-          "B": "941 is payroll tax.",
-          "C": "1120 is a corporate return.",
-          "D": "1065 is a partnership return."
-        }
-      }
-    },
-    {
-      "id": "M7-MCQ-03",
-      "question": "Accuracy-related penalties generally equal:",
-      "options": [
-        "10%",
-        "15%",
-        "20%",
-        "25%"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Accuracy-related penalties are generally 20%."
-        },
-        "incorrect": {
-          "A": "10% is incorrect.",
-          "B": "15% is incorrect.",
-          "D": "25% is not standard."
-        }
-      }
-    }
+  "id": "REG-M7-01",
+  "question": "Mr. and Mrs. Sloan incurred the following expenses during the year when they adopted a child:[BOX] Child's medical expenses - \t $5,000\n\nLegal fees - \t $8,000\n\nAgency fee - \t $3,000[/BOX]\n\nWithout regard to the limitation of the credit, what amount of the above expenses are qualifying expenses for the adoption credit?",
+  "options": [
+    "\t\n$16,000",
+    "$5,000",
+    "$11,000",
+    "$8,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M7-02",
+  "question": "Which of the following credits can result in a refund even if the individual had no income tax liability?",
+  "options": [
+    "\t\nEarned income credit",
+    "Lifetime learning credit",
+    "Retirement savings contribution credit",
+    "Elderly and/or permanently disabled credit"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M7-03",
+  "question": "Krete, an unmarried taxpayer with income exclusively from wages, filed her initial income tax return for Year 8. By December 31, Year 8, Krete's employer had withheld $16,000 in federal income taxes and Krete had made no estimated tax payments. On April 15, Year 9, Krete timely filed an extension request to file her individual tax return and paid $300 of additional taxes. Krete's Year 8 income tax liability was $16,500 when she timely filed her return on April 30, Year 9, and paid the remaining income tax liability balance.\n\nWhat amount would be subject to the penalty for the underpayment of estimated taxes?",
+  "options": [
+    "\t\n$500",
+    "$0",
+    "$200",
+    "$16,500"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M7-04",
+  "question": "Which of the following is not a refundable tax credit?",
+  "options": [
+    "\t\nRetirement savings contribution credit.",
+    "Earned income credit.",
+    "Child tax credit.",
+    "Excess social security paid."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M7-05",
+  "question": "Which of the following personal tax credits can offset tax liability but cannot result in a refund to the taxpayer if the amount of the credit exceeds the taxpayerʹs tax liability?",
+  "options": [
+    "Earned income credit",
+    "Child tax credit",
+    "Lifetime learning credit",
+    "American opportunity credit"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M7-06",
+  "question": "Which of the following statements about the child and dependent care credit is correct?",
+  "options": [
+    "The credit is available for the cost of the care of a disabled spouse.",
+    "The child must be a direct descendant of the taxpayer.",
+    "The child must be under the age of 18 years.",
+    "The maximum credit is $600."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M7-07",
+  "question": "Frank and Mary Wood have 2 children, Becky, age 10, and Matt, age 14. The Woods incur expenses of $5,000 for after-school care for each child. Their only income is from wages. Frank's wages are $60,000, and Mary's wages are $2,500. What amount of Child and Dependent Care Credit may the Woods claim on their joint tax return?",
+  "options": [
+    "\t\n$500",
+    "$1,000",
+    "$2,000",
+    "$1,750"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M7-08",
+  "question": "How may taxes paid by an individual to a foreign country be treated?",
+  "options": [
+    "\t\nAs an itemized deduction subject to a 2% floor.",
+    "As an adjustment to gross income.",
+    "As a credit against federal income taxes due.",
+    "As a nondeductible expense."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M7-09",
+  "question": "Max, a 19-year-old single taxpayer, works part time and goes to school part time. Maxʹs adjusted gross income (AGI) for the current year is below the AGI threshold phase-out. He made a $3,000 contribution to a Roth individual retirement account (IRA). Which of the following is a true statement about Maxʹs retirement savings contribution credit for the current year?",
+  "options": [
+    "Max is eligible for the credit even if he is a dependent of another taxpayer.",
+    "The credit is only available for contributions to a traditional IRA, not a Roth IRA.",
+    "Max is not eligible for the credit because he is not at least 21 years old by the end of the tax year.",
+    "The credit is only available for $2,000 of Maxʹs contributions to a Roth IRA."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-10",
+  "question": "For the current year, Seth and Sheila intend to file a joint return. Seth expects to earn $35,000 in wages from his teaching job. He is covered by the university's pension plan. Sheila is a volunteer at their son, Stephen's, school. In addition to Seth's income, they received $500 in interest income and $50 in prize winnings from a local radio contest. Each would like to make a deductible contribution to a traditional individual retirement account (IRA) for the current year. They also believe they will be eligible to claim a tax credit for these contributions. Which of the following would Seth and Sheila be eligible to do?[BOX] I. Make a Deductible IRA Contribution.\n II. Claim a Tax Credit [/BOX]",
+  "options": [
+    "I. No II. No",
+    "I.No II. Yes",
+    "I.Yes II. No",
+    "I.Yes II. Yes"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-11",
+  "question": "The Tiller family has a modified adjusted gross income of $50,000. The Tillers have two children, ages 12 and 13, who qualify as dependents. All of the Tillers' income is from wages and their tax liability is $1,000 before the child tax credit. What is the amount of the child tax credit on the Tillers' married filing jointly income tax return for the current year?",
+  "options": [
+    "$2,000",
+    "$3,000",
+    "$4,000",
+    "$1,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M7-12",
+  "question": "Madison and Nick Koz have two children, ages 8 and 10. Both children meet the definition of qualifying child. The Koz family has adjusted gross income of $300,000. What is the amount of the child tax credit on the couple's current year income tax return?",
+  "options": [
+    "\t\n$4,000",
+    "$2,000",
+    "$3,000",
+    "$6,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M7-13",
+  "question": "Which of the following is not a test for qualifying a child for the purposes of the earned income credit?",
+  "options": [
+    "Child's age",
+    "Child's residence",
+    "Child's relationship to the taxpayer",
+    "Child's income"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-14",
+  "question": "An employee who has had Social Security tax withheld in an amount greater than the maximum for a particular year may claim:",
+  "options": [
+    "\t\nThe excess as a credit against income tax, if that excess was withheld by one employer.",
+    "Reimbursement of such excess from his employers, if that excess resulted from correct withholding by two or more employers.",
+    "Such excess as either a credit or an itemized deduction, at the election of the employee, if that excess resulted from correct withholding by two or more employers.",
+    "The excess as a credit against income tax, if that excess resulted from correct withholding by two or more employers."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-15",
+  "question": "An individual taxpayer's tax return included the following:[BOX] Regular tax before tax credits - \t $5,000\n\nCurrent year estimated tax payments - \t $6,000\n\nAmount paid with current year extension - \t $1,000\n\nFederal income tax withheld - \t $1,000[/BOX]\n\nWhat amount, if any, is the taxpayer's overpayment?",
+  "options": [
+    "\t\n$1,000",
+    "$0",
+    "$2,000",
+    "$3,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-16",
+  "question": "Chris Baker's adjusted gross income on her current year tax return was $160,000. The amount covered a 12-month period. For the next tax year, Baker may avoid the penalty for the underpayment of estimated tax if the timely estimated tax payments equal the required annual amount of:[BOX] I. 90% of the tax on the return for the current year paid in four equal installments.\n\nII. 110% of prior year's tax liability paid in four equal installments.[/BOX]",
+  "options": [
+    "\t\nII only.",
+    "Both I and II.",
+    "Neither I nor II.",
+    "I only."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M7-17",
+  "question": "Dawn White's adjusted gross income on her Year 1 tax return was $100,000. The amount covered a 12-month period. For the Year 2 tax year, the minimum payments required from White to avoid the penalty for the underpayment of estimated tax is:",
+  "options": [
+    "100% of the prior year's tax liability paid in four equal installments only.",
+    "90% of the current tax on the return for the current year paid in four equal installments or 100% of the prior year's tax liability paid in four equal installments.",
+    "90% of the current tax on the return for the current year paid in four equal installments or 110% of the prior year's tax liability paid in four equal installments.",
+    "110% of the prior year's tax liability paid in four equal installments only."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M7-18",
+  "question": "Sam's Year 2 taxable income was $175,000 with a corresponding tax liability of $30,000. His Year 2 adjusted gross income was $200,000. For Year 3, Sam expects taxable income of $250,000 and a tax liability of $50,000. In order to avoid a penalty for underpayment of estimated tax, what is the minimum amount of Year 3 estimated tax payments that Sam can make?",
+  "options": [
+    "\t\n$30,000",
+    "$45,000",
+    "$50,000",
+    "$33,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-19",
+  "question": "Which of the following statements is true regarding the net investment income (NII) tax?",
+  "options": [
+    "\t\nThe tax is 2.8 percent of the greater of (1) the taxpayer’s net investment income; or (2) the excess of modified AGI over a threshold amount.",
+    "The tax is 3.8 percent of the greater of (1) the taxpayer’s net investment income; or (2) the excess of modified AGI over a threshold amount.",
+    "The tax is 2.8 percent of the lesser of (1) the taxpayer’s net investment income; or (2) the excess of modified AGI over a threshold amount.",
+    "The tax is 3.8 percent of the lesser of (1) the taxpayer’s net investment income; or (2) the excess of modified AGI over a threshold amount."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-20",
+  "question": "Which of the following can be subject to the net investment income tax?",
+  "options": [
+    "\t\nA limited partnership.",
+    "A nonresident alien.",
+    "A domestic C corporation.",
+    "An individual who is a resident of the United States."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-21",
+  "question": "The Welles family has three children. Which of the children listed below would be subject to the “kiddie tax”?",
+  "options": [
+    "\t\nNone of these",
+    "Walker: 25 years old, full-time college student, supports himself fully",
+    "Willy: 20 years old, not a college student, supports himself fully",
+    "Wilson: 20 years old, full-time college student, fully supported by his parents"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-22",
+  "question": "Chris, age 5, has $3,000 of interest income and no earned income this year. Assuming the current applicable standard deduction for dependents with unearned income is $1,350, how much of Chris' income will be taxed at his parents' marginal rate?",
+  "options": [
+    "\t\n$0",
+    "$300",
+    "$1,650",
+    "$3,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M7-23",
+  "question": "A 22-year-old full-time student earned $11,000 in salary and received $9,000 in interest from corporate bonds. The bonds were a gift from the student's grandparents. The student's parents pay more than half of the student's support, including $25,000 in tuition. Which of the following statements is correct regarding the student's current year income tax?",
+  "options": [
+    "The student's salary income and no other income will be subject to the \"kiddie tax.\"",
+    "Neither the student's salary nor the interest income will be subject to the \"kiddie tax.\"",
+    "Both the student's salary and a portion of the interest income will be subject to the \"kiddie tax.\"",
+    "A portion of the student's interest income and no other income will be subject to the \"kiddie tax.\""
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M7-24",
+  "question": "Andre Davis is 17 years old and lives at home with his parents. He earned $5,000 in the current tax year mowing lawns. Andre also received $3,000 in interest on a corporate bond that his grandmother gave him. At what marginal tax rate is Andre’s $8,000 of income taxed?",
+  "options": [
+    "$8,000 less the standard deduction is taxed at Andre’s marginal rate.",
+    "$7,700 less the standard deduction is taxed at Andre’s marginal rate. $300 is taxed at his parents' marginal rate.",
+    "$8,000 less the standard deduction is taxed at his parents' marginal rate.",
+    "$5,000 less the standard deduction is taxed at Andre’s marginal rate. $3,000 is taxed at his parents' marginal rate."
+  ],
+  "correctIndex": 1
+}
   ]
 }

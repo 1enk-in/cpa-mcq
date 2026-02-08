@@ -12,9 +12,6 @@ import getCroppedImg from "../utils/cropImage";
 
 
 
-
-
-
 import {
   EmailAuthProvider,
   reauthenticateWithCredential,
@@ -335,10 +332,29 @@ const [showCrop, setShowCrop] = useState(false);
 
 
             {!showSettings && (
-              <button className="profile-action" onClick={() => setShowSettings(true)}>
-                ⚙️ Settings
-              </button>
-            )}
+  <>
+    <button
+      className="profile-action"
+      onClick={() => setShowSettings(true)}
+    >
+      ⚙️ Settings
+    </button>
+
+    <button
+      className="profile-action admin-tool"
+      onClick={() =>
+        window.open(
+          "/tools/mcq-builder/index.html",
+          "_blank",
+          "noopener,noreferrer"
+        )
+      }
+    >
+      🛠 MCQ JSON Builder
+    </button>
+  </>
+)}
+
 
 
 
@@ -354,7 +370,7 @@ const [showCrop, setShowCrop] = useState(false);
        ===================== */}
     {!showCredSettings && (
       <>
-        {/* PROFILE IMAGE */}
+
         
 
         {/* DARK MODE */}

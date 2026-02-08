@@ -6,15 +6,15 @@ export default function RegModules({
   const modules = [
     { id: "M1", title: "Filing Requirements and Filing Status", mcqs: 25 },
     { id: "M2", title: "Gross Income: Part 1", mcqs: 53 },
-    { id: "M3", title: "Gross Income: Part 2", mcqs: 35 },
-    { id: "M4", title: "Adjustments", mcqs: 30 },
-    { id: "M5", title: "Itemized Deductions", mcqs: 45 },
+    { id: "M3", title: "Gross Income: Part 2", mcqs: 30 },
+    { id: "M4", title: "Adjustments", mcqs: 15 },
+    { id: "M5", title: "Itemized Deductions", mcqs: 46 },
     {
       id: "M6",
       title: "Section 199A Qualified Business Income Deduction",
-      mcqs: 20
+      mcqs: 18
     },
-    { id: "M7", title: "Tax Computations and Credits", mcqs: 50 }
+    { id: "M7", title: "Tax Computations and Credits", mcqs: 24 }
   ];
 
   return (

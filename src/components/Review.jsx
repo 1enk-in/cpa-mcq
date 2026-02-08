@@ -95,6 +95,18 @@ export default function Review({ reviewSession, setScreen }) {
      🔒 BACKWARD-SAFE DESTRUCTURE
      =============================== */
   const module = reviewSession.module;
+  const subjectFolderMap = {
+  M: "reg",
+  A: "aud",
+  F: "far",
+  B: "bar",
+  I: "isc",
+  T: "tcp"
+};
+
+const subjectFolder = subjectFolderMap[module[0]];
+const moduleFolder = module.toLowerCase(); // M1 → m1, A2 → a2
+
   const wrongIndexes = reviewSession.wrongIndexes ?? [];
   const answers = reviewSession.answers ?? [];
 
@@ -178,29 +190,18 @@ export default function Review({ reviewSession, setScreen }) {
                 </div>
               );
             })}
-
             {/* EXPLANATION */}
-            <div className="explanation">
-              <h4>Explanation</h4>
+<div className="explanation">
+  <h4>Explanation</h4>
 
-              <p>
-                <strong>
-                  Choice "{q.explanation.correct.choice}" is correct.
-                </strong>{" "}
-                {q.explanation.correct.text}
-              </p>
+  <img
+  src={`/explanations/${subjectFolder}/${moduleFolder}/${q.id}.png`}
+  alt={`Explanation for ${q.id}`}
+  className="explanation-img"
+/>
 
-              {Object.entries(q.explanation.incorrect).map(
-                ([choice, text]) => (
-                  <p key={choice}>
-                    <strong>
-                      Choice "{choice}" is incorrect.
-                    </strong>{" "}
-                    {text}
-                  </p>
-                )
-              )}
-            </div>
+</div>
+
           </div>
         );
       })()}

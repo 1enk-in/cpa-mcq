@@ -2,86 +2,334 @@
   "module": "F1",
   "questions": [
     {
-      "id": "MCQ-00001",
-      "question": "===QUESTION===\nMark and Molly met at a New Year's Eve party held December 31, Year 1. They instantly bonded, fell madly in love, and were married at 11:38 p.m. that night. Identify Mark's filing status for Year 1.\n===OPTIONS===",
-      "options": [
-        "Head of household",
-        "Married filing jointly",
-        "Single",
-        "Surviving spouse"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "Choice \"B\" is correct. Mark and Molly were married as of midnight on December 31, Year 1. Therefore, Mark's only options are to file as married either jointly or separately, and because \"jointly\" is the only option presented that qualifies, it is the correct choice.\n\nChoices \"C\", \"A\", and \"D\" are incorrect, based on the above explanation."
-        },
-        "incorrect": {}
-      }
-    },
-    {
-      "id": "MCQ-00002",
-      "question": "===QUESTION===\nWhich of the following is (are) among the requirements to enable a taxpayer to be classified as a \"qualifying surviving spouse\"?\n\nI.\tA dependent has lived with the taxpayer for six months.\nII.\tThe taxpayer has maintained the cost of the principal residence for six months.\n===OPTIONS===",
-      "options": [
-        "II only.",
-        "Both I and II.",
-        "Neither I nor II.",
-        "I only."
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Choice \"C\" is correct. The requirements that enable a taxpayer to be classified as a \"qualifying surviving spouse\" are:\n\nThe taxpayer's spouse died in one of the two previous years and the taxpayer did not remarry in the current tax year;\nThe taxpayer has a child who can be claimed as a dependent;\nThis child lived in the taxpayer's home for all of the current tax year;\nThe taxpayer paid over half the cost of keeping up a home for the child; and\nThe taxpayer could have filed a joint return in the year the spouse died."
-        },
-        "incorrect": {}
-      }
-    },
-    {
-      "id": "MCQ-00003",
-      "question": "===QUESTION===\nIn which of the following situations may taxpayers file as married filing jointly?\n===OPTIONS===",
-      "options": [
-        "Taxpayers who were married but lived under a legal separation agreement at the end of the year.",
-        "Taxpayers who were divorced during the year.",
-        "Taxpayers who were married but lived apart during the year.",
-        "Taxpayers who were legally separated but lived together for the entire year.",
-        "Head of household.",
-        "Single.",
-        "Married filing jointly.",
-        "Qualifying surviving spouse.",
-        "July 31",
-        "August 3",
-        "August 31",
-        "December 31",
-        "Qualifying surviving spouse.",
-        "Single.",
-        "Head of household.",
-        "Married filing jointly/separately.",
-        "Single.",
-        "Married filing jointly.",
-        "Head of household.",
-        "Surviving spouse.",
-        "Single.",
-        "Head of household.",
-        "Qualifying surviving spouse.",
-        "Married filing jointly.",
-        "Married filing jointly",
-        "Married filing separately",
-        "Head of household",
-        "Single",
-        "A single taxpayer maintains a household that is the principal home for five months of the year for his disabled child.",
-        "An unmarried taxpayer maintains a household with a 28-year-old son, who earned $10,000 during the tax year.",
-        "A single taxpayer maintains a separate home for his parent, who qualifies as a dependent.",
-        "A taxpayer with no dependents is the surviving spouse of an individual who died in the current year."
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "In order to file a joint return, the parties must be married at the end of the year. Exception: If the parties are married but are legally separated under the laws of the state in which they reside, they cannot file a joint return (they will file either under the single or head of household filing status).\n\nChoice \"C\" is correct. Taxpayers who are married but lived apart during the year are allowed to file a joint return for the year. The fact that they did not live together during the year has no bearing on the issue.\n\nChoice \"A\" is incorrect. Taxpayers who are married but lived under a legal separation agreement at the end of the year may not file a joint return. They will generally file either under the single or head of household filing status.\n\nChoice \"B\" is incorrect. Taxpayers who were divorced during the year may not file a joint return together, as they are not married at the end of the year. [Note, however, that they may become married again in the year and file a joint return with the new spouse.]\n\nChoice \"D\" is incorrect. Taxpayers who were legally separated but lived together for the entire year may not file a joint return. They will generally file either under the single or head of household filing status.\n\n===QUESTION===\nA taxpayer's spouse dies in August of the current year. Which of the following is the taxpayer's filing status for the current year?\n===OPTIONS===\nA.Option A.\t\nHead of household.\n\nB.Option B.\t\nSingle.\n\nC.Option C.\t\nMarried filing jointly.\n\nD.Option D.\t\nQualifying surviving spouse.\n===CORRECT===\n the correct answer is C.\n===EXPLANATION===\nExplanation\nChoice \"C\" is correct. The surviving spouse is considered to be married (and thus able to file as married filing jointly) for the entire current year even if the spouse dies earlier in the year (in this case in August).\n\nChoice \"A\" is incorrect. The filing status is not head of household for the current year.\n\nChoice \"B\" is incorrect. The filing status is not single for the current year.\n\nChoice \"D\" is incorrect. The filing status is not qualifying surviving spouse for the current year.\n\n===QUESTION===\nTaylor, an individual, commenced business on August 4 of this year. Taylor does not keep adequate records. On which of the following dates must Taylor's tax year end?\n===OPTIONS===\nA.Option A.\t\nJuly 31\n\nB.Option B.\t\nAugust 3\n\nC.Option C.\t\nAugust 31\n\nD.Option D.\t\nDecember 31\n===CORRECT===\n the correct answer is D.\n===EXPLANATION===\nExplanation\nChoice \"D\" is correct. Because Taylor is an individual, Taylor is required to use a calendar year as her tax year. As such, Taylor's tax year will end on December 31.\n\nChoice \"A\" is incorrect. Because Taylor is an individual, she is not permitted to use a fiscal year as her tax year; rather, she must use a calendar year ending on December 31 as her tax year. The fact that she started business on August 4, or that she does not keep adequate records, is irrelevant.\n\nChoice \"B\" is incorrect. Because Taylor is an individual, Taylor is not permitted to use a fiscal year as her tax year. As such, Taylor cannot choose an end date for her tax year other than December 31, regardless of the fact that her business started in August.\n\nChoice \"C\" is incorrect. Because Taylor is an individual, she is required to use a calendar year as her tax year. As such, her tax year will end on December 31. The fact that she started her business in the middle of the year and that she keeps inadequate records is irrelevant.\n\n===QUESTION===\nJohn and Theresa are in the process of obtaining a divorce. Although they are not legally separated, John moved out of the family home in October of Year 1 and moved into an apartment nearby. John and Theresa's two children, Jenna and Stella, lived with Theresa in the family home for more than half of the tax year. What filing status can Theresa use to file her Year 1 tax return?\n===OPTIONS===\nA.Option A.\t\nQualifying surviving spouse.\n\nB.Option B.\t\nSingle.\n\nC.Option C.\t\nHead of household.\n\nD.Option D.\t\nMarried filing jointly/separately.\n===CORRECT===\n the correct answer is D.\n===EXPLANATION===\nExplanation\nChoice \"D\" is correct. John and Theresa are still married at year-end, not legally separated, and have not lived apart for the last six months of the taxable year. Theresa must file as married, but may choose to do so either jointly with John or separately.\n\nChoice \"A\" is incorrect. Qualifying surviving spouse is not an option for Theresa, as John is still alive.\n\nChoice \"B\" is incorrect. Filing as single is not an option, because John and Theresa are still married and not legally separated at year-end.\n\nChoice \"C\" is incorrect. Head of household status is not an option because the couple is not legally separated at year-end and John did not live apart from Theresa for the last six months of the taxable year.\n\n===QUESTION===\nMort and Mindy met at a New Year's Eve party held December 31, Year 1. They instantly bonded, fell madly in love, and were married at 11:38 p.m. that night. Sadly, Mort passed away November 15, Year 2. What filing status should Mindy use for Year 2?\n===OPTIONS===\nA.Option A.\t\nSingle.\n\nB.Option B.\t\nMarried filing jointly.\n\nC.Option C.\t\nHead of household.\n\nD.Option D.\t\nSurviving spouse.\n===CORRECT===\n the correct answer is B.\n===EXPLANATION===\nExplanation\nChoice \"B\" is correct. Mindy will be able to use the married filing jointly status for the year Mort passed away (Year 2) even though she was not married at year-end.\n\nChoices \"A\", \"C\", and \"D\" are incorrect, based on the above explanation.\n\n===QUESTION===\nThompson's spouse died in Year 1. Thompson did not remarry in Year 2 and lived alone the entire year. What is Thompson's Year 2 filing status?\n===OPTIONS===\nA.Option A.\t\nSingle.\n\nB.Option B.\t\nHead of household.\n\nC.Option C.\t\nQualifying surviving spouse.\n\nD.Option D.\t\nMarried filing jointly.\n===CORRECT===\n the correct answer is A.\n===EXPLANATION===\nExplanation\nChoice \"A\" is correct. Filing status is determined as of the last day of the year. At the end of Year 2, Thompson is not married and does not qualify for any other filing status. Therefore, his status is single.\n\nChoice \"B\" is incorrect. Head of household status could apply in certain circumstances where there is a dependent and surviving spouse status does not apply. That is not the case here. Thompson is single for Year 2.\n\nChoice \"C\" is incorrect. Qualifying surviving spouse status, can be claimed for the two years after year of death. However, it requires the presence of a dependent child, which is not part of the facts here. Thompson is single for Year 2.\n\nChoice \"D\" is incorrect. When a spouse dies during the year, the surviving spouse can file married filing jointly for that year under an exception to the end-of-year test. But this question is about Year 2, the year after death. Thompson is single for Year 2.\n\n===QUESTION===\nAs of December 31, the Mitchells were legally separated and maintained separate households for the entire year. The Mitchells have no children. What filing status should Mr. Mitchell claim for the year?\n===OPTIONS===\nA.Option A.\t\nMarried filing jointly\n\nB.Option B.\t\nMarried filing separately\n\nC.Option C.\t\nHead of household\n\nD.Option D.\t\nSingle\n===CORRECT===\n the correct answer is D.\n===EXPLANATION===\nExplanation\nChoice \"D\" is correct. Marital status for the tax year is determined as of the last day of the year. Taxpayers who are divorced or legally separated are considered unmarried. Mr. Mitchell is legally separated and does not have a qualifying dependent, so Mr. Mitchell's filing status for the year is single.\n\nChoice \"A\" is incorrect. Because the taxpayer is legally separated, he is considered unmarried and does not qualify for married-filing-jointly filing status.\n\nChoice \"B\" is incorrect. Because the taxpayer is legally separated, he is considered unmarried and does not qualify for married-filing-separately filing status.\n\nChoice \"C\" is incorrect. The taxpayer does not qualify for head-of-household filing status because he does not maintain a home for a qualifying dependent.\n\n===QUESTION===\nIn which of the following scenarios would the head of household filing status be available to the taxpayer?\n===OPTIONS===\nA.Option A.\t\nA single taxpayer maintains a household that is the principal home for five months of the year for his disabled child.\n\nB.Option B.\t\nAn unmarried taxpayer maintains a household with a 28-year-old son, who earned $10,000 during the tax year.\n\nC.Option C.\t\nA single taxpayer maintains a separate home for his parent, who qualifies as a dependent.\n\nD.Option D.\t\nA taxpayer with no dependents is the surviving spouse of an individual who died in the current year.\n===CORRECT===\n the correct answer is C.\n===EXPLANATION===\nExplanation\nChoice \"C\" is correct. Head of household filing status is available to a single taxpayer who maintains a separate home for a dependent parent. To qualify for head of household filing status, a taxpayer must be unmarried as of the last day of the tax year and maintain a home that is the principal residence of a qualifying person for more than half of the tax year. A qualifying person includes a dependent child, parent, or relative. A dependent parent is not required to live with the taxpayer, provided the taxpayer maintains a home that was the principal residence of the parent for the entire year.\n\nChoice \"A\" is incorrect. The taxpayer is not entitled to head of household filing status. His filing status is single. To qualify for head of household status, the taxpayer must maintain a home that is the principal residence of a qualifying person for more than half the year. Because the taxpayer maintains a household that is the principal home for his disabled child for only five months of the year, his son is not a dependent child or relative and he does not qualify for head of household status.\n\nChoice \"B\" is incorrect. The taxpayer is not entitled to head of household filing status. Her filing status is single. The taxpayer is unmarried and maintains a home for her son, but her son is not a dependent child or dependent relative. Her son is not a qualifying child dependent because he is over the age limit (under age 19, or under age 24 in the case of a full-time student). He is not a qualifying relative dependent because his gross income of $10,000 is more than the gross income threshold amount.\n\nChoice \"D\" is incorrect. A taxpayer who has no dependents is not entitled to head of household filing status. Because the taxpayer's spouse died in the current year, the taxpayer is entitled to married filing jointly status for the current year."
-        },
-        "incorrect": {}
-      }
-    }
+  "id": "REG-M3-01",
+  "question": "Baker, a sole proprietor CPA, has several clients that do business in Spain. While on a four-week vacation in Spain, Baker attended a five-day seminar on Spanish business practices that cost $700. Baker's round-trip airfare to Spain was $600. While in Spain, Baker spent an average of $100 per day on accommodations, local travel, and other incidental expenses, for total expenses of $2,800. What amount of total expense can Baker deduct on Form 1040 Schedule C, \"Profit or Loss From Business,\" related to this situation?",
+  "options": [
+    "$4,100",
+    "$1,200",
+    "$1,800",
+    "$700"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M3-02",
+  "question": "Nare, an accrual-basis taxpayer, owns a building which was rented to Mott under a 10-year lease expiring August 31, Year 8. On January 2, Year 2, Mott paid $30,000 as consideration for canceling the lease. On November 1, Year 2, Nare leased the building to Pine under a five-year lease. Pine paid Nare $10,000 rent for the two months of November and December, and an additional $5,000 for the last month's rent. What amount of rental income should Nare report in its Year 2 income tax return?",
+  "options": [
+    "\t\n$10,000",
+    "$40,000",
+    "$45,000",
+    "$15,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-03",
+  "question": "Which of the following is both an item that is an allowable tax deduction to the partnership, reported separately on the individual partner's Schedule K-1, and then included on the partner's individual tax return?",
+  "options": [
+    "\t\nGuaranteed payments paid to partners",
+    "Advertising expenditures",
+    "Salaries paid to non-partner employees",
+    "Depreciation on equipment used in the business"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M3-04",
+  "question": "Perle, a dentist, billed Wood $600 for dental services. Wood paid Perle $200 cash and built a bookcase for Perle's office in full settlement of the bill. Wood sells comparable bookcases for $350. What amount should Perle include in taxable income as a result of this transaction?",
+  "options": [
+    "$200",
+    "$0",
+    "$550",
+    "$600"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-05",
+  "question": "Tom and Sharlene had the following items of income and expense during the taxable year:[BOX] Self-Employment Activity :\n\nGross income - \t $35,000\n\nBusiness license fees - \t $500\n\nMarketing Expenses - \t $2,000\n\nSalary paid to Sharlene - \t $10,000\n\nTom's wages from his Job - \t $67,000\n\nInterest from money market - \t $1,500\n\nGain from sale of securities owned for 3 months - \t $15,000[/BOX]\n\nWhat is Tom & Sharlene's gross income before adjustments?",
+  "options": [
+    "$131,500",
+    "$116,000",
+    "$106,000",
+    "$128,500"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M3-06",
+  "question": "Baum, an unmarried optometrist and sole proprietor of Optics, buys and maintains a supply of eyeglasses and frames to sell in the ordinary course of business. In the current year, Optics had $350,000 in gross business receipts and its year-end inventory was not subject to the uniform capitalization rules. Baum's current year adjusted gross income was $90,000 and Baum qualified to itemize deductions. During the year, Baum recorded the following information:[BOX] Business expenses:\t\n \n\n * Optics cost of goods sold --------------------------------------------------------------- \t $35,000\n\n * Optics rent expense --------------------------------------------------------------------- \t $28,000\n\n * Liability insurance premium on Optics ---------------------------------------------------- \t $5,250[/BOX][BOX]Other expenditures:\t \n * Baum's self-employment tax -------------------------------------------------------------- \t $29,750\n\n * Baum's self-employment health insurance ------------------------------------------------- \t $8,750\n\n * Insurance premium on personal residence. In the current year, Baum's home was\ntotally destroyed by fire. The furniture had an adjusted basis of $14,000 and a\nfair market value of $11,000. During the year, Baum collected $3,000 in insurance\nreimbursement and had no casualty gains during the year. ---------------------------------- \t $2,625\n\n * Qualified mortgage interest on a loan secured 5 yrs ago to acquire a personal residence - \t $52,500\n\n * Annual interest on a $70,000, 5-year home equity loan. The loan was secured\nby Baum's home, obtained January 2 of the current year. The fair market value\nof the home exceeded the mortgage and the home equity loan by a substantial\namount. The proceeds were used to purchase a car for personal use. ------------------------ \t $3,500\n\n * Points prepaid on January 2 of the current year to acquire the home equity loan --------- \t $1,400\n\n * Real estate taxes on personal residence ------------------------------------------------- \t $2,200\n\n * Estimated payments of current year federal income taxes -------------------------------- \t $13,500\n\n * Local property taxes on car used exclusively for personal use ----------------------------- \t $300[/BOX]\n\nWhat amount should Baum report as the total amount of self-employment income in the current year?",
+  "options": [
+    "\t\n$243,250",
+    "$281,750",
+    "$252,000",
+    "$273,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M3-07",
+  "question": "Ben Flood, attorney at law, is a sole proprietor and files Schedule C with his federal Form 1040. Which of the following is not a deductible expense on Schedule C?",
+  "options": [
+    "Health insurance for him and his family.",
+    "Salaries paid to the paralegal who works for him.",
+    "$30 business tax payable to the city in which he practices.",
+    "Depreciation on the computer used by his assistant."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M3-08",
+  "question": "Dr. Merry, a self-employed dentist, incurred the following expenses:[BOX] Investment expenses - \t $700\n\nCustodial fees for Dr. Merry's self-employed retirement plan - \t $40\n\nWork uniforms for Dr. Merry and Dr. Merry's employees - \t $320\n\nSubscriptions for periodicals used in the waiting room - \t $110\n\nDental education seminar - \t $1,300[/BOX]\n\nWhat is the amount of expenses the doctor can deduct as business expenses on Schedule C, Profit or Loss from Business?",
+  "options": [
+    "\t\n$1,770",
+    "$1,620",
+    "$2,430",
+    "$1,730"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-09",
+  "question": "A real estate broker reported the following business income and expenses for the current year:[BOX] Commission income - \t $100,000\n[/BOX][BOX]Expenses:\t \nAuto rentals - \t $2,000\nReferral fees to other brokers (legal under state law) - \t $20,000\nReferral fees to nonbrokers (illegal under state law) - \t $8,000\nParking fines - \t $200[/BOX]\nWhat amount should be reported as net profit on Schedule C, Profit or Loss from Business?",
+  "options": [
+    "$78,000",
+    "$77,800",
+    "$70,000",
+    "$69,800"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M3-10",
+  "question": "Marty Smarty is a CPA in private practice. In the current year, Marty had the following items of income and expenses with respect to his CPA practice:[BOX] Gross revenue - \t $275,000\n\nRent expense - \t $24,000\n\nWages paid to employees - \t $60,000\n\nWages paid to Marty - \t $120,000\n\nPayroll taxes for employees - \t $5,000\n\nSupplies expense - \t $10,000\n\nInsurance expense - \t $8,000\n\nDepreciation expense - \t $15,000\n\nBusiness meals - \t $4,000\n\nHealth insurance for employees - \t $5,000\n\nHealth insurance for Marty - \t $2,000\n\nBusiness bad debt (allowance) - \t $3,000\n\nState income taxes for the business - \t $10,000[/BOX]\n\nWhat is Marty's taxable income on Schedule C for the CPA practice for the current year?",
+  "options": [
+    "\t\n$146,000",
+    "$144,000",
+    "$120,000",
+    "$130,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M3-11",
+  "question": "Juan recently started operating a flower shop as a proprietorship. In its first year of operations, the shop had a taxable income of $60,000. Assuming that Juan had no other employment-related earnings:",
+  "options": [
+    "The flower shop must withhold FICA taxes from Juan's earnings.",
+    "Juan will be exempt from the Medicare tax because the business earnings are below the threshold amount.",
+    "Juan must pay self-employment tax on the earnings of the business.",
+    "Juan will be exempt from self-employment taxes for the first three years of operations."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-12",
+  "question": "On December 1 of the current taxable year, Krest, a self-employed cash basis taxpayer, borrowed $200,000 to use in her business. The loan was to be repaid on November 30 of the following year. Krest paid the entire interest amount of $24,000 on December 1 of the current year. What amount of interest was deductible on Krest's current year income tax return (assuming the business interest expense deduction limitation does not apply)?",
+  "options": [
+    "$0",
+    "$22,000",
+    "$24,000",
+    "$2,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-13",
+  "question": "On December 1, Year 1, Michaels, a self-employed cash basis taxpayer, borrowed $100,000 to use in her business. The loan was to be repaid on November 30, Year 2. Michaels paid the entire interest of $12,000 on December 1, Year 1. What amount of interest was deductible on Michaels' Year 2 income tax return (assuming the business interest expense deduction limitation does not apply)?",
+  "options": [
+    "\t\n$0",
+    "$1,000",
+    "$11,000",
+    "$12,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-14",
+  "question": "Nan, a cash basis taxpayer, borrowed money from a bank and signed a 10-year interest-bearing note on business property on January 1 of the current year. The cash flow from Nan's business enabled Nan to prepay the first three years of interest attributable to the note on December 31 of the current year. How should Nan treat the prepayment of interest for tax purposes?",
+  "options": [
+    "Capitalize the interest and amortize the balance over the 10-year load period.",
+    "Capitalize the interest as part of the basis of the business property.",
+    "Deduct the current year's interest and amortize the balance over the next two years.",
+    "Deduct the entire amount as a current expense."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-15",
+  "question": "Jennifer raises and trains poodles and enters them in dog shows as a hobby. She is not engaged in the activity with the intent to make a profit. In the current year, she received $1,000 in prize money from participation in dog shows and had the following expenses related to her dog show activity:[BOX] Dog food - \t $300\nVeterinary fees - \t $800\nTravel to dog shows - \t $ 200\n ---------------------------\nTotal expenses - \t $ $1,300[/BOX]\nWhat is the amount of the increase or decrease in Jennifer's current year taxable income from her hobby activity?",
+  "options": [
+    "No increase or decrease",
+    "$1,000 increase",
+    "$300 decrease",
+    "$100 decrease"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M3-16",
+  "question": "Janice loves to make handmade quilts as a hobby. She primarily makes quilts as gifts for friends and family and contributes quilts to charities for fundraisers, but occasionally she gets paid for making a custom quilt. In the current year, she received $200 for a custom quilt sale and had the following expenses related to her quilting activity:[BOX] Materials - \t $950\nSupplies  - \t $250\nQuilt show expenses  - \t $150\n ---------------------------\nTotal expenses - \t $1,350[/BOX]\nWhat is the amount of Janice's taxable quilting income or loss for the current year?",
+  "options": [
+    "$1,150 loss",
+    "$0 income or loss",
+    "$1,350 loss",
+    "$200 income"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-17",
+  "question": "Larry collects and restores antique cars as a hobby. Larry works full-time but spends most evenings working on his antique cars and nearly every weekend participating in classic collector car shows. Larry has kept nearly all of the cars he has restored although he has occasionally donated a restored car to a charity for auction. This year, Larry won a $2,500 Best of Show award at one of the car shows. In the current year, he had the following expenses related to his antique cars activity:[BOX] Car parts - \t $900\nSupplies - \t $350\nTools    - \t $250\nCar show expenses - \t $500\n---------------------------\nTotal expenses  - \t $2,000[/BOX]\nWhat is the amount of Larry's taxable income related to his antique cars activity for the current year?",
+  "options": [
+    "\t\n$500",
+    "$0",
+    "$2,000",
+    "$2,500"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-18",
+  "question": "Adams owns a second residence that is used for both personal and rental purposes. During the current year, Adams used the second residence for 50 days and rented the residence for 200 days. Which of the following statements is correct?",
+  "options": [
+    "All mortgage interest and taxes on the property will be deducted to determine the property's net income or loss.",
+    "A rental loss may be deducted if rental-related expenses exceed rental income.",
+    "Utilities and maintenance on the property must be divided between personal and rental use.",
+    "Depreciation may not be deducted on the property under any circumstances."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-19",
+  "question": "Kant, a cash-basis individual, owns and operates an office building. Kant received the following payments during the current year:[BOX] Current rents - \t $30,000\n\nAdvance rents for the next year - \t $10,000\n\nSecurity deposits held in a segregated account - \t $5,000\n\nLease cancellation payments - \t $15,000[/BOX]\n\nWhat amount is included in gross income?",
+  "options": [
+    "$30,000",
+    "$40,000",
+    "$55,000",
+    "$60,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-20",
+  "question": "During a major sports event, a taxpayer rented his primary residence to spectators for 10 days. The taxpayer's rental income and expenses were as follows:[BOX] Rental income - \t $10,000\nProrated mortgage interest and taxes - \t $1,000\nAdvertising - \t $500\nCommissions - \t $1,000[/BOX]\nHow much net rental income must the taxpayer report on his income tax return?",
+  "options": [
+    "$8,500",
+    "$7,500",
+    "$0",
+    "$10,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-21",
+  "question": "Barkley owns a vacation cabin that was rented to unrelated parties for 10 days during the year for $2,500. The cabin was used personally by Barkley for three months and left vacant for the rest of the year. Expenses for the cabin were as follows:[BOX] Real estate taxes - \t $1,000\n\nMaintenance and utilities - \t $2,000[/BOX]\n\nHow much rental income (loss) is included in Barkley's adjusted gross income?",
+  "options": [
+    "$(500)",
+    "$(1,500)",
+    "$0",
+    "$500"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-22",
+  "question": "A taxpayer rents out the taxpayer's personal residence for $4,000 each year during the week of the town's popular art festival. What are the tax consequences of this rental income?",
+  "options": [
+    "The taxpayer should report the income as other income on page 1 of Form 1040.",
+    "The taxpayer can exclude the first $1,200 of rental income and should include the remainder as rental income on Schedule E.",
+    "The taxpayer should report the $4,000 as rental income on Schedule E.",
+    "The taxpayer can exclude the $4,000 rental income from gross income."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-23",
+  "question": "A guaranteed payment by a partnership to a partner for services rendered may include an agreement to pay:[BOX] I. A salary of $5,000 monthly without regard to partnership income.\n\nII. A 25 percent interest in partnership profits.[/BOX]",
+  "options": [
+    "Both I and II.",
+    "I only.",
+    "II only.",
+    "Neither I nor II."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M3-24",
+  "question": "Guaranteed payments made by a partnership to partners for services rendered to the partnership, that are deductible business expenses under the Internal Revenue Code, are:[BOX]\n\nI. Deductible expenses on the U.S. Partnership Return of Income, Form 1065, in order to arrive at partnership income (loss).\n\nII. Included on schedules K-1 to be taxed as ordinary income to the partners.[/BOX]",
+  "options": [
+    "II only.",
+    "Neither I nor II.",
+    "I only.",
+    "Both I and II."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-25",
+  "question": "Miyasyke Inc., a calendar year S corporation, has 5 equal shareholders at the end of the tax year. Miyasyke had $75,000 of taxable income. Miyasyke made distributions to its shareholders of $32,000 each, for a total of $160,000. Each shareholder's basis in the S corporation is $100,000 at the beginning of the tax year. What amount from Miyasyke should be included in each shareholder's gross income?",
+  "options": [
+    "$32,000",
+    "$47,000",
+    "$0",
+    "$15,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M3-26",
+  "question": "Carson owned 40% of the outstanding stock of a C corporation. During a tax year, the corporation reported $400,000 in taxable income and distributed a total of $70,000 in cash dividends to its shareholders. Carson accurately reported $28,000 in gross income on Carson's individual tax return. If the corporation had been an S corporation and the distributions to the owners had been proportionate, how much income would Carson have reported on Carson's individual return?",
+  "options": [
+    "$160,000",
+    "$188,000",
+    "$28,000",
+    "$132,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M3-27",
+  "question": "Aston and Becker are equal partners in AB Partnership. In the tax year, the ordinary income of the partnership is $20,000, and the partnership has a long-term capital gain of $12,000. Aston's basis in AB was $40,000, and he received distributions of $5,000 during the year. What is Aston's share of AB's ordinary income?",
+  "options": [
+    "$10,000",
+    "$18,500",
+    "$16,000",
+    "$15,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M3-28",
+  "question": "An S corporation pays one of its individual shareholders for services rendered to the S corporation, and a general partnership pays one of its partners for services rendered to the partnership. Which of the following statements is accurate regarding these payments?",
+  "options": [
+    "\t\nThe S corporation should classify the payments as nondeductible dividends reportable on Form 1099-DIV.",
+    "The partnership should classify the payments as nondeductible partnership distributions reportable on Schedule K-1.",
+    "The S corporation should classify the payments as deductible wages reportable on Form W-2.",
+    "The partnership should classify the payments as deductible wages reportable on Form W-2."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M3-29",
+  "question": "Freeman, a single individual, reported the following income in the current year:[BOX] Guaranteed payment from services rendered to a partnership - \t $50,000\n\nOrdinary income from an S corporation - \t $20,000[/BOX]\n\nWhat amount of Freeman's income is subject to self-employment tax?",
+  "options": [
+    "\t\n$70,000",
+    "$50,000",
+    "$20,000",
+    "$0"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M3-30",
+  "question": "A taxpayer reported the following in a tax year:[BOX] Salary - \t $122,000 \nCapital gain dividends - \t $3,700 \nPartnership short-term capital loss - \t $(6,300)[/BOX]\nThe taxpayer acquired the partnership interest during the year in exchange for a capital contribution of $2,750, and there were no additional items affecting the taxpayer's basis in the partnership. What is the taxpayer's adjusted gross income for the year?",
+  "options": [
+    "$122,950",
+    "$122,700",
+    "$122,000",
+    "$119,400"
+  ],
+  "correctIndex": 0
+}
   ]
 }

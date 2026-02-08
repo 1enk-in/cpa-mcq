@@ -2,70 +2,510 @@
   "module": "M5",
   "questions": [
     {
-      "id": "M5-MCQ-01",
-      "question": "Which deduction is FOR AGI?",
-      "options": [
-        "Medical expenses",
-        "Charitable contributions",
-        "Student loan interest",
-        "Casualty losses"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Student loan interest is a for-AGI deduction."
-        },
-        "incorrect": {
-          "A": "Medical expenses are from AGI.",
-          "B": "Charitable contributions are from AGI.",
-          "D": "Casualty losses are from AGI."
-        }
-      }
-    },
-    {
-      "id": "M5-MCQ-02",
-      "question": "Which deduction requires itemizing?",
-      "options": [
-        "IRA contribution",
-        "Standard deduction",
-        "Charitable contribution",
-        "Student loan interest"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Charitable contributions require itemizing."
-        },
-        "incorrect": {
-          "A": "IRA is for AGI.",
-          "B": "Standard deduction is automatic.",
-          "D": "Student loan interest is for AGI."
-        }
-      }
-    },
-    {
-      "id": "M5-MCQ-03",
-      "question": "Standard deduction is allowed when:",
-      "options": [
-        "Itemizing",
-        "AGI is low",
-        "Itemizing is not elected",
-        "Credits exceed tax"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Standard deduction applies when itemizing is not chosen."
-        },
-        "incorrect": {
-          "A": "Itemizing replaces standard deduction.",
-          "B": "AGI level does not control eligibility.",
-          "D": "Credits are unrelated."
-        }
-      }
-    }
+  "id": "REG-M5-01",
+  "question": "Which of the following requirements must be met in order for a single individual to qualify for the additional standard deduction?[BOX]\n I. Must Support Dependent Child or Aged Parent \n II. Must Be Age 65 or Older or Blind[/BOX]",
+  "options": [
+    "I. Yes - II. Yes",
+    "I.No - II. Yes",
+    "I.Yes - II. No",
+    "I.No - II. No"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-02",
+  "question": "Carroll, a 35-year-old unmarried taxpayer with an adjusted gross income of $100,000, incurred and paid the following unreimbursed medical expenses:[BOX] Doctor bills resulting from a serious fall - \t $5,000\n\nCosmetic surgery that was necessary to correct a congenital deformity - \t $15,000[/BOX]\n\nCarroll had no medical insurance. For regular income tax purposes, what was Carroll's maximum allowable medical expense deduction, after the applicable threshold limitation, for the year?",
+  "options": [
+    "\t\n$0",
+    "$15,000",
+    "$12,500",
+    "$20,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-03",
+  "question": "Taylor, an unmarried taxpayer, had $90,000 in adjusted gross income for the current year. During the current year, Taylor donated land to a church and made no other contributions. Taylor purchased the land 15 years ago as an investment for $14,000. The land's fair market value was $25,000 on the day of the donation. What is the maximum amount of charitable contribution that Taylor may deduct as an itemized deduction for the land donation for the current year?",
+  "options": [
+    "$14,000",
+    "$11,000",
+    "$25,000",
+    "$0"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-04",
+  "question": "Bob and Nancy Goldberg are both age 67 and file a joint return. For the current year, the regular standard deduction for a couple married filing jointly is $30,000. What is the maximum standard deduction available to Bob and Nancy?",
+  "options": [
+    "\t\n$32,000",
+    "$31,600",
+    "$30,000",
+    "$33,200"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-05",
+  "question": "Which of the following statements is correct regarding the deductibility of an individual's medical expenses?",
+  "options": [
+    "A medical expense deduction is not allowed for Medicare insurance premiums.",
+    "A medical expense deduction is allowed for payments made in the current year for medical services received in earlier years.",
+    "A medical expense deduction is allowed for vitamins and supplements.",
+    "A medical expense paid by credit card is deductible in the year the credit card bill is paid."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-06",
+  "question": "During the year, Scott charged $4,000 on his credit card for his dependent son's medical expenses. Payment to the credit card company had not been made by the time Scott filed his income tax return in the following year. In addition, in the current year, Scott paid a physician $2,800 for the medical expenses of his wife, who died in the prior year. Disregarding the adjusted gross income percentage threshold, what amount could Scott claim in his current year income tax return for medical expenses?",
+  "options": [
+    "\t\n$2,800",
+    "$4,000",
+    "$6,800",
+    "$0"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-07",
+  "question": "The Stevensons are filing married filing jointly, and their adjusted gross income was $58,250. Additional information is as follows:[BOX] Interest paid on their home mortgage - \t $5,200\n\nState taxes paid - \t $2,000\n\nMedical expenses in excess of AGI floor - \t $1,500\n\nDeductible contributions to IRAs - \t $4,000\n\nAlimony paid to Mr. Stevenson's first wife (divorce finalized in 2015) - \t $5,000\n\nChild support paid for Mr. Stevenson's daughter - \t $5,100[/BOX]\n\nWhat amount may the Stevensons claim as itemized deductions on their Schedule A?",
+  "options": [
+    "$7,200",
+    "$12,300",
+    "$13,800",
+    "$8,700"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-08",
+  "question": "Which one of the following expenditures qualifies as a deductible medical expense for tax purposes?",
+  "options": [
+    "\t\nMandatory Social Security taxes for basic coverage under Medicare Part A.",
+    "Vitamins for general health not prescribed by a physician.",
+    "Transportation to physician's office for required medical care.",
+    "Health club dues."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-09",
+  "question": "Alex and Myra Burg, married and filing joint income tax returns, derive their entire income from the operation of their retail candy shop. Their adjusted gross income was $50,000. The Burgs itemized their deductions on Schedule A. The following unreimbursed cash expenditures were among those made by the Burgs during the year:[BOX] * Repair and maintenance of motorized wheelchair for their dependent child\n  who has a physical disability ------------------------------------------------------------- \t $300\n\n * Tuition, meals, and lodging at a special school for children with disabilities,\n  primarily for the availability of medical care, with meals and lodging furnished\n  as necessary incidents to that care ------------------------------------------------------ \t $4,000\n\n * State income tax ----------------------------------------------------------------------- \t $1,200\n\n * Self-employment tax --------------------------------------------------------------------- \t $7,650\n\n * Four tickets to a theatre party sponsored by a qualified charitable organization;\n  not considered a business expense; similar tickets would cost $25 each at the box office -- \t $160\n\n * Repair of glass vase accidentally broken in home by dog; vase cost $500 5 years ago;\n  fair value $600 before accident and $200 after accident ----------------------------------- \t $90\n\n * Fee for breaking lease on prior apartment residence located 20 miles from new residence - \t $500\n\n * Security deposit placed on apartment at new location ------------------------------------ \t $900[/BOX]\n\nWithout regard to the adjusted gross income percentage threshold, what amount may the Burgs claim in their current year return as qualifying medical expenses?",
+  "options": [
+    "$300",
+    "$4,300",
+    "$0",
+    "$4,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-10",
+  "question": "An individual taxpayer had the following expenses paid in the current year:[BOX] Prescription drugs for the taxpayer's dependent - \t $1,500\n\nBurial expenses for the taxpayer's spouse - \t $8,000\n\nElective cosmetic surgery for the taxpayer - \t $2,500\n\nContributions to the taxpayer's health savings account - \t $3,000[BOX]\n\nDisregarding the adjusted gross income limitation, what amount is deductible as medical expenses and included in the taxpayer's itemized deductions?",
+  "options": [
+    "$4,000",
+    "$1,500",
+    "$5,500",
+    "$9,500"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-11",
+  "question": "Matthews was a cash basis taxpayer whose current year records showed the following:[BOX] State and local income taxes withheld - \t $1,500\n\nState estimated income taxes paid December 30 of the current year - \t $400\n\nFederal income taxes withheld - \t $2,500\n\nState and local income taxes paid April 17 of the following year - \t $300[/BOX]\n\nWhat total amount was Matthews entitled to claim for taxes on her current year Schedule A of Form 1040?",
+  "options": [
+    "$1,900",
+    "$1,500",
+    "$2,200",
+    "$4,700"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-12",
+  "question": "In Year 10, Farb, a cash basis individual taxpayer, received an $8,000 invoice for personal property taxes. Believing the amount to be overstated by $5,000, Farb paid the invoiced amount under protest and immediately started legal action to recover the overstatement. In November, Year 11, the matter was resolved in Farb's favor, and he received a $5,000 refund. Farb itemizes his deductions on his tax returns.\n\nWhich of the following statements is correct regarding the deductibility of the property taxes?",
+  "options": [
+    "\t\nFarb should not deduct any amount in his Year 10 income tax return when originally filed, and should file an amended Year 10 income tax return in Year 11.",
+    "Farb should not deduct any amount in his Year 10 income tax return and should deduct $3,000 in his Year 11 income tax return.",
+    "Farb should deduct $3,000 in his Year 10 income tax return.",
+    "Farb should deduct $8,000 in his Year 10 income tax return and should report the $5,000 refund as income in his Year 11 income tax return."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-13",
+  "question": "Alex and Myra Burg, married and filing joint income tax returns, derive their entire income from the operation of their retail candy shop. Their adjusted gross income was $50,000. The Burgs itemized their deductions on Schedule A. The following unreimbursed cash expenditures were among those made by the Burgs during the year:[BOX] * Repair and maintenance of motorized wheelchair for physically handicapped dependent child --- \t $300\n\n * Tuition, meals, and lodging at special school for physically handicapped dependent child in the institution primarily for the availability of medical care, with meals and lodging furnished as necessary incidents to that care ------------------------------------------------------------ \t $4,000\n\n * State income tax ------------------------------------------------------------------------- \t $1,200\n\n * Self-employment tax ----------------------------------------------------------------------- \t $7,650\n\n * Four tickets to a theatre party sponsored by a qualified charitable organization; not considered a business expense; similar tickets would cost $25 each at the box office ---------------------- \t $160\n\n * Repair of glass vase accidentally broken in home by dog; vase cost $500 5 years ago; fair value $600 before accident and $200 after accident -------------------------------------------------- \t $90\n\n * Fee for breaking lease on prior apartment residence located 20 miles from new residence ----- \t $500\n\n * Security deposit placed on apartment at new location ---------------------------------------- \t $900[BOX]\n\nWhat amount should the Burgs deduct for taxes expense in their itemized deductions on Schedule A for the current year?",
+  "options": [
+    "\t\n$3,825",
+    "$1,200",
+    "$5,025",
+    "$7,650"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-14",
+  "question": "The Rites are married, file a joint income tax return, and qualify to itemize their deductions in the current year. Their adjusted gross income for the year was $55,000, and during the year they paid the following taxes:[BOX] Real estate tax on personal residence - \t $2,000\n\nPersonal property tax on personal automobile - \t $500\n\nCurrent-year state and city income taxes withheld from paycheck - \t $1,000[/BOX]\n\nWhat total amount of the expense should the Rites claim as an itemized deduction on their current-year joint income tax return?",
+  "options": [
+    "\t\n$3,000",
+    "$1,000",
+    "$2,500",
+    "$3,500"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-15",
+  "question": "An individual's losses on transactions entered into for personal purposes are deductible only if:",
+  "options": [
+    "\t\nThe losses can be characterized as hobby losses.",
+    "The losses do not exceed $3,000 ($6,000 on a joint return).",
+    "The losses qualify as casualty or theft losses.",
+    "No part of the transactions was entered into for profit."
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-16",
+  "question": "During the current year, Wood's residence had an adjusted basis of $150,000 and it was destroyed by a tornado. The location was a federally declared disaster area. An appraiser valued the decline in market value at $175,000. Later in the current year, Wood received $130,000 from his insurance company for the property loss and did not elect to deduct the casualty loss in an earlier year. Wood's current year adjusted gross income was $60,000 and he did not have any casualty gains.\n\nWhat total amount can Wood deduct as a current year itemized deduction for casualty loss, after the application of the threshold limitations?",
+  "options": [
+    "\t\n$20,000",
+    "$19,900",
+    "$13,900",
+    "$25,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-17",
+  "question": "In the current year, Joan Frazer's residence was totally destroyed by a hurricane. It was located in a federally declared disaster area. The property had an adjusted basis and a fair market value of $130,000 before the hurricane. During the year, Frazer received insurance reimbursement of $120,000 for the destruction of her home. Frazer's current year adjusted gross income was $70,000. Frazer had no casualty gains during the year. What amount of the loss was Frazer entitled to claim as an itemized deduction on her current year tax return?",
+  "options": [
+    "$8,600",
+    "$10,000",
+    "$8,500",
+    "$2,900"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-18",
+  "question": "Alex and Myra Burg, married and filing joint income tax returns, derive their entire income from the operation of their retail candy shop. Their adjusted gross income was $50,000. The Burgs itemized their deductions on Schedule A. The following unreimbursed cash expenditures were among those made by the Burgs during the year:[BOX] Repair and maintenance of motorized wheelchair for physically handicapped dependent child ---- \t $300\n\n * Tuition, meals, and lodging at special school for physically handicapped dependent child in the institution primarily for the availability of medical care, with meals and lodging furnished as necessary incidents to that care ----------------------------------------------------------- \t $4,000\n\n * State income tax ------------------------------------------------------------------------ \t $1,200\n\n * Self-employment tax --------------------------------------------------------------------- \t $7,650\n\n * Four tickets to a theatre party sponsored by a qualified charitable organization; not considered a business expense; similar tickets would cost $25 each at the box office ----------------------- \t $160\n\n * Repair of glass vase accidentally broken in home by dog; vase cost $500 5 years ago; fair value $600 before accident and $200 after accident ----------------------------------------------- \t $90\n\n * Fee for breaking lease on prior apartment residence located 20 miles from new residence ----- \t $500\n\n * Security deposit placed on apartment at new location ---------------------------------------- \t $900[/BOX]\n\nWithout regard to the $100 \"floor\" and the adjusted gross income percentage threshold, What amount should the Burgs deduct for gifts to charity in their itemized deductions on Schedule A for the current year?",
+  "options": [
+    "\t\n$400",
+    "$0",
+    "$300",
+    "$90"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-19",
+  "question": "Robinson's personal residence was partially destroyed by a hurricane. Robinson resided in a federally declared disaster area. The fair market value (FMV) before the hurricane was $500,000, and the FMV after the hurricane was $300,000. Robinson's adjusted basis in the home was $350,000. Robinson settled the insurance claim for $175,000. If Robinson's adjusted gross income for the year is $120,000, what amount of the casualty loss may Robinson claim after consideration of threshold limitations?",
+  "options": [
+    "$12,900",
+    "$25,000",
+    "$13,000",
+    "$24,900"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-20",
+  "question": "In Year 1, Kane's residence had an adjusted basis of $250,000 and it was destroyed by a tornado. The residence was located in a federally declared disaster area. An appraiser valued the decline in market value at $425,000. Later that same year, Kane received $200,000 from his insurance company for the property loss and did not elect to deduct the casualty loss in an earlier year. Kane's Year 1 adjusted gross income was $100,000 and he did not have any casualty gains.\n\nWhat total amount can Kane deduct as a Year 1 itemized deduction for casualty loss, after the application of the threshold limitations?",
+  "options": [
+    "$50,000",
+    "$49,900",
+    "$40,000",
+    "$39,900"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-21",
+  "question": "Pat, a single taxpayer, has adjusted gross income of $40,000 in the current year. During the year, a hurricane causes $4,100 damage to Pat's personal use car on which Pat has no insurance. Pat resides in a federally declared disaster area. Pat purchased the car for $20,000. Immediately before the hurricane, the car's fair market value was $11,000 and immediately after the hurricane its fair market value was $6,900. What amount should Pat deduct as a casualty loss for the current year after all threshold limitations are applied?",
+  "options": [
+    "\t\n$4,100",
+    "$100",
+    "$4,000",
+    "$0"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-22",
+  "question": "Jim had gambling losses totaling $2,500 for the year. He is including a lottery prize of $5,000 in his gross income this year. The gambling losses are:",
+  "options": [
+    "\t\nNot deductible.",
+    "A deduction from adjusted gross income.",
+    "A deduction to arrive at adjusted gross income.",
+    "A deduction from adjusted gross income, subject to a 2% AGI Floor."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-23",
+  "question": "Doyle has gambling losses totaling $7,000 during the current year. Doyle's adjusted gross income is $60,000, including $3,000 in gambling winnings. Doyle can itemize the deductions. What amount of gambling losses is deductible?",
+  "options": [
+    "\t\n$5,800",
+    "$0",
+    "$3,000",
+    "$7,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-24",
+  "question": "The deduction by an individual taxpayer for interest on investment indebtedness is:",
+  "options": [
+    "Limited to the taxpayer's interest income for the year.",
+    "Limited to the taxpayer's net investment income for the year.",
+    "Not limited.",
+    "Limited to the investment interest paid during the year."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-25",
+  "question": "For regular tax purposes, with regard to the itemized deduction for qualified residence interest, home equity indebtedness incurred during a year:",
+  "options": [
+    "\t\nIs only deductible when used to buy, build, or substantially improve the taxpayer's home that secures the loan.",
+    "Must exceed the taxpayer's net equity in the residence.",
+    "May exceed the fair market value of the residence.",
+    "Includes acquisition indebtedness secured by a qualified residence."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-26",
+  "question": "Jackson owns two residences. The second residence, which has never been used for rental purposes, is the only residence that is subject to a mortgage. The following expenses were incurred for the second residence in the current year:[BOX] Mortgage interest - \t $5,000\n\nUtilities - \t $1,200\n\nHazard insurance - \t $6,000[/BOX]\n\nFor regular income tax purposes, what is the maximum amount allowable as a deduction for Jackson's second residence in the current year?",
+  "options": [
+    "\t\n$11,000 in determining adjusted gross income.",
+    "$5,000 as an itemized deduction.",
+    "$6,200 in determining adjusted gross income.",
+    "$12,200 as an itemized deduction."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-27",
+  "question": "The Browns borrowed $20,000, secured by their home, to pay their son's college tuition. At the time of the loan, the fair market value of their home was $400,000, and it was unencumbered by other debt. The interest on the loan qualifies as:",
+  "options": [
+    "Investment interest expense.",
+    "Nondeductible interest.",
+    "Deductible personal interest.",
+    "Deductible qualified residence interest."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-28",
+  "question": "On January 2, Year 1, the Philips paid $50,000 cash and obtained a $200,000 mortgage to purchase a home. In Year 4 they borrowed $15,000 secured by their home, and used the cash to add a new room to their residence. That same year they took out a $5,000 auto loan.\n\nThe following information pertains to interest paid in Year 4:[BOX] Mortgage interest - \t $17,000\n\nInterest on room construction loan - \t $1,500\n\nAuto loan interest - \t $500[/BOX]\n\nFor Year 4, how much interest is deductible?",
+  "options": [
+    "\t\n$18,500",
+    "$19,000",
+    "$17,000",
+    "$17,500"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-29",
+  "question": "Wilson, CPA, uses a commercial tax software package to prepare clients' individual income tax returns. Upon reviewing a client's computer-generated year 1 itemized deductions, Wilson discovers that the schedule's deductible investment interest expense is less than the amount paid by the taxpayer and the amount that Wilson entered into the computer. After analyzing the entire tax return, Wilson determines that the computer-generated investment interest expense deduction is correct. Why is the computer-generated investment interest expense deduction correct?\n\n[BOX] I. The client's investment interest expense exceeds net investment income.\n\nII. The client's qualified residence interest expense reduces the deductible amount of investment interest expense.[/BOX]",
+  "options": [
+    "I only.",
+    "II only.",
+    "Neither I nor II.",
+    "Both I and II."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-30",
+  "question": "On January 2, Year 1, the Kanes paid $60,000 cash and obtained a $300,000 mortgage to purchase a home. In Year 4, they borrowed $20,000 secured by their home on a home equity line of credit and used the cash to pay bills and take a vacation. That same year they took out a $7,000 auto loan.\n\nThe following information pertains to interest paid in Year 4:[BOX] Mortgage interest on first loan - \t $19,000\n\nInterest on home equity line of credit - \t $2,500\n\nAuto loan interest - \t $500[/BOX]\n\nFor Year 4, how much interest is deductible?",
+  "options": [
+    "$19,000",
+    "$22,000",
+    "$21,500",
+    "$19,500"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-31",
+  "question": "An individual taxpayer earned $10,000 in investment income, $8,000 in noninterest investment expenses, and $5,000 in investment interest expense. How much is the taxpayer allowed to deduct on the current-year's tax return for investment interest expenses?",
+  "options": [
+    "$0",
+    "$2,000",
+    "$3,000",
+    "$5,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-32",
+  "question": "An individual taxpayer reports the following information:[BOX] U.S. Treasury bond income - \t $100\n\nMunicipal bond income - \t $200\n\nRental income from apartment building - \t $500\n\nInvestment interest expense - \t $1,000[/BOX]\n\nWhat amount of investment interest can the taxpayer deduct in the current year?",
+  "options": [
+    "\t\n$300",
+    "$100",
+    "$800",
+    "$1,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-33",
+  "question": "Jefferson's investment income consisted of $2,000 in interest from a U.S. Treasury bond and $1,000 interest from a municipal bond. Jefferson also paid $4,000 in investment interest expense. Assuming that Jefferson itemizes, what amount can Jefferson deduct for investment interest expense?",
+  "options": [
+    "\t\n$4,000",
+    "$3,000",
+    "$2,000",
+    "$1,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M5-34",
+  "question": "Which of the following is an itemized deduction?",
+  "options": [
+    "\t\nQualified charitable contributions of property",
+    "Educator expenses",
+    "Roof repair due to regular wear and tear",
+    "Moving expenses for a move due to change in employment"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-35",
+  "question": "Which of the following would qualify as a deductible charitable contribution in Year 1 for an individual taxpayer?",
+  "options": [
+    "\t\nA $200 contribution to the taxpayer's church charged by credit card on December 31, Year 1.",
+    "A contribution on December 31, Year 1, of $500 worth of clothing to the Salvation Army for which substantiation was not obtained.",
+    "A $450 contribution to a senator's campaign on December 31, Year 1.",
+    "A $1,000 contribution to a foreign charity on December 31, Year 1."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-36",
+  "question": "Jimet, an unmarried taxpayer, qualified to itemize deductions. Jimet's adjusted gross income was $30,000 and he made a $2,000 cash donation directly to a needy family. During the year, Jimet also donated stock, valued at $3,000, to his church. Jimet had purchased the stock four months earlier for $1,500. What was the maximum amount of the charitable contribution allowable as an itemized deduction of Jimet's current year income tax return?",
+  "options": [
+    "$1,500",
+    "$5,000",
+    "$2,000",
+    "$0"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-37",
+  "question": "Smith, a single individual, made the following charitable contributions during the current year. Smith's adjusted gross income is $60,000.[BOX] Cash donation to Smith's church - \t $5,000\n\nArt work donated to the local art museum\n\n(Purchased four months ago for $2,000, currently appraised for $3,000) - \t $3,000\n\nCash contribution to a needy family - \t $1,000[/BOX]\n\nWhat amount should Smith deduct as a charitable contribution if Smith itemizes deductions?",
+  "options": [
+    "\t\n$9,000",
+    "$8,000",
+    "$5,000",
+    "$7,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-38",
+  "question": "Deet, an unmarried taxpayer, qualified to itemize current year deductions. Deet's adjusted gross income was $40,000 and he made a $1,500 substantiated cash donation directly to a needy family. Deet also donated art, valued at $11,000, to a local art museum. Deet had purchased the art work two years earlier for $2,000. What was the maximum amount of the charitable contribution allowable as an itemized deduction on Deet's current year income tax return?",
+  "options": [
+    "$3,500",
+    "$11,000",
+    "$12,500",
+    "$2,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-39",
+  "question": "Mary, an unmarried taxpayer, made the following charitable contributions during the current year:[BOX] A cash contribution to a church - \t $2,000\nA donation to a hospital's thrift shop of furniture purchased two years ago for $2,000, with a fair market value of - \t $500\nA donation to a state university of publicly traded stock purchased by Mary for $3,000 four months ago, with a fair market value of - \t $4,000[/BOX]\nAssuming that Mary's adjusted gross income was $50,000, what amount can Mary claim as a charitable contribution deduction?",
+  "options": [
+    "$5,500",
+    "$5,000",
+    "$6,500",
+    "$6,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-40",
+  "question": "Charitable contributions subject to the 60-percent limit that are not fully deductible in the year made may be:",
+  "options": [
+    "\t\nCarried forward indefinitely until fully deducted.",
+    "Carried forward five years.",
+    "Neither carried back nor carried forward.",
+    "Carried back two years or carried forward twenty years."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-41",
+  "question": "Stein, an unmarried taxpayer, had adjusted gross income of $80,000 for the year, and qualified to itemize deductions. Stein had no charitable contribution carryovers and only made one contribution during the year. Stein donated stock, purchased seven years earlier for $17,000, to a tax-exempt educational organization. The stock was valued at $25,000 when it was contributed. What is the amount of charitable contributions deductible on Stein's current year income tax return?",
+  "options": [
+    "\t\n$25,000",
+    "$17,000",
+    "$21,000",
+    "$24,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-42",
+  "question": "Taylor, an unmarried taxpayer, had $90,000 in adjusted gross income for Year 13. During Year 13, Taylor donated land to a church and made no other contributions. Taylor purchased the land in Year 1 as an investment for $14,000. The land's fair market value was $25,000 on the day of the donation. What is the maximum amount of charitable contribution that Taylor may deduct as an itemized deduction for the land donation for Year 13?",
+  "options": [
+    "\t\n$0",
+    "$11,000",
+    "$14,000",
+    "$25,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-43",
+  "question": "Jeffrey, a single taxpayer, had $55,000 in adjusted gross income for the current year. During the current year he contributed $19,500 to his church. He had a $5,000 charitable contribution carryover from his prior year church contribution. What was the maximum amount of properly substantiated charitable contributions that Jeffrey could report as an itemized deduction for the current year?",
+  "options": [
+    "\t\n24,500",
+    "27,500",
+    "19,500",
+    "5,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M5-44",
+  "question": "Moore, a single taxpayer, had $50,000 in adjusted gross income for the year. During the year she contributed $18,000 to her church. She had a $10,000 charitable contribution carryover from her prior year church contribution. What was the maximum amount of properly substantiated charitable contributions that Moore could claim as an itemized deduction for the current year?",
+  "options": [
+    "\t\n$10,000",
+    "$28,000",
+    "$25,000",
+    "$18,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M5-45",
+  "question": "Which of the following statements is correct regarding the deductibility of donations made to qualifying charities by a cash-basis individual taxpayer?",
+  "options": [
+    "\t\nA qualified appraisal for real property donations is not required to be attached to the tax return unless the property value exceeds $10,000.",
+    "A contemporaneous written acknowledgement is required for donations of $100.",
+    "The charitable contribution deduction for long-term appreciated stock is limited to 50% of adjusted gross income.",
+    "A charitable contribution deduction is not allowed for the value of services rendered to a charity."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M5-46",
+  "question": "Alex and Myra Burg, married and filing joint income tax returns, derive their entire income from the operation of their retail candy shop. Their adjusted gross income was $50,000. The Burgs itemized their deductions on Schedule A. The following unreimbursed cash expenditures were among those made by the Burgs during the year:[BOX] Repair and maintenance of motorized wheelchair for physically handicapped dependent child ---- \t $300\n\n * Tuition, meals, and lodging at special school for physically handicapped dependent child in the institution primarily for the availability of medical care, with meals and lodging furnished as necessary incidents to that care ----------------------------------------------------------- \t $4,000\n\n * State income tax ------------------------------------------------------------------------ \t $1,200\n\n * Self-employment tax --------------------------------------------------------------------- \t $7,650\n\n * Four tickets to a theatre party sponsored by a qualified charitable organization; not considered a business expense; similar tickets would cost $25 each at the box office ----------------------- \t $160\n\n * Repair of glass vase accidentally broken in home by dog; vase cost $500 5 years ago; fair value $600 before accident and $200 after accident ----------------------------------------------- \t $90\n\n * Fee for breaking lease on prior apartment residence located 20 miles from new residence ----- \t $500\n\n * Security deposit placed on apartment at new location ---------------------------------------- \t $900[/BOX]\n\nWhat amount should the Burgs deduct for gifts to charity in their itemized deductions on Schedule A for the current year?",
+  "options": [
+    "\t\n$160",
+    "$60",
+    "$100",
+    "$0"
+  ],
+  "correctIndex": 1
+}
   ]
 }

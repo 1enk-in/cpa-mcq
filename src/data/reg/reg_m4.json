@@ -2,70 +2,169 @@
   "module": "M4",
   "questions": [
     {
-      "id": "M4-MCQ-01",
-      "question": "Which credit is refundable?",
-      "options": [
-        "Child tax credit",
-        "Foreign tax credit",
-        "Adoption credit",
-        "Education credit"
-      ],
-      "correctIndex": 0,
-      "explanation": {
-        "correct": {
-          "choice": "A",
-          "text": "The child tax credit is partially refundable."
-        },
-        "incorrect": {
-          "B": "Foreign tax credit is nonrefundable.",
-          "C": "Adoption credit is nonrefundable.",
-          "D": "Education credits are generally nonrefundable."
-        }
-      }
-    },
-    {
-      "id": "M4-MCQ-02",
-      "question": "Credits are generally applied against which tax?",
-      "options": [
-        "Gross income",
-        "Adjusted gross income",
-        "Tax liability",
-        "Taxable income"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Credits reduce tax liability dollar-for-dollar."
-        },
-        "incorrect": {
-          "A": "Credits do not reduce gross income.",
-          "B": "Credits are applied after AGI.",
-          "D": "Credits are applied after taxable income is calculated."
-        }
-      }
-    },
-    {
-      "id": "M4-MCQ-03",
-      "question": "Which credit is designed to avoid double taxation?",
-      "options": [
-        "Child tax credit",
-        "Foreign tax credit",
-        "Earned income credit",
-        "Adoption credit"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "The foreign tax credit prevents double taxation."
-        },
-        "incorrect": {
-          "A": "Child tax credit is unrelated.",
-          "C": "EIC is income-based.",
-          "D": "Adoption credit is unrelated."
-        }
-      }
-    }
+  "id": "REG-M4-01",
+  "question": "The self-employment tax is:",
+  "options": [
+    "\t\nFully deductible as an itemized deduction.",
+    "Not deductible.",
+    "Fully deductible in determining net income from self-employment.",
+    "One-half deductible from gross income in arriving at adjusted gross income."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-02",
+  "question": "Which of the following is not an adjustment to arrive at adjusted gross income?",
+  "options": [
+    "\t\nSelf-employed health insurance.",
+    "Self-employment tax (50 percent).",
+    "Alimony paid pursuant to a divorce settled on or before December 31, 2018.",
+    "Qualified mortgage interest paid."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-03",
+  "question": "Which of the following is not a deduction to arrive at adjusted gross income?",
+  "options": [
+    "Trade or business expenses.",
+    "Mortgage interest.",
+    "Alimony payments pursuant to a divorce settlement finalized on or before 12/31/18.",
+    "Capital losses in excess of capital gains."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M4-04",
+  "question": "Which allowable deduction can be claimed in arriving at an individual's adjusted gross income?",
+  "options": [
+    "Charitable contribution.",
+    "Unreimbursed business expense of an employee.",
+    "Personal casualty loss.",
+    "Alimony payment pursuant to a divorce settlement executed on or before December 31, 2018."
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-05",
+  "question": "In the current year, a self-employed taxpayer had gross income of $57,000. The taxpayer paid self-employment tax of $8,000, self-employed health insurance of $6,000, and $5,000 of alimony pursuant to divorce finalized in 2007. The taxpayer also contributed $2,000 to a traditional IRA. What is the taxpayer's adjusted gross income for the year?",
+  "options": [
+    "$50,000",
+    "$40,000",
+    "$46,000",
+    "$55,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M4-06",
+  "question": "Which of the following amounts represents an adjustment for adjusted gross income (AGI) for the current tax year?",
+  "options": [
+    "\t\nChild support paid to a former spouse pursuant to a divorce agreement executed in 2014",
+    "Child support paid to a former spouse pursuant to a divorce agreement executed in 2019",
+    "Alimony paid to a former spouse pursuant to a divorce agreement executed in 2019",
+    "Alimony paid to a former spouse pursuant to a divorce agreement executed in 2014"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-07",
+  "question": "Pat's divorce decree, finalized in 2016, requires Pat to make the following transfers to Pat's former spouse during the current year:[BOX] * Alimony payments of $9,000 to be reduced to $7,000 when their child attains the age of 18.\n * Property division of stock with a basis of $2,000 and a fair market value of $3,500.[/BOX]\nWhat is the amount of Pat's alimony deduction for the current year?",
+  "options": [
+    "\t\n$10,500",
+    "$1,500",
+    "$9,000",
+    "$7,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-08",
+  "question": "Tana's 2015 divorce decree requires Tana to make the following transfers to Tana's former spouse during the current year:[BOX] Alimony payments of $3,000.\n\nChild support of $2,000.\n\nProperty division of stock with a basis of $4,000 and a fair market value of $6,500.[/BOX]\n\nWhat is the amount of Tana's alimony deduction for the current year?",
+  "options": [
+    "\t\n$9,500",
+    "$7,000",
+    "$3,000",
+    "$11,500"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M4-09",
+  "question": "For the current year, Val and Pat White, both age 40, are filing a joint income tax return. Val earned $40,000 in wages and was covered by his employer's qualified pension plan. Pat was unemployed and received $5,000 in alimony payments (from a divorce agreement executed in 2017) for the first four months of the year before remarrying. The couple had no other income. Each contributed $5,000 to a traditional IRA account. The allowable IRA deduction on their current year joint income tax return is:",
+  "options": [
+    "\t\n$5,000",
+    "$0",
+    "$1,000",
+    "$10,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-10",
+  "question": "In the current year, Mike and Jane Smith, both 35 years old, are filing a joint income tax return. Mike earned $40,000 in wages and was covered by his employer's qualified retirement plan. Jane was employed part-time and received $10,000 in wages. The couple had no other income. Each contributed $5,000 to a traditional IRA account. The allowable IRA deduction on their current year joint income tax return is:",
+  "options": [
+    "$2,500",
+    "$5,000",
+    "$0",
+    "$10,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-11",
+  "question": "An individual starts paying student loan interest in the current year. How many years may the individual deduct a portion of the student loan interest?",
+  "options": [
+    "\t\nCurrent year only.",
+    "Duration of time that interest is paid.",
+    "Five years.",
+    "Ten years."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M4-12",
+  "question": "In the current year, an unmarried individual with modified adjusted gross income of $25,000 paid $1,000 interest on a qualified education loan entered into on July 1. How may the individual treat the interest for income tax purposes?",
+  "options": [
+    "As a $1,000 deduction to arrive at AGI for the year.",
+    "As a nondeductible item of personal interest.",
+    "As a $1,000 itemized deduction.",
+    "As a $500 deduction to arrive at AGI for the year."
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M4-13",
+  "question": "During the year, Barlow moved from Chicago to Miami to start a new job, incurring costs of $1,200 to move household goods and $2,500 in temporary living expenses. Barlow was not reimbursed for any of these expenses. What amount should Barlow deduct as itemized deduction for moving expense?",
+  "options": [
+    "\t\n$3,000",
+    "$2,700",
+    "$3,700",
+    "$0"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-14",
+  "question": "For the current year, Jennifer has self-employment net income of $50,000 before any SEP IRA deduction and no other earned income for the year. The total amount of self-employment tax related to Jennifer's earnings was $7,064. What is the maximum amount Jennifer may deduct for contributions to her SEP IRA for the year?",
+  "options": [
+    "\t\n$8,587",
+    "$10,000",
+    "$70,000",
+    "$9,294"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M4-15",
+  "question": "An individual taxpayer taking the standard deduction on Form 1040, U.S. Individual Income Tax Return, is the sole proprietor of a service business with no employees. The taxpayer paid $7,000 in self-employment taxes for the year. What amount, if any, is deductible by the taxpayer?",
+  "options": [
+    "\t\n$700",
+    "$0",
+    "$3,500",
+    "$7,000"
+  ],
+  "correctIndex": 2
+}
   ]
 }

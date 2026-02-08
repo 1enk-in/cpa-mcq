@@ -2,70 +2,202 @@
   "module": "M6",
   "questions": [
     {
-      "id": "M6-MCQ-01",
-      "question": "Which tax is paid by employers?",
-      "options": [
-        "Income tax",
-        "Employee FICA",
-        "Employer FICA",
-        "Self-employment tax"
-      ],
-      "correctIndex": 2,
-      "explanation": {
-        "correct": {
-          "choice": "C",
-          "text": "Employers pay their share of FICA tax."
-        },
-        "incorrect": {
-          "A": "Income tax is paid by employees.",
-          "B": "Employee FICA is withheld from wages.",
-          "D": "SE tax applies to self-employed individuals."
-        }
-      }
-    },
-    {
-      "id": "M6-MCQ-02",
-      "question": "Which form reports payroll taxes?",
-      "options": [
-        "Form W-2",
-        "Form 941",
-        "Form 1099",
-        "Form 1040"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "Form 941 reports payroll taxes."
-        },
-        "incorrect": {
-          "A": "W-2 reports wages to employees.",
-          "C": "1099 reports nonemployee income.",
-          "D": "1040 is an individual return."
-        }
-      }
-    },
-    {
-      "id": "M6-MCQ-03",
-      "question": "FUTA tax is paid by:",
-      "options": [
-        "Employees",
-        "Employers",
-        "Self-employed",
-        "Both employer and employee"
-      ],
-      "correctIndex": 1,
-      "explanation": {
-        "correct": {
-          "choice": "B",
-          "text": "FUTA tax is paid only by employers."
-        },
-        "incorrect": {
-          "A": "Employees do not pay FUTA.",
-          "C": "SE individuals do not pay FUTA.",
-          "D": "Employees do not share FUTA."
-        }
-      }
-    }
+  "id": "REG-M6-01",
+  "question": "What is the basic deduction calculation for the qualified business income deduction?",
+  "options": [
+    "30% × W-2 wages",
+    "20% × W-2 wages",
+    "30% × qualified business income (QBI)",
+    "20% × qualified business income (QBI)"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M6-02",
+  "question": "Which of the following statements is true regarding taxpayers with taxable income below the taxable income limitations for the qualified business income (QBI) deduction?",
+  "options": [
+    "\t\nQBI deduction is only allowed if the taxpayer is a qualified trade or business (QTB).",
+    "A qualified trade or business (QTB) and specified trade or business (SSTB) are treated the same.",
+    "QBI deduction is limited to 50 percent of W-2 wages.",
+    "QBI deduction is a phased-out deduction if a specified service trade or business (SSTB)."
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M6-03",
+  "question": "Which of the following is considered a specified service trade or business (SSTB) for purposes of the qualified business income deduction?",
+  "options": [
+    "Manufacturing company",
+    "Architectural services",
+    "Accounting firm",
+    "Engineering firm"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-04",
+  "question": "An individual taxpayer received a Schedule K-1, Partner's Share of Income, Deductions, Credits, etc. from a small partnership, in which the taxpayer owns a 50 percent interest. The qualified business income amount attributable to the taxpayer is $70,000. That is the taxpayer's only qualified business income, and the taxpayer has no capital gains or other investments. Ignoring the W-2 wage and property limitation, what is the net amount of increase to taxable income from the partnership income?",
+  "options": [
+    "$0",
+    "$56,000",
+    "$14,000",
+    "$70,000"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M6-05",
+  "question": "Jason is a limited partner in a partnership, and his filing status is single. In Year 1, Jason received a K-1 from the partnership with the following amounts of allocated partnership income and loss: $15,000 ordinary business income, $4,000 interest income, $5,000 in guaranteed payments, and $7,000 of long-term capital gain. The partnership is not a specified service trade or business, and Jason’s taxable income before the QBI deduction is $150,000.\n\nWhat is Jason’s qualified business income (QBI) for purposes of calculating his qualified business income deduction?",
+  "options": [
+    "\t\n$15,000",
+    "$19,000",
+    "$20,000",
+    "$31,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M6-06",
+  "question": "Sam has the following items of income for Year 1: Salary of $75,000, ordinary business income from a partnership in which Sam is a limited partner of $15,000, guaranteed payment from the partnership of $5,000, and interest income of $2,000.\n\nWhat is Sam’s QBI for Year 1?",
+  "options": [
+    "\t\n$20,000",
+    "$22,000",
+    "$97,000",
+    "$15,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M6-07",
+  "question": "Which of the following is the overall limitation to the qualified business income (QBI) deduction?",
+  "options": [
+    "\t\nTaxable income limitations based on filing status",
+    "Lesser of: 50 percent of W-2 wages or 25 percent of W-2 wages plus 2.5 percent of the unadjusted basis of qualified property",
+    "Lesser of: the combined QBI deductions or 20 percent of the taxpayer's taxable income in excess of net capital gain",
+    "Lesser of: 50 percent of the combined QBI deductions or 20 percent of the taxpayer's taxable income in excess of net capital gain"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-08",
+  "question": "Calculate the taxpayer's qualified business income deduction for a qualified trade or business:[BOX] * Filing status: Single\n\n * Taxable income: $100,000\n\n * Net capital gains: $0\n\n * Qualified business income (QBI): $30,000\n\n * W-2 wages: $10,000[/BOX]",
+  "options": [
+    "$20,000",
+    "$15,000",
+    "$6,000",
+    "$5,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-09",
+  "question": "David is an individual taxpayer who earns a salary of $100,000. He is also the sole owner of an S corporation, whose principal activity is providing tax consulting services to clients. This year, the S corporation’s qualified business income was $50,000. The S corporation paid $10,000 in wages to a part-time employee, and its unadjusted basis in qualified property was $40,000. David does not itemize deductions for the current taxable year.\n\nWhat is David’s qualified business income (QBI) deduction?",
+  "options": [
+    "\t\n$3,500",
+    "$0",
+    "$10,000",
+    "$5,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-10",
+  "question": "David is an individual taxpayer who earns a salary of $100,000. He is also a limited partner in a partnership. The partnership allocated David $25,000 of ordinary business income this year. The partnership earned this ordinary business income from its principal activity of performing consulting work for clients. David’s share of the partnership’s W-2 wages is $6,000, and his share of the qualified property is $3,500.\n\nWhat is David’s qualified business income (QBI) deduction, assuming he has no other sources of income this year?",
+  "options": [
+    "$25,000",
+    "$5,000",
+    "$3,000",
+    "$0"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M6-11",
+  "question": "Tim is a single taxpayer with $150,000 of taxable income before the Section 199A QBI deduction in Year 1. The entirety of his earnings comes from an S corporation that he solely owns and that operates a qualified trade or business. As part of determining his taxable income for the year, Tim determines that his S corporation earned $170,000 of net taxable income. Tim reports this on Schedule C of his individual income tax return. What is Tim’s QBI deduction for Year 1?",
+  "options": [
+    "\t\n$34,000",
+    "$4,000",
+    "$30,000",
+    "$0"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-12",
+  "question": "An individual taxpayer with a filing status of married filing jointly owns an interest in a partnership that provides commercial cleaning services. For the current year, the taxpayer's joint taxable income, prior to deducting any qualified business income, is $300,000. The taxpayer's Schedule K-1, Partner's Share of Income, Deductions, Credits, etc., and additional details from the partnership provide the following information:[BOX] * Ordinary business income (loss) -------------------------------------- \t $250,000\n\n * Employer's Form W-2 wages deducted\n\n  in determining ordinary business income -------------------------------- \t $75,000\n\n * Unadjusted basis of partnership assets used\n\n  in the partnership's business ----------------------------------------- \t $100,000[/BOX]\n\nWhat is the taxpayer's qualified business income deduction for the year?",
+  "options": [
+    "\t\n$35,000",
+    "$21,250",
+    "$37,500",
+    "$50,000"
+  ],
+  "correctIndex": 3
+},
+{
+  "id": "REG-M6-13",
+  "question": "David is an individual taxpayer who earns a salary of $100,000. He is also a limited partner in a partnership. The partnership allocated David $25,000 of ordinary business income this year. The partnership earned this ordinary business income from a qualified trade or business. David’s share of the partnership’s W-2 wages is $6,000, and his share of the qualified property is $3,500.\n\nWhat is David’s qualified business income (QBI) deduction, assuming he has no other sources of income this year?",
+  "options": [
+    "\t\n$25,000",
+    "$5,000",
+    "$3,000",
+    "$0"
+  ],
+  "correctIndex": 1
+},
+{
+  "id": "REG-M6-14",
+  "question": "Calculate the taxpayer's qualified business income deduction for a specified service trade or business:[BOX] * Filing status: Single\n\n * Taxable income: $300,000\n\n * Net capital gains: $0\n\n * Qualified business income (QBI): $50,000\n\n * W-2 wages: $10,000[/BOX]",
+  "options": [
+    "$0",
+    "$60,000",
+    "$5,000",
+    "$10,000"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M6-15",
+  "question": "Sarah is an individual taxpayer who earns a salary of $300,000. She is the sole owner of an S corporation that is not a specified service trade or business. This year, the S corporation’s qualified business income was $50,000. The S corporation paid $10,000 in wages to a part-time employee, and its unadjusted basis in qualified property was $40,000. Sarah will take the standard deduction this year and does not have any other adjustments for the current taxable year.\n\nWhat is Sarah’s qualified business income (QBI) deduction?",
+  "options": [
+    "\t\n$5,000",
+    "$10,000",
+    "$3,500",
+    "$0"
+  ],
+  "correctIndex": 0
+},
+{
+  "id": "REG-M6-16",
+  "question": "David is an individual taxpayer who earns a salary of $300,000. He is also a limited partner in a partnership. The partnership allocated David $25,000 of ordinary business income this year. The partnership earned this ordinary business income from a qualified trade or business. David’s share of the partnership’s W-2 wages is $6,000, and his share of the qualified property is $3,500. David will claim the standard deduction this taxable year, and his taxable income before the QBI deduction is $310,000.\n\nWhat is David’s qualified business income (QBI) deduction, assuming he has no other sources of income this year?",
+  "options": [
+    "$1,588",
+    "$0",
+    "$3,000",
+    "$5,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-17",
+  "question": "Alex is an individual taxpayer who earns a salary of $300,000. She is also a limited partner in a partnership, whose principal activity is providing tax consulting services to clients. This year, Alex’s allocation of the partnership’s QBI is $50,000. The partnership paid $10,000 of wages to a part-time employee, and its unadjusted basis in qualified property was $40,000. Alex will take the standard deduction this taxable year and has no other adjustments.\n\nWhat is Alex’s qualified business income (QBI) deduction?",
+  "options": [
+    "\t\n$3,500",
+    "$5,000",
+    "$0",
+    "$10,000"
+  ],
+  "correctIndex": 2
+},
+{
+  "id": "REG-M6-18",
+  "question": "David is an individual taxpayer who earns a salary of $300,000. He is also a limited partner in a partnership. The partnership allocated David $25,000 of ordinary business income this year. The partnership earned this ordinary business income from its principal activity of performing consulting work for clients. David’s share of the partnership’s W-2 wages is $6,000, and his share of the qualified property is $3,500. David will claim the standard deduction this taxable year, and his taxable income before the QBI deduction is $310,000.\n\nWhat is David’s qualified business income (QBI) deduction, assuming he has no other sources of income this year?",
+  "options": [
+    "$3,000",
+    "$65,000",
+    "$0",
+    "$5,000"
+  ],
+  "correctIndex": 2
+}
   ]
 }

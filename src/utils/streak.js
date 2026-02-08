@@ -48,14 +48,20 @@ export async function updateSessionStreak(userId) {
 
   // 2️⃣ upsert
   const { data, error } = await supabase
-    .from("user_streaks")
-    .upsert({
+  .from("user_streaks")
+  .upsert(
+    {
       user_id: userId,
       streak: newStreak,
       last_active_date: today
-    })
-    .select()
-    .single();
+    },
+    {
+      onConflict: "user_id" // ⭐ THIS LINE FIXES EVERYTHING
+    }
+  )
+  .select()
+  .single();
+
 
   if (error) {
     console.error("❌ Streak update failed", error);

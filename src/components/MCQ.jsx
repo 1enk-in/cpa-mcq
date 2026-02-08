@@ -132,6 +132,19 @@ const isExam = !retryIndexes;
   if (!user) return null;
   if (!module) return null;
 
+  const subjectFolderMap = {
+  M: "reg",
+  A: "aud",
+  F: "far",
+  B: "bar",
+  I: "isc",
+  T: "tcp"
+};
+
+const subjectFolder = subjectFolderMap[module[0]];
+const moduleFolder = module.toLowerCase(); // M1 → m1, A2 → a2
+
+
   const SESSION_KEY = `cpa_session_${user.uid}`;
 
   const data = MODULE_DATA[module];
@@ -397,7 +410,24 @@ if (!questions.length || !questions[index]) {
         <div className="mcq-id">{q.id}</div>
 
 
-<div className="mcq-question">{q.question}</div>
+<div className="mcq-question">
+  {q.question
+    .split(/\[BOX\]|\[\/BOX\]/)
+    .map((block, i) => {
+      const isBox = i % 2 === 1;
+      return (
+        <div
+          key={i}
+          className={isBox ? "question-box" : "question-text"}
+        >
+          {block.split("\n").map((line, idx) => (
+            <div key={idx}>{line}</div>
+          ))}
+        </div>
+      );
+    })}
+</div>
+
 
 
         {q.options.map((opt, i) => {
@@ -415,26 +445,20 @@ if (!questions.length || !questions[index]) {
         })}
 
         {/* EXPLANATION */}
-        {selected !== null && (
-          <div className="explanation">
-            <h4>Explanation</h4>
+        {/* EXPLANATION */}
+{selected !== null && (
+  <div className="explanation">
+    <h4>Explanation</h4>
 
-            <p>
-              <strong>
-                Choice "{q.explanation.correct.choice}" is correct.
-              </strong>{" "}
-              {q.explanation.correct.text}
-            </p>
+    <img
+      src={`/explanations/${subjectFolder}/${moduleFolder}/${q.id}.png`}
+      alt={`Explanation for ${q.id}`}
+      className="explanation-img"
+    />
+  </div>
+)}
 
-            {Object.entries(q.explanation.incorrect).map(
-              ([choice, text]) => (
-                <p key={choice}>
-                  <strong>Choice "{choice}" is incorrect.</strong> {text}
-                </p>
-              )
-            )}
-          </div>
-        )}
+
 
         {/* NAVIGATION */}
         <div className="nav">

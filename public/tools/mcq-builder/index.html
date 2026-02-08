@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MCQ JSON Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <div class="builder-card">
+    <h2>🧠 MCQ JSON Builder</h2>
+
+    <label>Module</label>
+    <input id="module" value="A1" />
+
+    <label>ID Prefix</label>
+    <input id="idPrefix" value="AUD-A1" />
+
+    <label>Starting Number</label>
+    <input id="counter" type="number" value="1" />
+
+    <hr />
+
+    <label>Question</label>
+    <textarea id="question" rows="3"></textarea>
+
+    <label>Options (paste A–D together)</label>
+    <textarea
+      id="options"
+      rows="8"
+      placeholder="A.Option A...
+B.Option B...
+C.Option C...
+D.Option D..."
+    ></textarea>
+
+    <label>Correct Answer</label>
+    <select id="correct">
+      <option value="0">A</option>
+      <option value="1">B</option>
+      <option value="2">C</option>
+      <option value="3">D</option>
+    </select>
+
+    <div class="actions">
+      <button onclick="addMCQ()">➕ Add MCQ</button>
+      <button onclick="copyJSON()">📋 Copy JSON</button>
+      <button class="danger" onclick="clearAll()">🗑 Clear All</button>
+    </div>
+
+    <h3>Generated JSON</h3>
+    <pre id="output"></pre>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
